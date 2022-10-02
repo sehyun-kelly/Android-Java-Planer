@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "369502083583",
+    "project_id": "planer-9f409",
+    "storage_bucket": "planer-9f409.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369502083583:android:6bfdfc007a83fb20142fca",
+        "android_client_info": {
+          "package_name": "com.example.planer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369502083583-jiqipmm426u7csmqjafmbj1f9kgh0cti.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.planer",
+            "certificate_hash": "6646d352fc5f92cffa80816553bcf57a96fc22d4"
+          }
+        },
+        {
+          "client_id": "369502083583-0jbfvc2noe13sm0c3oe1d5n3lbn76vj6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS0OFD8DzhMM-frz6SNldmJ_5q8nf6utQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369502083583-0jbfvc2noe13sm0c3oe1d5n3lbn76vj6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
