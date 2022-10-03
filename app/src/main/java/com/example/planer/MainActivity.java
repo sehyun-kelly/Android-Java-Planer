@@ -2,10 +2,13 @@ package com.example.planer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -32,14 +35,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //
     public void signUp(View view) {
         EditText username = findViewById(R.id.username_input);
         String user = username.getText().toString();
         EditText password = findViewById(R.id.password_input);
         String pass = password.getText().toString();
 
+        if (!validateForm(user, pass)) {
+            Toast.makeText(MainActivity.this,
+                    "Please enter email and password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         mAuth.createUserWithEmailAndPassword(user, pass)
+                .addOnFailureListener(e -> {
+                    Log.e("QA", "Failed to add data", e); // log error to logcat
+                })
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(MainActivity.this,
