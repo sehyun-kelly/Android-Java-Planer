@@ -1,25 +1,21 @@
 package com.example.planer;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SecondActivity extends AppCompatActivity {
 
-    FirebaseAuth mAuth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        FirebaseUser user = mAuth.getInstance().getCurrentUser();
-
+        user = FirebaseAuth.getInstance().getCurrentUser();
         TextView currUser = (TextView)findViewById(R.id.userID);
         String email = user.getEmail();
         String uid = user.getUid();
@@ -28,7 +24,7 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void logout(View view) {
-        mAuth.getInstance().signOut();
+        FirebaseAuth.getInstance().signOut();
         finish();
     }
 }
