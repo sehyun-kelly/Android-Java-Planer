@@ -2,7 +2,9 @@ package com.example.planer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseUser;
@@ -23,6 +25,10 @@ public class SecondActivity extends AppCompatActivity {
         String uid = user.getUid();
         String result = "Email:\n\t" + email + "\n\n" + "UserID:\n\t" + uid + "\n\n";
         currUser.setText(result);
+    }
 
+    public void logout(View view) {
+        mAuth.getInstance().signOut();
+        finish();
     }
 }
