@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="20dp"
-    android:layout_marginVertical="50dp"
+    android:layout_marginHorizontal="0dp"
+    android:layout_marginVertical="0dp"
     tools:context=".MainActivity">
+
 
     <ImageView
         android:id="@+id/app_logo"
         android:layout_width="300dp"
         android:layout_height="0dp"
+        android:layout_marginTop="4dp"
         android:importantForAccessibility="no"
         android:scaleType="fitCenter"
+
         android:src="@drawable/planer_no_background"
-        app:layout_constraintBottom_toTopOf="@id/username_input_field"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,10 +29,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingHorizontal="20dp"
-        app:layout_constraintBottom_toTopOf="@id/password_input_field"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_logo">
+        app:layout_constraintTop_toBottomOf="@+id/app_logo">
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,6 +42,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/username_input"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:autofillHints=""
@@ -53,12 +56,13 @@
         android:id="@+id/password_input_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:paddingHorizontal="20dp"
-        app:layout_constraintBottom_toTopOf="@id/button_bar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username_input_field">
+        app:layout_constraintTop_toBottomOf="@+id/username_input_field">
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,6 +72,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/password_input"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:autofillHints=""
@@ -77,35 +82,33 @@
             android:paddingHorizontal="10dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/button_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:orientation="horizontal"
+    <Button
+        android:id="@+id/login_btn"
+        style="@style/ShapeAppearanceOverlay.Material3.Button"
+        android:layout_width="116dp"
+        android:layout_height="63dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginEnd="56dp"
+        android:text="@string/log_in"
+        android:textSize="18sp"
+        android:onClick="signIn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_input_field"
+        app:layout_constraintVertical_bias="0.322" />
+
+    <Button
+        android:id="@+id/sign_up_btn"
+        style="@style/ShapeAppearanceOverlay.Material3.Button"
+        android:layout_width="116dp"
+        android:layout_height="63dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginStart="56dp"
+        android:text="@string/sign_up"
+        android:textSize="18sp"
+        android:onClick="signUp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_input_field">
-
-        <Button
-            android:id="@+id/sign_up_btn"
-            style="@style/ShapeAppearanceOverlay.Material3.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:text="@string/sign_up"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/login_btn"
-            style="@style/ShapeAppearanceOverlay.Material3.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:text="@string/log_in"
-            android:textSize="18sp" />
-    </LinearLayout>
-
+        app:layout_constraintTop_toBottomOf="@+id/password_input_field"
+        app:layout_constraintVertical_bias="0.322" />
 </androidx.constraintlayout.widget.ConstraintLayout>
