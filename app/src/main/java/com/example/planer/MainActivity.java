@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     public static int count = 0;
+    public static int pos = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
-        // Add countries info do "countries" collection
+        // Add countries info to "countries" collection
         // completed but left for future purposes
 //        Map<String, String> countries = new HashMap<>();
 //
@@ -51,16 +52,15 @@ public class MainActivity extends AppCompatActivity {
 //            while (line != null) {
 //                line = bufferedReader.readLine();
 //                String info[] = line.split("/");
-//                countries.put("name", info[0]);
 //                countries.put("airport", info[1]);
 //                countries.put("advisory", info[2]);
 //
-//                db.collection("countries")
-//                        .add(countries)
-//                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                db.collection("countries").document(info[0])
+//                        .set(countries)
+//                        .addOnSuccessListener(new OnSuccessListener() {
 //                            @Override
-//                            public void onSuccess(DocumentReference documentReference) {
-//                                Log.d(TAG, "Count: " + count + ", DocumentSnapshot added with ID: " + documentReference.get());
+//                            public void onSuccess(Object o) {
+//                                Log.d(TAG, "Count: " + count + ", DocumentSnapshot added");
 //                            }
 //                        }).addOnFailureListener(new OnFailureListener() {
 //                            @Override
@@ -70,6 +70,51 @@ public class MainActivity extends AppCompatActivity {
 //                        });
 //
 //                count++;
+//            }
+//            bufferedReader.close();
+//            inputStream.close();
+//        }catch (Exception e){
+//            System.out.println("FileRead Error");
+//            e.printStackTrace();
+//        }
+
+        // Add visa info to "visa" collection
+        // completed but left for future purposes
+//        Map<String, String> visa = new HashMap<>();
+//        InputStream inputStream = getBaseContext().getResources().openRawResource(R.raw.visa);
+//        BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
+//        ArrayList<String> visaList = new ArrayList<>();
+//
+//        try{
+//            String line = "";
+//            while (line != null) {
+//                line = bufferedReader.readLine();
+//                String info[] = line.split(",");
+//
+//                if(pos == 0){
+//                    for(int i = 0; i < info.length; i++){
+//                        visaList.add(info[i]);
+//                    }
+//                }else{
+//                    for(int i = 1; i < info.length; i++){
+//                        visa.put(visaList.get(i), info[i]);
+//                    }
+//                    db.collection("visa").document(info[0])
+//                            .set(visa)
+//                            .addOnSuccessListener(new OnSuccessListener() {
+//                                @Override
+//                                public void onSuccess(Object o) {
+//                                    Log.d(TAG, "Count: " + count + ", DocumentSnapshot added");
+//                                }
+//                            }).addOnFailureListener(new OnFailureListener() {
+//                                @Override
+//                                public void onFailure(@NonNull Exception e) {
+//                                    Log.w(TAG, "Error adding document", e);
+//                                }
+//                            });
+//                }
+//                pos++;
+//
 //            }
 //            bufferedReader.close();
 //            inputStream.close();
