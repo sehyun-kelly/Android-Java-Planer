@@ -38,90 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
-
         db = FirebaseFirestore.getInstance();
-
-        // Add countries info to "countries" collection
-        // completed but left for future purposes
-//        Map<String, String> countries = new HashMap<>();
-//
-//        InputStream inputStream = getBaseContext().getResources().openRawResource(R.raw.info);
-//        BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
-//        try{
-//            String line = bufferedReader.readLine();
-//            while (line != null) {
-//                line = bufferedReader.readLine();
-//                String info[] = line.split("/");
-//                countries.put("airport", info[1]);
-//                countries.put("advisory", info[2]);
-//
-//                db.collection("countries").document(info[0])
-//                        .set(countries)
-//                        .addOnSuccessListener(new OnSuccessListener() {
-//                            @Override
-//                            public void onSuccess(Object o) {
-//                                Log.d(TAG, "Count: " + count + ", DocumentSnapshot added");
-//                            }
-//                        }).addOnFailureListener(new OnFailureListener() {
-//                            @Override
-//                            public void onFailure(@NonNull Exception e) {
-//                                Log.w(TAG, "Error adding document", e);
-//                            }
-//                        });
-//
-//                count++;
-//            }
-//            bufferedReader.close();
-//            inputStream.close();
-//        }catch (Exception e){
-//            System.out.println("FileRead Error");
-//            e.printStackTrace();
-//        }
-
-        // Add visa info to "visa" collection
-        // completed but left for future purposes
-//        Map<String, String> visa = new HashMap<>();
-//        InputStream inputStream = getBaseContext().getResources().openRawResource(R.raw.visa);
-//        BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
-//        ArrayList<String> visaList = new ArrayList<>();
-//
-//        try{
-//            String line = "";
-//            while (line != null) {
-//                line = bufferedReader.readLine();
-//                String info[] = line.split(",");
-//
-//                if(pos == 0){
-//                    for(int i = 0; i < info.length; i++){
-//                        visaList.add(info[i]);
-//                    }
-//                }else{
-//                    for(int i = 1; i < info.length; i++){
-//                        visa.put(visaList.get(i), info[i]);
-//                    }
-//                    db.collection("visa").document(info[0])
-//                            .set(visa)
-//                            .addOnSuccessListener(new OnSuccessListener() {
-//                                @Override
-//                                public void onSuccess(Object o) {
-//                                    Log.d(TAG, "Count: " + count + ", DocumentSnapshot added");
-//                                }
-//                            }).addOnFailureListener(new OnFailureListener() {
-//                                @Override
-//                                public void onFailure(@NonNull Exception e) {
-//                                    Log.w(TAG, "Error adding document", e);
-//                                }
-//                            });
-//                }
-//                pos++;
-//
-//            }
-//            bufferedReader.close();
-//            inputStream.close();
-//        }catch (Exception e){
-//            System.out.println("FileRead Error");
-//            e.printStackTrace();
-//        }
     }
 
     @Override
@@ -189,5 +106,90 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean validateForm(String username, String password) {
         return !username.isEmpty() && !password.isEmpty();
+    }
+
+
+    // Add countries info to "countries" collection
+    public void uploadCountries(FirebaseFirestore db){
+        Map<String, String> countries = new HashMap<>();
+
+        InputStream inputStream = getBaseContext().getResources().openRawResource(R.raw.info);
+        BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
+        try{
+            String line = bufferedReader.readLine();
+            while (line != null) {
+                line = bufferedReader.readLine();
+                String info[] = line.split("/");
+                countries.put("airport", info[1]);
+                countries.put("advisory", info[2]);
+
+                db.collection("countries").document(info[0])
+                        .set(countries)
+                        .addOnSuccessListener(new OnSuccessListener() {
+                            @Override
+                            public void onSuccess(Object o) {
+                                Log.d(TAG, "Count: " + count + ", DocumentSnapshot added");
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error adding document", e);
+                            }
+                        });
+
+                count++;
+            }
+            bufferedReader.close();
+            inputStream.close();
+        }catch (Exception e){
+            System.out.println("FileRead Error");
+            e.printStackTrace();
+        }
+    }
+
+    // Add visa info to "visa" collection
+    public void uploadVisa(FirebaseFirestore db){
+        Map<String, String> visa = new HashMap<>();
+        InputStream inputStream = getBaseContext().getResources().openRawResource(R.raw.visa);
+        BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
+        ArrayList<String> visaList = new ArrayList<>();
+
+        try{
+            String line = "";
+            while (line != null) {
+                line = bufferedReader.readLine();
+                String info[] = line.split(",");
+
+                if(pos == 0){
+                    for(int i = 0; i < info.length; i++){
+                        visaList.add(info[i]);
+                    }
+                }else{
+                    for(int i = 1; i < info.length; i++){
+                        visa.put(visaList.get(i), info[i]);
+                    }
+                    db.collection("visa").document(info[0])
+                            .set(visa)
+                            .addOnSuccessListener(new OnSuccessListener() {
+                                @Override
+                                public void onSuccess(Object o) {
+                                    Log.d(TAG, "Count: " + pos + ", DocumentSnapshot added");
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w(TAG, "Error adding document", e);
+                                }
+                            });
+                }
+                pos++;
+
+            }
+            bufferedReader.close();
+            inputStream.close();
+        }catch (Exception e){
+            System.out.println("FileRead Error");
+            e.printStackTrace();
+        }
     }
 }
