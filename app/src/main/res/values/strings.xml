@@ -9,4 +9,26 @@
     <string name="logged_in">Logged in!</string>
     <string name="log_out">log out</string>
     <string name="curruser">%currUser%</string>
+
+    <string name="search">Search</string>
+    <string name="favourite">Favourite</string>
+    <string name="profile">Profile</string>
+
+
+    <string name="homeCountry">Home Country</string>
+    <string name="destination">Destination Country</string>
+    <string name="canada">Canada</string>
+
+    <string name="visa">Visa</string>
+    <string name="restriction">Covid/Travel Restriction</string>
+    <string name="weather">Weather</string>
+    <string name="currency">Currency</string>
+
+    <string name="visa_free">Visa Free</string>
+
+    <string name="covid">Covid</string>
+    <string name="no_restrictions">No Restrictions</string>
+    <string name="risk_level">Risk Level</string>
+    <string name="normal">take normal precautions</string>
+
 </resources>
