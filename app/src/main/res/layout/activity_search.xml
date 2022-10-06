@@ -77,35 +77,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995">
+        app:layout_constraintVertical_bias="1">
 
-        <Button
+        <android.widget.Button
             android:id="@+id/nav_search"
+            style="@style/navButtonFocused"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/bottom_nav"
-            android:drawableTop="@drawable/icon_search"
+            android:drawableTop="@drawable/ic_search"
+            android:onClick="buttonEffect"
             android:text="@string/search"
             tools:ignore="TextContrastCheck" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/nav_favourite"
+            style="@style/navButtonIdle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
             android:layout_weight="1"
-            android:background="@drawable/bottom_nav"
-            android:drawableTop="@drawable/icon_favourite"
+            android:drawableTop="@drawable/ic_favorite"
+            android:onClick="buttonEffect"
             android:text="@string/favourite"
             tools:ignore="TextContrastCheck" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/nav_profile"
+            style="@style/navButtonIdle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/bottom_nav"
-            android:drawableTop="@drawable/icon_home"
+            android:drawableTop="@drawable/ic_home"
+            android:onClick="buttonEffect"
             android:text="@string/profile"
             tools:ignore="TextContrastCheck" />
     </LinearLayout>

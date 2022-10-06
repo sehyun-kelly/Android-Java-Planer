@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -66,5 +67,11 @@ public class SearchActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void buttonEffect(View button){
+        AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
+        buttonClick.setDuration(300);
+        button.startAnimation(buttonClick);
     }
 }
