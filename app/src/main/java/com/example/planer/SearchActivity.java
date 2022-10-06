@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import java.io.BufferedReader;
@@ -19,11 +20,18 @@ import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
     String country;
+    Button searchBtn;
+    Button favoriteBtn;
+    Button profileBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        searchBtn = findViewById(R.id.nav_search);
+        favoriteBtn = findViewById(R.id.nav_favourite);
+        profileBtn = findViewById(R.id.nav_profile);
 
         Fragment searchCard = new SearchFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -69,9 +77,23 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
-    public void buttonEffect(View button){
-        AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
-        buttonClick.setDuration(300);
-        button.startAnimation(buttonClick);
+    public void buttonUnfocusedEffect(View button){
+        button.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
+        button.setOnClickListener(l -> buttonFocusedEffect(button));
+    }
+
+    public void buttonFocusedEffect(View button){
+        if (button.equals(searchBtn)) {
+            buttonUnfocusedEffect(favoriteBtn);
+            buttonUnfocusedEffect(profileBtn);
+        } else if (button.equals(favoriteBtn)) {
+            buttonUnfocusedEffect(searchBtn);
+            buttonUnfocusedEffect(profileBtn);
+        } else {
+            buttonUnfocusedEffect(profileBtn);
+            buttonUnfocusedEffect(favoriteBtn);
+        }
+
+        button.setBackgroundColor(getResources().getColor(R.color.turquoise));
     }
 }

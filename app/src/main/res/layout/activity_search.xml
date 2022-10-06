@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@drawable/ic_search"
-            android:onClick="buttonEffect"
+            android:onClick="buttonFocusedEffect"
             android:text="@string/search"
             tools:ignore="TextContrastCheck" />
 
@@ -98,7 +98,7 @@
             android:layout_marginHorizontal="2dp"
             android:layout_weight="1"
             android:drawableTop="@drawable/ic_favorite"
-            android:onClick="buttonEffect"
+            android:onClick="buttonFocusedEffect"
             android:text="@string/favourite"
             tools:ignore="TextContrastCheck" />
 
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@drawable/ic_home"
-            android:onClick="buttonEffect"
+            android:onClick="buttonFocusedEffect"
             android:text="@string/profile"
             tools:ignore="TextContrastCheck" />
     </LinearLayout>
