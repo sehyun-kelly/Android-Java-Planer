@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -90,7 +89,7 @@ public class SearchActivity extends AppCompatActivity {
             buttonUnfocusedEffect(searchBtn);
             buttonUnfocusedEffect(profileBtn);
         } else {
-            buttonUnfocusedEffect(profileBtn);
+            buttonUnfocusedEffect(searchBtn);
             buttonUnfocusedEffect(favoriteBtn);
         }
 
