@@ -36,22 +36,22 @@ public class SearchActivity extends AppCompatActivity {
         ArrayList<String> countries = new ArrayList<>();
 
         InputStream inputStream = getBaseContext().getResources().openRawResource(R.raw.info);
-        BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
-        String line = "";
-        try{
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+        try {
+            String line = bufferedReader.readLine();
             while (line != null) {
-                line = bufferedReader.readLine();
                 String[] split = line.split("/");
                 countries.add(split[0]);
+                line = bufferedReader.readLine();
             }
             bufferedReader.close();
             inputStream.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("FileRead Error");
             e.printStackTrace();
         }
 
-        ArrayAdapter<String> adapter =  new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countries);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countries);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         countrySpinner.setAdapter(adapter);
 
