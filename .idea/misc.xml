@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/bottom_nav.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1375" />
         <entry key="app/src/main/res/drawable/corner_rounded.xml" value="0.125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_favorite.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.1" />
@@ -12,7 +14,11 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_second.xml" value="0.19610507246376813" />
-        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_favorite_list.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_favourite.xml" value="0.1037037037037037" />
+        <entry key="app/src/main/res/layout/fragment_favourite_list.xml" value="0.1037037037037037" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.165" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1645" />
       </map>
     </option>
@@ -23,5 +29,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1037037037037037" />
+      </ProjectState>
+    </option>
   </component>
 </project>

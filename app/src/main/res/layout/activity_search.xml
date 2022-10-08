@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/page_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/home_title"
         android:layout_width="wrap_content"
@@ -58,10 +68,10 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/cardFragment"
+        android:id="@+id/card_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/navigation_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,9 +79,9 @@
         app:layout_constraintVertical_bias="0.038" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/navigation_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,10 +93,9 @@
             android:id="@+id/nav_search"
             style="@style/navButtonFocused"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:drawableTop="@drawable/ic_search"
-            android:onClick="buttonFocusedEffect"
             android:text="@string/search"
             tools:ignore="TextContrastCheck" />
 
@@ -94,11 +103,10 @@
             android:id="@+id/nav_favourite"
             style="@style/navButtonIdle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginHorizontal="2dp"
             android:layout_weight="1"
             android:drawableTop="@drawable/ic_favorite"
-            android:onClick="buttonFocusedEffect"
             android:text="@string/favourite"
             tools:ignore="TextContrastCheck" />
 
@@ -106,10 +114,9 @@
             android:id="@+id/nav_profile"
             style="@style/navButtonIdle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:drawableTop="@drawable/ic_home"
-            android:onClick="buttonFocusedEffect"
             android:text="@string/profile"
             tools:ignore="TextContrastCheck" />
     </LinearLayout>
