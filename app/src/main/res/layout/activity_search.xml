@@ -16,6 +16,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/search_activity_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="home_title, home_value, destination_value, spinner_country, card_fragment" />
+
     <TextView
         android:id="@+id/home_title"
         android:layout_width="wrap_content"

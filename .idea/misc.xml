@@ -12,7 +12,7 @@
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/input_background.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15520833333333334" />
-        <entry key="app/src/main/res/layout/activity_search.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_search.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_second.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_favorite_list.xml" value="0.19610507246376813" />

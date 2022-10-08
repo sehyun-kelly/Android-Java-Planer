@@ -6,7 +6,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -114,12 +113,15 @@ public class SearchActivity extends AppCompatActivity {
         if (button.equals(searchBtn)) {
             favoriteBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
             profileBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
+            findViewById(R.id.search_activity_group).setVisibility(View.VISIBLE);
         } else if (button.equals(favoriteBtn)) {
             searchBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
             profileBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
+            findViewById(R.id.search_activity_group).setVisibility(View.INVISIBLE);
         } else {
             searchBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
             favoriteBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
+            findViewById(R.id.search_activity_group).setVisibility(View.INVISIBLE);
         }
 
         button.setBackgroundColor(getResources().getColor(R.color.turquoise));
