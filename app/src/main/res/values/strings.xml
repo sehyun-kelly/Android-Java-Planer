@@ -30,5 +30,8 @@
     <string name="no_restrictions">No Restrictions</string>
     <string name="risk_level">Risk Level</string>
     <string name="normal">take normal precautions</string>
+    <string name="placeholderWeatherActivity">Weather page showing current weather, forecast, description of season conditions.</string>
+    <string name="countryname">%CountryName%</string>
+    <string name="currentdate">%CurrentDate%</string>
 
 </resources>

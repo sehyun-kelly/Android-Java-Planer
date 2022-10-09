@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_weather_scene"
+    tools:context=".WeatherActivity">
+
+    <TextView
+        android:id="@+id/currentDate"
+        android:layout_width="164dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/currentdate"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/country_name"
+        android:layout_width="164dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/countryname"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentDate" />
+
+    <ImageView
+        android:id="@+id/sunshine"
+        android:layout_width="208dp"
+        android:layout_height="173dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/country_name"
+        app:srcCompat="@drawable/weather1" />
+
+    <TextView
+        android:id="@+id/textinput_placeholder"
+        android:layout_width="276dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/placeholderWeatherActivity"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sunshine" />
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layoutDescription="@xml/activity_weather_scene"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textinput_placeholder"
+        tools:context=".WeatherActivity">
+
+        <ImageView
+            android:id="@+id/image0"
+            android:layout_width="150dp"
+            android:layout_height="150dp"/>
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"/>
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"/>
+        <ImageView
+            android:id="@+id/image3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"/>
+
+    <androidx.constraintlayout.helper.widget.Carousel
+            android:id="@+id/carousel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:carousel_forwardTransition="@+id/forward"
+            app:carousel_backwardTransition="@+id/backward"
+            app:carousel_previousState="@+id/previous"
+            app:carousel_nextState="@+id/next"
+            app:carousel_infinite="true"
+            app:carousel_firstView="@+id/imageView2"
+            app:constraint_referenced_ids="image0,image1,image2,image3" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

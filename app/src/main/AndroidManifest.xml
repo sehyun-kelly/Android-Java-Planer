@@ -17,6 +17,14 @@
         android:theme="@style/Theme.Planer"
         tools:targetApi="31">
         <activity
+            android:name=".WeatherActivity"
+            android:exported="false"
+            android:parentActivityName=".SearchActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SearchActivity"
             android:exported="false">
             <meta-data

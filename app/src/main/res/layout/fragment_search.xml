@@ -12,6 +12,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/visaCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -48,6 +49,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/travelRestrictionsCard"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -116,17 +118,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
+                android:id="@+id/weatherCard"
                 app:cardCornerRadius="10dp"
                 app:contentPadding="10dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
+                    android:id="@+id/weather"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/weather"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/weather"
