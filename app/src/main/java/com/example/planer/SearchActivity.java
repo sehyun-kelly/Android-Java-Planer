@@ -31,6 +31,24 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void onBindViewToData() {
+        ArrayList<String> countries = readCountries();
+        Spinner countrySpinner = findViewById(R.id.spinner_country);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, readCountries());
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        countrySpinner.setAdapter(adapter);
+
+        countrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                country = adapterView.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         searchBtn = findViewById(R.id.nav_search);
         favoriteBtn = findViewById(R.id.nav_favourite);
         profileBtn = findViewById(R.id.nav_profile);
@@ -53,7 +71,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         favoriteBtn.setOnClickListener(v -> {
-            Fragment favoriteFragment = new FavouriteFragment();
+            Fragment favoriteFragment = new FavouriteFragment(countries);
             fragmentManager.beginTransaction()
                     .replace(R.id.page_fragment, favoriteFragment, "currentFragment")
                     .addToBackStack(null)
@@ -68,23 +86,6 @@ public class SearchActivity extends AppCompatActivity {
                     .addToBackStack(null)
                     .commit();
             buttonFocusedEffect(profileBtn);
-        });
-
-        Spinner countrySpinner = findViewById(R.id.spinner_country);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, readCountries());
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        countrySpinner.setAdapter(adapter);
-
-        countrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                country = adapterView.getItemAtPosition(position).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
         });
     }
 
