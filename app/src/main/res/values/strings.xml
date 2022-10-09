@@ -34,4 +34,10 @@
     <string name="countryname">%CountryName%</string>
     <string name="currentdate">%CurrentDate%</string>
 
+    <!-- Used in Register page -->
+    <string name="email">Email</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="enter_your_password_again">Confirm your password</string>
+
 </resources>

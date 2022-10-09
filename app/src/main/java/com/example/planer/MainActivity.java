@@ -50,31 +50,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Redirect user to register activity.
+     * @author Ravinder Shokar
+     * @param view
+     */
     public void signUp(View view) {
-        EditText username = findViewById(R.id.username_input);
-        String user = username.getText().toString();
-        EditText password = findViewById(R.id.password_input);
-        String pass = password.getText().toString();
-
-        if (!validateForm(user, pass)) {
-            Toast.makeText(MainActivity.this,
-                    "Please enter email and password", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        mAuth.createUserWithEmailAndPassword(user, pass)
-                .addOnFailureListener(e -> {
-                    Log.e("QA", "Failed to add data", e); // log error to logcat
-                })
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(MainActivity.this,
-                                "Account created. Please log in.", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(MainActivity.this,
-                                "Authentication failed.", Toast.LENGTH_SHORT).show();
-                    }
-                });
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 
     public void signIn(View view) {
@@ -123,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
                 db.collection("countries").document(info[0])
                         .set(countries)
                         .addOnSuccessListener((OnSuccessListener) o -> Log.d(TAG, "Count: " + count + ", DocumentSnapshot added")).addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
-
                 count++;
             }
             bufferedReader.close();
