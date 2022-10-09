@@ -6,16 +6,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 public class RegisterActivity extends AppCompatActivity {
 
     static final String TAG = "Android";
 
+    String country = "";
     FirebaseFirestore db;
 
     @Override
@@ -23,6 +32,45 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         this.db = FirebaseFirestore.getInstance();
+
+        ArrayList<String> countries = readCountries();
+        Spinner countrySpinner = findViewById(R.id.spinner_country);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, readCountries());
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        countrySpinner.setAdapter(adapter);
+
+        countrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                country = adapterView.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    private ArrayList<String> readCountries() {
+        ArrayList<String> countries = new ArrayList<>();
+
+        InputStream inputStream = getBaseContext().getResources().openRawResource(R.raw.info);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+        try {
+            String line = bufferedReader.readLine();
+            while (line != null) {
+                String[] split = line.split("/");
+                countries.add(split[0]);
+                line = bufferedReader.readLine();
+            }
+            bufferedReader.close();
+            inputStream.close();
+        } catch (Exception e) {
+            System.out.println("FileRead Error");
+            e.printStackTrace();
+        }
+        return countries;
     }
 
 
@@ -64,17 +112,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         // Redirect to sign up
         signIn(view);
-
-//        mAuth.signInWithEmailAndPassword(user, pass).addOnCompleteListener(this, task -> {
-//            if (task.isSuccessful()) {
-//                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-//                startActivity(intent);
-//
-//            } else {
-//                Toast.makeText(MainActivity.this,
-//                        "Incorrect email / password.", Toast.LENGTH_SHORT).show();
-//            }
-//        });
     }
 
     private boolean validateForm(String userName, String email, String password, String confirmPassword) {
