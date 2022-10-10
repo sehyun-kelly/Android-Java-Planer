@@ -31,7 +31,7 @@ public class FavouriteFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_favourite, container, false);
 
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.list);
+        RecyclerView recyclerView = view.findViewById(R.id.list);
         recyclerView.setAdapter(new FavouriteCountriesAdapter(favouriteCountries));
         return view;
     }

@@ -2,11 +2,8 @@ package com.example.planer.data;
 
 import static android.content.ContentValues.TAG;
 
-import android.content.res.Resources;
 import android.util.Log;
 
-import com.example.planer.R;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.BufferedReader;
@@ -16,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class FirebaseDriver {
     public static int count = 0;
@@ -25,7 +23,8 @@ public class FirebaseDriver {
     public static void uploadCountries(FirebaseFirestore db) {
         Map<String, String> countries = new HashMap<>();
 
-        InputStream inputStream = Resources.getSystem().openRawResource(R.raw.info);
+        String file = "res/raw/info.txt";
+        InputStream inputStream = Objects.requireNonNull(FirebaseDriver.class.getClassLoader()).getResourceAsStream(file);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         try {
             String line = bufferedReader.readLine();
@@ -37,7 +36,7 @@ public class FirebaseDriver {
 
                 db.collection("countries").document(info[0])
                         .set(countries)
-                        .addOnSuccessListener((OnSuccessListener) o -> Log.d(TAG, "Count: " + count + ", DocumentSnapshot added")).addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
+                        .addOnSuccessListener( o -> Log.d(TAG, "Count: " + count + ", DocumentSnapshot added")).addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
                 count++;
             }
             bufferedReader.close();
@@ -51,14 +50,15 @@ public class FirebaseDriver {
     // Add visa info to "visa" collection
     public static void uploadVisa(FirebaseFirestore db) {
         Map<String, String> visa = new HashMap<>();
-        InputStream inputStream = Resources.getSystem().openRawResource(R.raw.visa);
+
+        String file = "res/raw/visa.txt";
+        InputStream inputStream = Objects.requireNonNull(FirebaseDriver.class.getClassLoader()).getResourceAsStream(file);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         ArrayList<String> visaList = new ArrayList<>();
 
         try {
-            String line = "";
+            String line = bufferedReader.readLine();
             while (line != null) {
-                line = bufferedReader.readLine();
                 String[] info = line.split(",");
 
                 if (pos == 0) {
@@ -69,10 +69,10 @@ public class FirebaseDriver {
                     }
                     db.collection("visa").document(info[0])
                             .set(visa)
-                            .addOnSuccessListener((OnSuccessListener) o -> Log.d(TAG, "Count: " + pos + ", DocumentSnapshot added")).addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
+                            .addOnSuccessListener(o -> Log.d(TAG, "Count: " + pos + ", DocumentSnapshot added")).addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
                 }
                 pos++;
-
+                line = bufferedReader.readLine();
             }
             bufferedReader.close();
             inputStream.close();
@@ -82,9 +82,9 @@ public class FirebaseDriver {
         }
     }
 
-//    public static void main(String[] args) {
-//        FirebaseFirestore db = FirebaseFirestore.getInstance();
-//        uploadCountries(db);
-//        uploadVisa(db);
-//    }
+    public static void main(String[] args) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        uploadCountries(db);
+        uploadVisa(db);
+    }
 }

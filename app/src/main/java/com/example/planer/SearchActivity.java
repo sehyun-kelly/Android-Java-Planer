@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,9 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import com.example.planer.data.CountryDriver;
+
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
@@ -32,9 +32,9 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void onBindViewToData() {
-        ArrayList<String> countries = readCountries();
+        ArrayList<String> countries = CountryDriver.readCountries();
         Spinner countrySpinner = findViewById(R.id.spinner_country);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, readCountries());
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countries);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         countrySpinner.setAdapter(adapter);
 
@@ -81,8 +81,6 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         profileBtn.setOnClickListener(v -> {
-            // I am going to use the profile button to temporalily
-            // redirect to  currency converter.
             Intent intent = new Intent(this, CurrencyConverterActivity.class);
             startActivity(intent);
 
@@ -96,42 +94,22 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
-    private ArrayList<String> readCountries() {
-        ArrayList<String> countries = new ArrayList<>();
-
-        InputStream inputStream = getBaseContext().getResources().openRawResource(R.raw.info);
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-        try {
-            String line = bufferedReader.readLine();
-            while (line != null) {
-                String[] split = line.split("/");
-                countries.add(split[0]);
-                line = bufferedReader.readLine();
-            }
-            bufferedReader.close();
-            inputStream.close();
-        } catch (Exception e) {
-            System.out.println("FileRead Error");
-            e.printStackTrace();
-        }
-        return countries;
-    }
-
     public void buttonFocusedEffect(View button) {
+        Resources.Theme theme = getTheme();
         if (button.equals(searchBtn)) {
-            favoriteBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
-            profileBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
+            favoriteBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise, theme));
+            profileBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise, theme));
             findViewById(R.id.search_activity_group).setVisibility(View.VISIBLE);
         } else if (button.equals(favoriteBtn)) {
-            searchBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
-            profileBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
+            searchBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise, theme));
+            profileBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise, theme));
             findViewById(R.id.search_activity_group).setVisibility(View.INVISIBLE);
         } else {
-            searchBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
-            favoriteBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise));
+            searchBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise, theme));
+            favoriteBtn.setBackgroundColor(getResources().getColor(R.color.greyish_turquoise, theme));
             findViewById(R.id.search_activity_group).setVisibility(View.INVISIBLE);
         }
 
-        button.setBackgroundColor(getResources().getColor(R.color.turquoise));
+        button.setBackgroundColor(getResources().getColor(R.color.turquoise, theme));
     }
 }

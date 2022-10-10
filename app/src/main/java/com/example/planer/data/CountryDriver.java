@@ -8,12 +8,14 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class CountryDriver {
-    public static ArrayList<String> readCountries(Context context) {
+public class CountryDriver extends android.app.Application {
+    public static ArrayList<String> readCountries() {
         ArrayList<String> countries = new ArrayList<>();
 
-        InputStream inputStream = context.getResources().openRawResource(R.raw.info);
+        String file = "res/raw/info.txt";
+        InputStream inputStream = Objects.requireNonNull(CountryDriver.class.getClassLoader()).getResourceAsStream(file);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         try {
             String line = bufferedReader.readLine();

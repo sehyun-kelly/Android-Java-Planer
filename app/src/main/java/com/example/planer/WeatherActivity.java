@@ -1,7 +1,6 @@
 package com.example.planer;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.helper.widget.Carousel;
 
 import android.os.Bundle;
 
