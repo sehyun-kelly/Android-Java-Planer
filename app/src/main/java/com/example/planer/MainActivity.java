@@ -73,4 +73,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean validateForm(String username, String password) {
         return !username.isEmpty() && !password.isEmpty();
     }
+
+    @Override
+    public void onBackPressed() {}
 }

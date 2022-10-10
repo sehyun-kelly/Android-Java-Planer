@@ -33,14 +33,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ProfilePage"
-            android:exported="false"
-            android:parentActivityName=".SearchActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".CurrencyConverterActivity"
             android:exported="false"
             android:parentActivityName=".SearchActivity" />

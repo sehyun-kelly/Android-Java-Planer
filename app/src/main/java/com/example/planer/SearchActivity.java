@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.planer.data.CountryDriver;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -81,16 +82,11 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         profileBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(this, CurrencyConverterActivity.class);
-            startActivity(intent);
-
-
-//            //TODO: Profile fragment
-//            fragmentManager.beginTransaction()
-//                    .replace(R.id.page_fragment, new Fragment(), "currentFragment")
-//                    .addToBackStack(null)
-//                    .commit();
-//            buttonFocusedEffect(profileBtn);
+            fragmentManager.beginTransaction()
+                    .replace(R.id.page_fragment, new ProfileFragment(), "currentFragment")
+                    .addToBackStack(null)
+                    .commit();
+            buttonFocusedEffect(profileBtn);
         });
     }
 
@@ -111,5 +107,11 @@ public class SearchActivity extends AppCompatActivity {
         }
 
         button.setBackgroundColor(getResources().getColor(R.color.turquoise, theme));
+    }
+
+    public void logout(View view) {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

@@ -27,6 +27,7 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    static final String TAG = "Android";
     private FirebaseAuth mAuth;
 
     String country = "";
@@ -98,35 +99,35 @@ public class RegisterActivity extends AppCompatActivity {
 
                         mAuth.signInWithEmailAndPassword(emailInput, passwordInput)
                                 .addOnCompleteListener(this, task2 -> {
-                            if (task2.isSuccessful()) {
-                                // log in, and store user inputs in new doc under 'users' collection
-                                user = FirebaseAuth.getInstance().getCurrentUser();
-                                Map<String, Object> registrant = new HashMap<>();
-                                registrant.put("uid", user.getUid());
-                                registrant.put("username", userNameInput);
-                                registrant.put("email", emailInput);
-                                registrant.put("country", country);
-                                db.collection("users")
-                                        .add(registrant)
-                                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                    @Override
-                                    public void onSuccess(DocumentReference documentReference) {
-                                        Log.d(TAG, "snapshot added with ID: " + documentReference.getId());
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Log.w(TAG, "Error adding document", e);
+                                    if (task2.isSuccessful()) {
+                                        // log in, and store user inputs in new doc under 'users' collection
+                                        user = FirebaseAuth.getInstance().getCurrentUser();
+                                        Map<String, Object> registrant = new HashMap<>();
+                                        registrant.put("uid", user.getUid());
+                                        registrant.put("username", userNameInput);
+                                        registrant.put("email", emailInput);
+                                        registrant.put("country", country);
+                                        db.collection("users")
+                                                .add(registrant)
+                                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                                    @Override
+                                                    public void onSuccess(DocumentReference documentReference) {
+                                                        Log.d(TAG, "snapshot added with ID: " + documentReference.getId());
+                                                    }
+                                                }).addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        Log.w(TAG, "Error adding document", e);
+                                                    }
+                                                });
+                                        Intent intent = new Intent(RegisterActivity.this, SearchActivity.class);
+                                        startActivity(intent);
+
+                                    } else {
+                                        Toast.makeText(RegisterActivity.this,
+                                                "Incorrect email / password.", Toast.LENGTH_SHORT).show();
                                     }
                                 });
-                                Intent intent = new Intent(RegisterActivity.this, SearchActivity.class);
-                                startActivity(intent);
-
-                            } else {
-                                Toast.makeText(RegisterActivity.this,
-                                        "Incorrect email / password.", Toast.LENGTH_SHORT).show();
-                            }
-                        });
                     } else {
                         // If an error display error as toast
                         Toast.makeText(RegisterActivity.this,
