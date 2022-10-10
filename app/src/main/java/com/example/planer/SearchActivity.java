@@ -23,7 +23,6 @@ public class SearchActivity extends AppCompatActivity {
     String country;
     Button searchBtn;
     Button favoriteBtn;
-    Button currencyBtn;
     Button profileBtn;
 
     @Override
@@ -54,7 +53,6 @@ public class SearchActivity extends AppCompatActivity {
 
         searchBtn = findViewById(R.id.nav_search);
         favoriteBtn = findViewById(R.id.nav_favourite);
-        currencyBtn = findViewById(R.id.nav_currency);
         profileBtn = findViewById(R.id.nav_profile);
 
         Fragment searchCard = new SearchFragment();
@@ -81,12 +79,6 @@ public class SearchActivity extends AppCompatActivity {
                     .addToBackStack(null)
                     .commit();
             buttonFocusedEffect(favoriteBtn);
-        });
-
-
-        currencyBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(this, CurrencyConverterActivity.class);
-            startActivity(intent);
         });
 
         profileBtn.setOnClickListener(v -> {

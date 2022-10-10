@@ -17,11 +17,6 @@ public class ProfilePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
-
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-
-        }
     }
 
     public void logout(View view) {
