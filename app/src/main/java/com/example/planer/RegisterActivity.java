@@ -33,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         this.db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         ArrayList<String> countries = readCountries();
         Spinner countrySpinner = findViewById(R.id.spinner_country);
@@ -107,7 +108,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         // This is where we would add the user to the db and then redirect to login activity
         // Add user to db
-        mAuth.createUserWithEmailAndPassword(userNameInput, passwordInput)
+        mAuth.createUserWithEmailAndPassword(emailInput, passwordInput)
                 .addOnFailureListener(e -> {
                     Log.e("QA", "Failed to add data", e); // log error to logcat
                 })
