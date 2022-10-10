@@ -84,7 +84,6 @@
 
     <Button
         android:id="@+id/login_btn"
-        style="@style/ShapeAppearanceOverlay.Material3.Button"
         android:layout_width="116dp"
         android:layout_height="63dp"
         android:layout_marginHorizontal="20dp"
@@ -99,7 +98,6 @@
 
     <Button
         android:id="@+id/sign_up_btn"
-        style="@style/ShapeAppearanceOverlay.Material3.Button"
         android:layout_width="116dp"
         android:layout_height="63dp"
         android:layout_marginHorizontal="20dp"

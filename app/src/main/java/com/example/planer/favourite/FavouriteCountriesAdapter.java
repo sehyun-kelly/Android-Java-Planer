@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.planer.databinding.FragmentFavouriteBinding;
 import com.example.planer.databinding.FragmentFavouriteItemBinding;
 
 import java.util.ArrayList;
@@ -39,7 +38,7 @@ public class FavouriteCountriesAdapter extends RecyclerView.Adapter<FavouriteCou
         return countryList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         public final TextView mContentView;
         public FavouriteCountry mItem;
 
