@@ -1,5 +1,6 @@
 package com.example.planer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,17 +13,24 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.example.planer.data.CountryDriver;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
     String country = "";
+    FirebaseUser user;
     FirebaseFirestore db;
 
     @Override
@@ -65,10 +73,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void signUp(View view) {
         EditText username = findViewById(R.id.username_input);
-        EditText password = findViewById(R.id.password_input);
         EditText email = findViewById(R.id.email_input);
+        EditText password = findViewById(R.id.password_input);
         EditText confirmPassword = findViewById(R.id.confirm_password_input);
-
 
         String userNameInput = username.getText().toString();
         String emailInput = email.getText().toString();
@@ -81,20 +88,45 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-
-        // This is where we would add the user to the db and then redirect to login activity
-        // Add user to db
+        // Sign in, adding user to db
         mAuth.createUserWithEmailAndPassword(emailInput, passwordInput)
                 .addOnFailureListener(e -> {
                     Log.e("QA", "Failed to add data", e); // log error to logcat
                 })
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(RegisterActivity.this,
-                                "Account created. Please log in.", Toast.LENGTH_SHORT).show();
 
-                        // Redirect to sign up
-                        signIn(view);
+                        mAuth.signInWithEmailAndPassword(emailInput, passwordInput)
+                                .addOnCompleteListener(this, task2 -> {
+                            if (task2.isSuccessful()) {
+                                // log in, and store user inputs in new doc under 'users' collection
+                                user = FirebaseAuth.getInstance().getCurrentUser();
+                                Map<String, Object> registrant = new HashMap<>();
+                                registrant.put("uid", user.getUid());
+                                registrant.put("username", userNameInput);
+                                registrant.put("email", emailInput);
+                                registrant.put("country", country);
+                                db.collection("users")
+                                        .add(registrant)
+                                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                    @Override
+                                    public void onSuccess(DocumentReference documentReference) {
+                                        Log.d(TAG, "snapshot added with ID: " + documentReference.getId());
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(TAG, "Error adding document", e);
+                                    }
+                                });
+                                Intent intent = new Intent(RegisterActivity.this, SearchActivity.class);
+                                startActivity(intent);
+
+                            } else {
+                                Toast.makeText(RegisterActivity.this,
+                                        "Incorrect email / password.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     } else {
                         // If an error display error as toast
                         Toast.makeText(RegisterActivity.this,
