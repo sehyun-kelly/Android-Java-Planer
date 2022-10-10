@@ -12,8 +12,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -23,6 +23,7 @@ import java.util.ArrayList;
 public class RegisterActivity extends AppCompatActivity {
 
     static final String TAG = "Android";
+    private FirebaseAuth mAuth;
 
     String country = "";
     FirebaseFirestore db;
@@ -105,13 +106,25 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         // This is where we would add the user to the db and then redirect to login activity
-
         // Add user to db
+        mAuth.createUserWithEmailAndPassword(userNameInput, passwordInput)
+                .addOnFailureListener(e -> {
+                    Log.e("QA", "Failed to add data", e); // log error to logcat
+                })
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(RegisterActivity.this,
+                                "Account created. Please log in.", Toast.LENGTH_SHORT).show();
 
-        // If an error display error as toast
+                        // Redirect to sign up
+                        signIn(view);
+                    } else {
+                        // If an error display error as toast
+                        Toast.makeText(RegisterActivity.this,
+                                "Authentication failed.", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-        // Redirect to sign up
-        signIn(view);
     }
 
     private boolean validateForm(String userName, String email, String password, String confirmPassword) {
