@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -80,12 +81,18 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         profileBtn.setOnClickListener(v -> {
-            //TODO: Profile fragment
-            fragmentManager.beginTransaction()
-                    .replace(R.id.page_fragment, new Fragment(), "currentFragment")
-                    .addToBackStack(null)
-                    .commit();
-            buttonFocusedEffect(profileBtn);
+            // I am going to use the profile button to temporalily
+            // redirect to  currency converter.
+            Intent intent = new Intent(this, CurrencyConverterActivity.class);
+            startActivity(intent);
+
+
+//            //TODO: Profile fragment
+//            fragmentManager.beginTransaction()
+//                    .replace(R.id.page_fragment, new Fragment(), "currentFragment")
+//                    .addToBackStack(null)
+//                    .commit();
+//            buttonFocusedEffect(profileBtn);
         });
     }
 

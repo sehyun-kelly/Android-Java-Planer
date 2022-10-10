@@ -12,7 +12,9 @@
 
     <string name="search">Search</string>
     <string name="favourite">Favourite</string>
-    <string name="profile">Profile</string>
+
+    <!-- Temporary Change to redirect to currecny page -->
+    <string name="profile">Currency</string>
 
 
     <string name="homeCountry">Home Country</string>
