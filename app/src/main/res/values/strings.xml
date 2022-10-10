@@ -41,4 +41,7 @@
     <string name="enter_your_password_again">Confirm your password</string>
     <string name="country">Country</string>
 
+    <!-- Used in CurrencyConverter page -->
+    <string name="home">Home Country</string>
+
 </resources>
