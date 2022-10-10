@@ -123,17 +123,6 @@
             tools:ignore="TextContrastCheck" />
 
         <android.widget.Button
-            android:id="@+id/nav_currency"
-            style="@style/navButtonIdle"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:drawableTop="@drawable/ic_home"
-            android:text="@string/currency"
-            android:textSize="15sp"
-            tools:ignore="TextContrastCheck" />
-
-        <android.widget.Button
             android:id="@+id/nav_profile"
             style="@style/navButtonIdle"
             android:layout_width="wrap_content"
