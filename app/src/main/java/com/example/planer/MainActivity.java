@@ -1,41 +1,25 @@
 package com.example.planer;
 
-import static android.content.ContentValues.TAG;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    public static int count = 0;
-    public static int pos = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
-//        FirebaseFirestore db = FirebaseFirestore.getInstance();
     }
 
     @Override
@@ -52,8 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Redirect user to register activity.
+     *
+     * @param view signup button view
      * @author Ravinder Shokar
-     * @param view
      */
     public void signUp(View view) {
         Intent intent = new Intent(this, RegisterActivity.class);
@@ -86,67 +71,5 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean validateForm(String username, String password) {
         return !username.isEmpty() && !password.isEmpty();
-    }
-
-
-    // Add countries info to "countries" collection
-    public void uploadCountries(FirebaseFirestore db){
-        Map<String, String> countries = new HashMap<>();
-
-        InputStream inputStream = getBaseContext().getResources().openRawResource(R.raw.info);
-        BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
-        try{
-            String line = bufferedReader.readLine();
-            while (line != null) {
-                line = bufferedReader.readLine();
-                String[] info= line.split("/");
-                countries.put("airport", info[1]);
-                countries.put("advisory", info[2]);
-
-                db.collection("countries").document(info[0])
-                        .set(countries)
-                        .addOnSuccessListener((OnSuccessListener) o -> Log.d(TAG, "Count: " + count + ", DocumentSnapshot added")).addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
-                count++;
-            }
-            bufferedReader.close();
-            inputStream.close();
-        }catch (Exception e){
-            System.out.println("FileRead Error");
-            e.printStackTrace();
-        }
-    }
-
-    // Add visa info to "visa" collection
-    public void uploadVisa(FirebaseFirestore db){
-        Map<String, String> visa = new HashMap<>();
-        InputStream inputStream = getBaseContext().getResources().openRawResource(R.raw.visa);
-        BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(inputStream));
-        ArrayList<String> visaList = new ArrayList<>();
-
-        try{
-            String line = "";
-            while (line != null) {
-                line = bufferedReader.readLine();
-                String[] info = line.split(",");
-
-                if(pos == 0){
-                    visaList.addAll(Arrays.asList(info));
-                }else{
-                    for(int i = 1; i < info.length; i++){
-                        visa.put(visaList.get(i), info[i]);
-                    }
-                    db.collection("visa").document(info[0])
-                            .set(visa)
-                            .addOnSuccessListener((OnSuccessListener) o -> Log.d(TAG, "Count: " + pos + ", DocumentSnapshot added")).addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
-                }
-                pos++;
-
-            }
-            bufferedReader.close();
-            inputStream.close();
-        }catch (Exception e){
-            System.out.println("FileRead Error");
-            e.printStackTrace();
-        }
     }
 }
