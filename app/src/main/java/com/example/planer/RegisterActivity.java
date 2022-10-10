@@ -1,6 +1,5 @@
 package com.example.planer;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,10 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.example.planer.data.CountryDriver;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.auth.FirebaseAuth;
@@ -109,17 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         registrant.put("country", country);
                                         db.collection("users")
                                                 .add(registrant)
-                                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                                    @Override
-                                                    public void onSuccess(DocumentReference documentReference) {
-                                                        Log.d(TAG, "snapshot added with ID: " + documentReference.getId());
-                                                    }
-                                                }).addOnFailureListener(new OnFailureListener() {
-                                                    @Override
-                                                    public void onFailure(@NonNull Exception e) {
-                                                        Log.w(TAG, "Error adding document", e);
-                                                    }
-                                                });
+                                                .addOnSuccessListener(documentReference -> Log.d(TAG, "snapshot added with ID: " + documentReference.getId())).addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
                                         Intent intent = new Intent(RegisterActivity.this, SearchActivity.class);
                                         startActivity(intent);
 
