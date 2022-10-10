@@ -16,7 +16,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.example.planer.data.CountryDriver;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firestore.v1.WriteResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +23,6 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    static final String TAG = "Android";
     private FirebaseAuth mAuth;
 
     String country = "";
