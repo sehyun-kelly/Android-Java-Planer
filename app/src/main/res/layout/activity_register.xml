@@ -6,26 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-    <ImageView
-        android:id="@+id/app_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="267dp"
-        android:importantForAccessibility="no"
-        android:scaleType="fitCenter"
-        android:src="@drawable/planer_no_background"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ScrollView
         android:id="@+id/text_inputs"
-        android:layout_width="414dp"
-        android:layout_height="219dp"
+        android:layout_width="411dp"
+        android:layout_height="554dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_logo"
-        tools:context=".RegisterActivity">
+        tools:context=".RegisterActivity"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -193,14 +181,14 @@
         android:layout_width="116dp"
         android:layout_height="63dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginEnd="48dp"
         android:onClick="signIn"
         android:text="@string/log_in"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_inputs"
-        app:layout_constraintVertical_bias="0.429" />
+        app:layout_constraintVertical_bias="0.202" />
 
     <Button
         android:id="@+id/sign_up_btn"
@@ -208,15 +196,14 @@
         android:layout_width="116dp"
         android:layout_height="63dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="40dp"
         android:onClick="signUp"
         android:text="@string/sign_up"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_inputs"
-        app:layout_constraintVertical_bias="0.429" />
-
+        app:layout_constraintVertical_bias="0.202" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

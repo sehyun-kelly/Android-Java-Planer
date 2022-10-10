@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,6 +23,7 @@ public class SearchActivity extends AppCompatActivity {
     String country;
     Button searchBtn;
     Button favoriteBtn;
+    Button currencyBtn;
     Button profileBtn;
 
     @Override
@@ -52,6 +54,7 @@ public class SearchActivity extends AppCompatActivity {
 
         searchBtn = findViewById(R.id.nav_search);
         favoriteBtn = findViewById(R.id.nav_favourite);
+        currencyBtn = findViewById(R.id.nav_currency);
         profileBtn = findViewById(R.id.nav_profile);
 
         Fragment searchCard = new SearchFragment();
@@ -80,10 +83,14 @@ public class SearchActivity extends AppCompatActivity {
             buttonFocusedEffect(favoriteBtn);
         });
 
-        profileBtn.setOnClickListener(v -> {
-            // I am going to use the profile button to temporalily
-            // redirect to  currency converter.
+
+        currencyBtn.setOnClickListener(v -> {
             Intent intent = new Intent(this, CurrencyConverterActivity.class);
+            startActivity(intent);
+        });
+
+        profileBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ProfilePage.class);
             startActivity(intent);
 
 

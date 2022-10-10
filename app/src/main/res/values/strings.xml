@@ -45,5 +45,6 @@
 
     <!-- Used in CurrencyConverter page -->
     <string name="home">Home Country</string>
+    <string name="usernamePlaceholder">%username%</string>
 
 </resources>
