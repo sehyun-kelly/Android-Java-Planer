@@ -6,23 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-    <ImageView
-        android:id="@+id/app_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:importantForAccessibility="no"
-        android:scaleType="fitCenter"
-        android:src="@drawable/planer_no_background"
-        app:layout_constraintDimensionRatio="1:1" />
-
     <ScrollView
         android:id="@+id/text_inputs"
-        android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_width="401dp"
+        android:layout_height="545dp"
         android:layout_below="@id/app_logo"
-        android:layout_margin="10dp">
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        tools:ignore="NotSibling">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -198,7 +191,8 @@
             android:layout_marginHorizontal="20dp"
             android:onClick="signUp"
             android:text="@string/sign_up"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/login_btn"
@@ -207,7 +201,8 @@
             android:layout_marginHorizontal="20dp"
             android:onClick="signIn"
             android:text="@string/log_in"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 
 </RelativeLayout>

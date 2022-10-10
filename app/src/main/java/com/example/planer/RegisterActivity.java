@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.example.planer.data.CountryDriver;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firestore.v1.WriteResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -103,9 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         registrant.put("username", userNameInput);
                                         registrant.put("email", emailInput);
                                         registrant.put("country", country);
-                                        db.collection("users")
-                                                .add(registrant)
-                                                .addOnSuccessListener(documentReference -> Log.d(TAG, "snapshot added with ID: " + documentReference.getId())).addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
+                                        db.collection("users").document(user.getUid()).set(registrant);
                                         Intent intent = new Intent(RegisterActivity.this, SearchActivity.class);
                                         startActivity(intent);
 

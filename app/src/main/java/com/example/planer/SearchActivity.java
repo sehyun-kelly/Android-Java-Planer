@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +14,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.planer.data.CountryDriver;
-import com.google.firebase.auth.FirebaseAuth;
+
 
 import java.util.ArrayList;
 
@@ -107,11 +106,5 @@ public class SearchActivity extends AppCompatActivity {
         }
 
         button.setBackgroundColor(getResources().getColor(R.color.turquoise, theme));
-    }
-
-    public void logout(View view) {
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
     }
 }

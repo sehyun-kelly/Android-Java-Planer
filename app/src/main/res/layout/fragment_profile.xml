@@ -14,14 +14,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/profile"
+        android:contentDescription="@string/profile_picture" />
 
     <TextView
         android:id="@+id/username"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:layout_marginTop="8dp"
-        android:text="@string/usernamePlaceholder"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,37 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profilePic" />
 
     <LinearLayout
-        android:id="@+id/country"
-        android:layout_width="309dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="4dp"
-        android:orientation="vertical"
-        android:paddingHorizontal="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailField">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/country"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/countryField"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:autofillHints=""
-            android:background="@drawable/input_background"
-            android:hint="country"
-            android:inputType="text"
-            android:paddingHorizontal="10dp"
-            android:textSize="24sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/emailField"
+        android:id="@+id/email_input_field"
         android:layout_width="309dp"
         android:layout_height="75dp"
         android:layout_marginTop="4dp"
@@ -77,16 +47,14 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/username_input"
+        <TextView
+            android:id="@+id/emailField"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:autofillHints=""
-            android:background="@drawable/input_background"
-            android:hint="email"
-            android:inputType="text"
             android:paddingHorizontal="10dp"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            tools:ignore="TextFields,SpeakableTextPresentCheck" />
     </LinearLayout>
 
     <LinearLayout
@@ -113,31 +81,65 @@
             android:layout_height="50dp"
             android:autofillHints=""
             android:background="@drawable/input_background"
-            android:hint="username"
             android:inputType="text"
+            android:labelFor="@id/usernameField"
             android:paddingHorizontal="10dp"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/country"
+        android:layout_width="309dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_input_field">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/country"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/countryField"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:autofillHints=""
+            android:background="@drawable/input_background"
+            android:inputType="text"
+            android:labelFor="@id/countryField"
+            android:paddingHorizontal="10dp"
+            android:textSize="24sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/updateBtn"
         android:layout_width="177dp"
         android:layout_height="59dp"
         android:layout_marginTop="16dp"
-        android:text="//TODO: update"
+        android:text="@string/update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/country" />
+        app:layout_constraintTop_toBottomOf="@+id/country"
+        tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/logoutBtn"
         android:layout_width="135dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
-        android:onClick="logout"
         android:text="@string/log_out"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/updateBtn"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
