@@ -49,9 +49,14 @@
     <string name="profilepicframe">ProfilePicFrame</string>
     <string name="update">update</string>
     <string name="profile_picture">profile picture</string>
+
+
+    <!-- Used in WeatherActivity page -->
     <string name="city">City</string>
-    <string name="weatherresults">%weatherResults%</string>
+    <string name="noCity">City cannot be empty</string>
+    <string name="weatherresults">Please select a city above</string>
     <string name="refresh">refresh</string>
     <string name="weather_graphic">weather graphic</string>
+    <string name="zero">0</string>
 
 </resources>
