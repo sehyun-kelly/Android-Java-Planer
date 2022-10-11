@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +30,7 @@ public class WeatherActivity extends AppCompatActivity {
 
     EditText etCity, etCountry;
     TextView tvResult;
+    ImageView ivIcon;
     DecimalFormat df = new DecimalFormat("#.#");
 
     @Override
@@ -42,6 +45,7 @@ public class WeatherActivity extends AppCompatActivity {
         etCountry = findViewById(R.id.country_name);
         etCity = findViewById(R.id.city_name);
         tvResult = findViewById(R.id.weatherResults);
+        ivIcon = findViewById(R.id.icon);
     }
 
     public void getWeather(View view) {
@@ -64,9 +68,13 @@ public class WeatherActivity extends AppCompatActivity {
                         Log.d("response", response);
                         String output = "";
                         try {
+                            String iconUrl = "http://openweathermap.org/img/wn/";  // + @2x.png
                             JSONObject jsonResponse = new JSONObject(response);
                             JSONArray jsonArray = jsonResponse.getJSONArray("weather");
                             JSONObject jsonObjectWeather = jsonArray.getJSONObject(0);
+                            String iconCode = jsonObjectWeather.getString("icon");
+                            iconUrl += iconCode + "@4x.png";
+                            Glide.with(this).load(iconUrl).into(ivIcon);
                             String description = jsonObjectWeather.getString("description");
                             JSONObject jsonObjectMain = jsonResponse.getJSONObject("main");
                             double temp = jsonObjectMain.getDouble("temp") - 273.15;
