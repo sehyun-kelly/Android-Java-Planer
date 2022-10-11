@@ -20,82 +20,71 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/country_name"
+    <EditText
+        android:id="@+id/city_name"
         android:layout_width="164dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/countryname"
-        android:textAlignment="center"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/city"
+        android:textAlignment="viewStart"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toEndOf="@+id/country_name"
+        app:layout_constraintTop_toBottomOf="@+id/currentDate"
+        android:autofillHints=""
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/country_name"
+        android:layout_width="165dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/country"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentDate" />
+        app:layout_constraintTop_toBottomOf="@+id/currentDate"
+        android:autofillHints=""
+        tools:ignore="TextFields" />
 
     <ImageView
         android:id="@+id/sunshine"
         android:layout_width="208dp"
         android:layout_height="173dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_weight="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/country_name"
-        app:srcCompat="@drawable/weather1" />
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:srcCompat="@drawable/weather1"
+        android:contentDescription="@string/weather_graphic" />
 
     <TextView
-        android:id="@+id/textinput_placeholder"
-        android:layout_width="276dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/placeholderWeatherActivity"
-        android:textAlignment="center"
+        android:id="@+id/weatherResults"
+        android:layout_width="289dp"
+        android:layout_height="251dp"
+        android:text="@string/weatherresults"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sunshine" />
+        app:layout_constraintTop_toBottomOf="@+id/sunshine"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <androidx.constraintlayout.motion.widget.MotionLayout
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        app:layoutDescription="@xml/activity_weather_scene"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getWeather"
+        android:text="@string/refresh"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textinput_placeholder"
-        tools:context=".WeatherActivity">
-
-        <ImageView
-            android:id="@+id/image0"
-            android:layout_width="150dp"
-            android:layout_height="150dp"/>
-        <ImageView
-            android:id="@+id/image1"
-            android:layout_width="150dp"
-            android:layout_height="150dp"/>
-        <ImageView
-            android:id="@+id/image2"
-            android:layout_width="150dp"
-            android:layout_height="150dp"/>
-        <ImageView
-            android:id="@+id/image3"
-            android:layout_width="150dp"
-            android:layout_height="150dp"/>
-
-    <androidx.constraintlayout.helper.widget.Carousel
-            android:id="@+id/carousel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:carousel_forwardTransition="@+id/forward"
-            app:carousel_backwardTransition="@+id/backward"
-            app:carousel_previousState="@+id/previous"
-            app:carousel_nextState="@+id/next"
-            app:carousel_infinite="true"
-            app:carousel_firstView="@+id/imageView2"
-            app:constraint_referenced_ids="image0,image1,image2,image3" />
-    </androidx.constraintlayout.motion.widget.MotionLayout>
+        app:layout_constraintTop_toBottomOf="@+id/country_name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

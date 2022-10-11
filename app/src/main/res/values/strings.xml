@@ -49,5 +49,9 @@
     <string name="profilepicframe">ProfilePicFrame</string>
     <string name="update">update</string>
     <string name="profile_picture">profile picture</string>
+    <string name="city">City</string>
+    <string name="weatherresults">%weatherResults%</string>
+    <string name="refresh">refresh</string>
+    <string name="weather_graphic">weather graphic</string>
 
 </resources>
