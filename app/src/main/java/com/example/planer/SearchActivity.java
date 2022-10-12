@@ -36,10 +36,6 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         onBindViewToData();
-
-        // Temporary write to Firebase until all cities are written
-//        FirebaseFirestore db = FirebaseFirestore.getInstance();
-//        uploadCitiesToCountries(db);
     }
 
     private void onBindViewToData() {
@@ -118,25 +114,4 @@ public class SearchActivity extends AppCompatActivity {
 
         button.setBackgroundColor(getResources().getColor(R.color.turquoise, theme));
     }
-
-//    public static void uploadCitiesToCountries(FirebaseFirestore db) {
-//        String file = "res/raw/cities.txt";
-//        InputStream inputStream = Objects.requireNonNull(FirebaseDriver.class.getClassLoader()).getResourceAsStream(file);
-//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-//        try {
-//            String line = bufferedReader.readLine();
-//            while (line != null) {
-//                String[] info = line.split("\t");
-//                String city = info[0];
-//                String country = info[1];
-//                db.collection("countries").document(country).update("cities", FieldValue.arrayUnion(city));
-//                line = bufferedReader.readLine();
-//            }
-//            bufferedReader.close();
-//            inputStream.close();
-//        } catch (Exception e) {
-//            System.out.println("FileRead Error");
-//            e.printStackTrace();
-//        }
-//    }
 }

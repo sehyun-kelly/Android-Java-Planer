@@ -8,7 +8,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Objects;
 
-public class citiesTest {
+public class CitiesDriver {
+
+    /**
+     * Snippet to update Firestore "countries" collection with cities.txt
+     */
+
+//    FirebaseFirestore db = FirebaseFirestore.getInstance();
+//    uploadCitiesToCountries(db);
 
     // Add countries info to "countries" collection
     public static void uploadCitiesToCountries(FirebaseFirestore db) {
@@ -32,6 +39,7 @@ public class citiesTest {
         }
     }
 
+    // Driver code:
     public static void main(String[] args) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         uploadCitiesToCountries(db);
