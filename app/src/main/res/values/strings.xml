@@ -58,5 +58,6 @@
     <string name="refresh">refresh</string>
     <string name="weather_graphic">weather graphic</string>
     <string name="zero">0</string>
+    <string name="get_weather">get weather</string>
 
 </resources>

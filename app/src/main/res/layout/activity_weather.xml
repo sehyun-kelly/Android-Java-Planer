@@ -79,7 +79,7 @@
         android:layout_width="268dp"
         android:layout_height="44dp"
         android:onClick="getWeather"
-        android:text="@string/refresh"
+        android:text="@string/get_weather"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
