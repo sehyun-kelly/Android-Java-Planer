@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="visible"
-        app:constraint_referenced_ids="home_title, home_value, destination_value, spinner_country, card_fragment" />
+        app:constraint_referenced_ids="home_title, home_value, destination_title, spinner_country, card_fragment" />
 
     <TextView
         android:id="@+id/home_title"
@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.012" />
 
     <TextView
-        android:id="@+id/destination_value"
+        android:id="@+id/destination_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/destination"
@@ -71,7 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.924"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/destination_value"
+        app:layout_constraintTop_toBottomOf="@+id/destination_title"
         app:layout_constraintVertical_bias="0.012"
         tools:ignore="SpeakableTextPresentCheck" />
 
