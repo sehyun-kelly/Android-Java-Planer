@@ -62,7 +62,7 @@ public class FavouriteFragment extends Fragment {
                 .addOnCompleteListener(task -> {
                     DocumentSnapshot document = task.getResult();
                     List<String> group = (List<String>) document.get("list");
-                    assert group != null;
+                    if (group == null) return;
                     for (String pair : group) {
                         favouriteCountries.add(new FavouriteCountry(pair));
                     }
