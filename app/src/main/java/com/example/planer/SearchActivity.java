@@ -12,20 +12,25 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.planer.data.CountryDriver;
-import com.example.planer.data.FirebaseDriver;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Objects;
+import java.util.HashMap;
 
 public class SearchActivity extends AppCompatActivity {
+    public static String CURRENT_USER_UUID_KEY = "current_user_uuid";
+
+    private FirebaseUser currentUser;
+    private FirebaseFirestore db;
+
     String country;
     Button searchBtn;
     Button favoriteBtn;
@@ -35,7 +40,11 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
         onBindViewToData();
+
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        db = FirebaseFirestore.getInstance();
     }
 
     private void onBindViewToData() {
@@ -79,7 +88,9 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         favoriteBtn.setOnClickListener(v -> {
-            Fragment favoriteFragment = new FavouriteFragment(countries);
+            saveFavouritePair();
+            Fragment favoriteFragment = new FavouriteFragment();
+            favoriteFragment.setArguments(getUserInfo());
             fragmentManager.beginTransaction()
                     .replace(R.id.page_fragment, favoriteFragment, "currentFragment")
                     .addToBackStack(null)
@@ -113,5 +124,55 @@ public class SearchActivity extends AppCompatActivity {
         }
 
         button.setBackgroundColor(getResources().getColor(R.color.turquoise, theme));
+    }
+
+    /**
+     * Save favourite to Firestore.
+     */
+    //TODO: Implement a favourite button. Call this when the button is clicked.
+    private void saveFavouritePair() {
+        TextView homeVisa = findViewById(R.id.home_value);
+        String homeVisaValue = homeVisa.getText().toString();
+
+        String countryPair = homeVisaValue + " - " + country;
+
+        db = FirebaseFirestore.getInstance();
+        assert currentUser != null;
+        db.collection("favourite")
+                .document(currentUser.getUid())
+                .update("list", FieldValue.arrayUnion(countryPair))
+                .addOnSuccessListener(o ->
+                        Toast.makeText(this, "Added favourite", Toast.LENGTH_SHORT))
+                .addOnFailureListener(e ->
+                        initializeFavouriteList(countryPair));
+    }
+
+    /**
+     * Add an array field named 'list' to user's favourite collection.
+     * Initialize this 'list' with a value.
+     *
+     * @param value a given String
+     */
+    private void initializeFavouriteList(String value) {
+        HashMap<String, Object> docData = new HashMap<>();
+        ArrayList<String> listOfCountries = new ArrayList<>();
+        listOfCountries.add(value);
+
+        docData.put("list", listOfCountries);
+
+        db.collection("favourite")
+                .document(currentUser.getUid())
+                .set(docData);
+    }
+
+    /**
+     * Create a bundle with user information.
+     *
+     * @return a bundle
+     */
+    private Bundle getUserInfo() {
+        Bundle bundle = new Bundle();
+        bundle.putString(CURRENT_USER_UUID_KEY, currentUser.getUid());
+        return bundle;
     }
 }
