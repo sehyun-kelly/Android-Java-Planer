@@ -12,6 +12,41 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/airportCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="10dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/airport"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/airport"
+                    android:textColor="#000000"
+                    />
+
+                <TextView
+                    android:id="@+id/airportInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/corner_rounded"
+                    android:padding="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:id="@+id/visaCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -40,7 +75,6 @@
                     android:background="@drawable/corner_rounded"
                     android:padding="10dp"
                     android:layout_marginTop="5dp"
-                    android:text="@string/visa_free"
                     android:textColor="#000000"
                     android:textStyle="bold"/>
 
@@ -90,7 +124,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="5dp"
-                            android:text="@string/no_restrictions"
                             android:textColor="#3B3B3B" />
 
                         <TextView
@@ -106,7 +139,6 @@
                             android:id="@+id/imageView"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/normal"
                             android:contentDescription="@string/normal" />
                     </LinearLayout>
                 </LinearLayout>

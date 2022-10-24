@@ -31,7 +31,8 @@ public class SearchActivity extends AppCompatActivity {
     private FirebaseUser currentUser;
     private FirebaseFirestore db;
 
-    String country;
+    private String homeCountry;
+    private String country;
     Button searchBtn;
     Button favoriteBtn;
     Button profileBtn;
@@ -43,6 +44,7 @@ public class SearchActivity extends AppCompatActivity {
 
         onBindViewToData();
 
+        homeCountry = "Canada";
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         db = FirebaseFirestore.getInstance();
     }
@@ -58,6 +60,17 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 country = adapterView.getItemAtPosition(position).toString();
+
+                Bundle countryBundle = new Bundle();
+                countryBundle.putString("home", homeCountry);
+                countryBundle.putString("country", country);
+
+                Fragment searchFragment = new SearchFragment();
+                searchFragment.setArguments(countryBundle);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.card_fragment, searchFragment);
+                fragmentTransaction.commit();
             }
 
             @Override
@@ -106,6 +119,7 @@ public class SearchActivity extends AppCompatActivity {
             buttonFocusedEffect(profileBtn);
         });
     }
+
 
     public void buttonFocusedEffect(View button) {
         Resources.Theme theme = getTheme();

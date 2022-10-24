@@ -7,13 +7,51 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.planer.favourite.FavouriteCountriesAdapter;
+import com.example.planer.favourite.FavouriteCountry;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import org.w3c.dom.Text;
+
+import java.util.Map;
+import java.util.List;
 
 public class SearchFragment extends Fragment {
+    private FirebaseFirestore db;
+    private String homeCountry;
+    private String countrySelected;
+    private TextView airport;
+    private TextView visaInfoText;
+    private TextView advisory;
+    private ImageView riskLevelIcon;
 
     public SearchFragment() {
         super(R.layout.fragment_search);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (getArguments() != null) {
+            db = FirebaseFirestore.getInstance();
+            homeCountry = getArguments().getString("home");
+            countrySelected = getArguments().getString("country");
+            System.out.println(countrySelected);
+            updateVisaCard();
+            updateDataFromCountries();
+        }
     }
 
     @Override
@@ -33,7 +71,50 @@ public class SearchFragment extends Fragment {
         CardView currency = requireView().findViewById(R.id.currencyCard);
         currency.setOnClickListener(this::gotoCurrency);
 
+        airport = view.findViewById(R.id.airportInfo);
+        visaInfoText = view.findViewById(R.id.visaInfo);
+        advisory = view.findViewById(R.id.restrictionCovidDetail);
+        riskLevelIcon = view.findViewById(R.id.imageView);
     }
+
+    private void updateDataFromCountries(){
+        db.collection("countries")
+                .document(countrySelected)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if(task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        Map<String, Object> group = document.getData();
+                        assert group != null;
+                        group.forEach((key, value) -> {
+                            if (key.equalsIgnoreCase("airport")) {
+                                airport.setText(value.toString());
+                            } else if (key.equalsIgnoreCase("advisory")) {
+                                advisory.setText(value.toString());
+                                getRiskLevelImage(value.toString());
+                            }
+                        });
+                    }
+                });
+    }
+    private void updateVisaCard(){
+        db.collection("visa")
+                .document(homeCountry)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if(task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        Map<String, Object> group = document.getData();
+                        assert group != null;
+                        group.forEach((key, value) -> {
+                            if (key.equalsIgnoreCase(countrySelected)) {
+                                visaInfoText.setText(value.toString());
+                            }
+                        });
+                    }
+                });
+    }
+
 
     public void gotoWeather(View view) {
         Intent intent = new Intent(getActivity(), WeatherActivity.class);
@@ -53,5 +134,12 @@ public class SearchFragment extends Fragment {
     public void gotoRestrictions(View view) {
         Intent intent = new Intent(getActivity(), TravelRestrictionsActivity.class);
         startActivity(intent);
+    }
+
+    private void getRiskLevelImage(String advisory){
+        if(advisory.contains("normal")) riskLevelIcon.setImageResource(R.drawable.normal);
+        if(advisory.contains("caution")) riskLevelIcon.setImageResource(R.drawable.high_caution);
+        if(advisory.contains("non-essential")) riskLevelIcon.setImageResource(R.drawable.avoid_non_essential);
+        if(advisory.contains("all travel")) riskLevelIcon.setImageResource(R.drawable.no_travel);
     }
 }
