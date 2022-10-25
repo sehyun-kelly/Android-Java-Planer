@@ -1,14 +1,10 @@
 <resources>
     <string name="app_name">Planer</string>
-    <string name="username">Username</string>
-    <string name="enter_your_username">Enter your username</string>
-    <string name="password">Password</string>
-    <string name="enter_your_password">Enter your password</string>
     <string name="sign_up">Sign Up</string>
     <string name="log_in">Log In</string>
     <string name="logged_in">Logged in!</string>
     <string name="log_out">log out</string>
-    <string name="curruser">%currUser%</string>
+    <string name="current_user">%currUser%</string>
 
     <string name="search">Search</string>
     <string name="favourite">Favourite</string>
@@ -17,7 +13,7 @@
     <string name="profile">Currency</string>
 
 
-    <string name="homeCountry">Home Country</string>
+    <string name="passport_held">Passport Held</string>
     <string name="destination">Destination Country</string>
     <string name="canada">Canada</string>
 
@@ -33,13 +29,17 @@
     <string name="no_restrictions">No Restrictions</string>
     <string name="risk_level">Risk Level</string>
     <string name="normal">take normal precautions</string>
-    <string name="placeholderWeatherActivity">Weather page showing current weather, forecast, description of season conditions.</string>
-    <string name="countryname">%CountryName%</string>
-    <string name="currentdate">%CurrentDate%</string>
+    <string name="placeholder_weather_activity">Weather page showing current weather, forecast, description of season conditions.</string>
+    <string name="country_name">%CountryName%</string>
+    <string name="current_date">%CurrentDate%</string>
 
-    <!-- Used in Register page -->
+    <!-- Used in Register and Main page -->
+    <string name="username">Username</string>
+    <string name="enter_your_username">Enter your username</string>
     <string name="email">Email</string>
     <string name="enter_your_email">Enter your email</string>
+    <string name="password">Password</string>
+    <string name="enter_your_password">Enter your password</string>
     <string name="confirm_password">Confirm password</string>
     <string name="enter_your_password_again">Confirm your password</string>
     <string name="country">Country</string>
@@ -47,15 +47,15 @@
     <!-- Used in CurrencyConverter page -->
     <string name="home">Home Country</string>
     <string name="usernamePlaceholder">%username%</string>
-    <string name="profilepicframe">ProfilePicFrame</string>
+    <string name="profile_pic_frame">ProfilePicFrame</string>
     <string name="update">update</string>
     <string name="profile_picture">profile picture</string>
 
 
     <!-- Used in WeatherActivity page -->
     <string name="city">City</string>
-    <string name="noCity">City cannot be empty</string>
-    <string name="weatherresults">Please select a city above</string>
+    <string name="no_city">City cannot be empty</string>
+    <string name="weather_results">Please select a city above</string>
     <string name="refresh">refresh</string>
     <string name="weather_graphic">weather graphic</string>
     <string name="zero">0</string>

@@ -54,7 +54,7 @@ public class WeatherActivity extends AppCompatActivity {
         String country = etCountry.getText().toString().trim();
         if(city.isEmpty()) {
             Toast.makeText(WeatherActivity.this,
-                    R.string.noCity, Toast.LENGTH_SHORT).show();
+                    R.string.no_city, Toast.LENGTH_SHORT).show();
         } else {
             // City has been entered, init key + URL base
             String APPID = "6ce8f403d3cbee49efdb370cafcc65c3";
