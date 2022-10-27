@@ -4,57 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00651B1B"
     tools:context=".ProfileFragment">
+
 
     <ImageView
         android:id="@+id/profilePic"
         android:layout_width="110dp"
         android:layout_height="100dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@string/profile_picture"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profile"
-        android:contentDescription="@string/profile_picture" />
-
-    <TextView
-        android:id="@+id/username"
-        android:layout_width="300dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePic" />
+        app:srcCompat="@drawable/profile" />
 
     <LinearLayout
-        android:id="@+id/email_input_field"
-        android:layout_width="309dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="4dp"
+        android:id="@+id/nameAndEmail"
+        android:layout_width="224dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="38dp"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/username_input_field"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_input_field">
+        app:layout_constraintStart_toEndOf="@+id/profilePic"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/email"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/emailField"
+            android:id="@+id/username"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:autofillHints=""
-            android:paddingHorizontal="10dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
             android:textSize="24sp"
-            tools:ignore="TextFields,SpeakableTextPresentCheck" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.448"
+            app:layout_constraintStart_toEndOf="@+id/profilePic"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.175"
+            app:layout_constraintStart_toEndOf="@+id/profilePic"
+            app:layout_constraintTop_toBottomOf="@+id/username" />
     </LinearLayout>
 
     <LinearLayout
@@ -63,27 +61,24 @@
         android:layout_height="75dp"
         android:layout_marginTop="12dp"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username">
+        app:layout_constraintTop_toBottomOf="@+id/profilePic">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/username"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="normal" />
 
         <EditText
             android:id="@+id/usernameField"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:autofillHints=""
-            android:background="@drawable/input_background"
             android:inputType="text"
             android:labelFor="@id/usernameField"
-            android:paddingHorizontal="10dp"
             android:textSize="24sp"
             tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
@@ -92,31 +87,57 @@
         android:id="@+id/country"
         android:layout_width="309dp"
         android:layout_height="75dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_input_field">
+        app:layout_constraintTop_toBottomOf="@+id/username_input_field">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/country"
+            android:text="@string/home_country"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="normal
+" />
 
         <EditText
             android:id="@+id/countryField"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:autofillHints=""
-            android:background="@drawable/input_background"
             android:inputType="text"
             android:labelFor="@id/countryField"
-            android:paddingHorizontal="10dp"
             android:textSize="24sp"
             tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/password_input_field"
+        android:layout_width="309dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/country">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/passwordField"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:autofillHints=""
+            android:inputType="textPassword"
+            android:textSize="24sp"
+            tools:ignore="TextFields,SpeakableTextPresentCheck" />
     </LinearLayout>
 
 
@@ -124,22 +145,28 @@
         android:id="@+id/updateBtn"
         android:layout_width="177dp"
         android:layout_height="59dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/country"
+        app:layout_constraintTop_toBottomOf="@+id/password_input_field"
         tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/logoutBtn"
         android:layout_width="135dp"
         android:layout_height="55dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/white"
         android:text="@string/log_out"
+        android:textColor="#019696"
+        app:iconTint="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/updateBtn"
+        app:rippleColor="#7DB5B0"
+        app:strokeColor="#019696"
+        app:strokeWidth="2dp"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

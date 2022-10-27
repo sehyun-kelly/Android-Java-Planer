@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void signIn(View view) {
-        EditText username = findViewById(R.id.username_input);
+        EditText username = findViewById(R.id.email_input);
         String user = username.getText().toString();
         EditText password = findViewById(R.id.password_input);
         String pass = password.getText().toString();

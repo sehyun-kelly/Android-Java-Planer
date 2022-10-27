@@ -50,7 +50,11 @@ public class SearchActivity extends AppCompatActivity {
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         db = FirebaseFirestore.getInstance();
 
-        // Get home country from Firestore
+        // Load home country from Firestore and set 'Destination Country' spinner
+        getUserHomeCountry(db);
+    }
+
+    public void getUserHomeCountry(FirebaseFirestore db) {
         DocumentReference userDoc = db.collection("users").document(currentUser.getUid());
         userDoc.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {

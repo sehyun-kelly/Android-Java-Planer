@@ -3,8 +3,10 @@ package com.example.planer;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -48,7 +50,7 @@ public class ProfileFragment extends Fragment {
                     // Update fields using firebase user doc
                     TextView userHeader = requireView().findViewById(R.id.username);
                     usernameField = requireView().findViewById(R.id.usernameField);
-                    emailField = requireView().findViewById(R.id.emailField);
+                    emailField = requireView().findViewById(R.id.email);
                     countryField = requireView().findViewById(R.id.countryField);
                     String username = (String) document.get("username");
                     String email = (String) document.get("email");
@@ -90,6 +92,7 @@ public class ProfileFragment extends Fragment {
                 "country", country
         );
         Toast.makeText(getActivity(), "Information updated", Toast.LENGTH_SHORT).show();
+        getFragmentManager().beginTransaction().detach(this).attach(this).commit();
 
         // Refreshing SearchActivity.java to show change to 'Passport Held'
         new Handler().post(new Runnable() {

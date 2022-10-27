@@ -60,5 +60,6 @@
     <string name="weather_graphic">weather graphic</string>
     <string name="zero">0</string>
     <string name="get_weather">get weather</string>
+    <string name="home_country">Home Country</string>
 
 </resources>
