@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/activity_weather_scene"
-    tools:context=".WeatherActivity">
+    tools:context=".WeatherActivity"
+    android:background="@color/teal_bg">
 
     <TextView
         android:id="@+id/currentDate"
