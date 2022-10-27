@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,6 +19,8 @@ import android.widget.Toast;
 import com.example.planer.data.CountryDriver;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -27,12 +30,14 @@ import java.util.HashMap;
 
 public class SearchActivity extends AppCompatActivity {
     public static String CURRENT_USER_UUID_KEY = "current_user_uuid";
+    public static final String TAG = "ActivityMain";
 
     private FirebaseUser currentUser;
     private FirebaseFirestore db;
 
-    private String homeCountry;
+    public String homeCountry;
     private String country;
+
     Button searchBtn;
     Button favoriteBtn;
     Button profileBtn;
@@ -42,11 +47,28 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        onBindViewToData();
-
-        homeCountry = "Canada";
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         db = FirebaseFirestore.getInstance();
+
+        // Get home country from Firestore
+        DocumentReference userDoc = db.collection("users").document(currentUser.getUid());
+        userDoc.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document.exists()) {
+                    // Update country field using firebase user doc
+                    TextView home_val = findViewById(R.id.home_value);
+                    homeCountry = (String) document.get("country");
+                    home_val.setText(homeCountry);
+                    onBindViewToData();
+                    Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                } else {
+                    Log.d(TAG, "No such document");
+                }
+            } else {
+                Log.d(TAG, "get failed with ", task.getException());
+            }
+        });
     }
 
     private void onBindViewToData() {

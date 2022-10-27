@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -89,6 +90,22 @@ public class ProfileFragment extends Fragment {
                 "country", country
         );
         Toast.makeText(getActivity(), "Information updated", Toast.LENGTH_SHORT).show();
+
+        // Refreshing SearchActivity.java to show change to 'Passport Held'
+        new Handler().post(new Runnable() {
+            @Override
+            public void run()
+            {
+                Intent intent = getActivity().getIntent();
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK
+                        | Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                getActivity().overridePendingTransition(0, 0);
+                getActivity().finish();
+
+                getActivity().overridePendingTransition(0, 0);
+                startActivity(intent);
+            }
+        });
     }
 
     public void logout(View view) {
