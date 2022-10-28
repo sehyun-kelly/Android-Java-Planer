@@ -61,5 +61,9 @@
     <string name="zero">0</string>
     <string name="get_weather">get weather</string>
     <string name="home_country">Home Country</string>
+    <string name="select_image">select image</string>
+    <string name="save_changes">save changes</string>
+    <string name="select_a_new_image">Select a new image</string>
+    <string name="change_profile_picture">Change Profile Picture</string>
 
 </resources>
