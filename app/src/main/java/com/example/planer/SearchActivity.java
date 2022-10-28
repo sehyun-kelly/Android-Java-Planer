@@ -42,6 +42,8 @@ public class SearchActivity extends AppCompatActivity {
     Button favoriteBtn;
     Button profileBtn;
 
+    Button addToFavBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,9 @@ public class SearchActivity extends AppCompatActivity {
 
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         db = FirebaseFirestore.getInstance();
+
+        addToFavBtn = findViewById(R.id.button_fav);
+        addToFavBtn.setOnClickListener(v -> toggleFavourite());
 
         // Load home country from Firestore and set 'Destination Country' spinner
         getUserHomeCountry(db);
@@ -86,6 +91,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 country = adapterView.getItemAtPosition(position).toString();
+                System.out.println("selected " + country);
 
                 Bundle countryBundle = new Bundle();
                 countryBundle.putString("home", homeCountry);
@@ -101,7 +107,6 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
 
@@ -127,7 +132,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         favoriteBtn.setOnClickListener(v -> {
-            saveFavouritePair();
+//            saveFavouritePair();
             Fragment favoriteFragment = new FavouriteFragment();
             favoriteFragment.setArguments(getUserInfo());
             fragmentManager.beginTransaction()
@@ -166,6 +171,19 @@ public class SearchActivity extends AppCompatActivity {
         button.setBackgroundColor(getResources().getColor(R.color.turquoise, theme));
     }
 
+    private void toggleFavourite() {
+        Button favButton = findViewById(R.id.button_fav);
+
+        if (favButton.getTag().toString().equalsIgnoreCase("false")) {
+            favButton.setTag("true");
+            favButton.setBackgroundResource(R.drawable.ic_favorite_filled);
+            saveFavouritePair();
+        } else {
+            favButton.setTag("false");
+            favButton.setBackgroundResource(R.drawable.ic_favorite_bordered);
+        }
+    }
+
     /**
      * Save favourite to Firestore.
      */
@@ -186,6 +204,11 @@ public class SearchActivity extends AppCompatActivity {
                 .addOnFailureListener(e ->
                         initializeFavouriteList(countryPair));
     }
+
+    private void deleteFavouritePair() {
+
+    }
+
 
     /**
      * Add an array field named 'list' to user's favourite collection.

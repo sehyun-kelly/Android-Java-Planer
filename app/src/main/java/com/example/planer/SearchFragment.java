@@ -48,7 +48,7 @@ public class SearchFragment extends Fragment {
             db = FirebaseFirestore.getInstance();
             homeCountry = getArguments().getString("home");
             countrySelected = getArguments().getString("country");
-            System.out.println(countrySelected);
+            System.out.println("search : " + countrySelected);
             updateVisaCard();
             updateDataFromCountries();
         }
@@ -77,12 +77,12 @@ public class SearchFragment extends Fragment {
         riskLevelIcon = view.findViewById(R.id.imageView);
     }
 
-    private void updateDataFromCountries(){
+    private void updateDataFromCountries() {
         db.collection("countries")
                 .document(countrySelected)
                 .get()
                 .addOnCompleteListener(task -> {
-                    if(task.isSuccessful()) {
+                    if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
                         Map<String, Object> group = document.getData();
                         assert group != null;
@@ -97,12 +97,13 @@ public class SearchFragment extends Fragment {
                     }
                 });
     }
-    private void updateVisaCard(){
+
+    private void updateVisaCard() {
         db.collection("visa")
                 .document(homeCountry)
                 .get()
                 .addOnCompleteListener(task -> {
-                    if(task.isSuccessful()) {
+                    if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
                         Map<String, Object> group = document.getData();
                         assert group != null;
@@ -136,10 +137,11 @@ public class SearchFragment extends Fragment {
         startActivity(intent);
     }
 
-    private void getRiskLevelImage(String advisory){
-        if(advisory.contains("normal")) riskLevelIcon.setImageResource(R.drawable.normal);
-        if(advisory.contains("caution")) riskLevelIcon.setImageResource(R.drawable.high_caution);
-        if(advisory.contains("non-essential")) riskLevelIcon.setImageResource(R.drawable.avoid_non_essential);
-        if(advisory.contains("all travel")) riskLevelIcon.setImageResource(R.drawable.no_travel);
+    private void getRiskLevelImage(String advisory) {
+        if (advisory.contains("normal")) riskLevelIcon.setImageResource(R.drawable.normal);
+        if (advisory.contains("caution")) riskLevelIcon.setImageResource(R.drawable.high_caution);
+        if (advisory.contains("non-essential"))
+            riskLevelIcon.setImageResource(R.drawable.avoid_non_essential);
+        if (advisory.contains("all travel")) riskLevelIcon.setImageResource(R.drawable.no_travel);
     }
 }
