@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class FavouriteFragment extends Fragment {
     public static final String TAG = FavouriteFragment.class.getName();
@@ -61,11 +62,9 @@ public class FavouriteFragment extends Fragment {
                 // Retrieve all country pairs
                 .addOnCompleteListener(task -> {
                     DocumentSnapshot document = task.getResult();
-                    List<String> group = (List<String>) document.get("list");
-                    if (group == null) return;
-                    for (String pair : group) {
-                        favouriteCountries.add(new FavouriteCountry(pair));
-                    }
+                    Map<String, Object> favPair = document.getData();
+                    if (favPair == null) return;
+                    favPair.forEach((k, v) -> favouriteCountries.add(new FavouriteCountry(k)));
                 })
                 // When finish reading all data, notify adapter
                 .addOnSuccessListener(o -> favouriteCountriesAdapter.notifyDataSetChanged())

@@ -1,5 +1,6 @@
 package com.example.planer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -17,6 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.planer.data.CountryDriver;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -27,6 +30,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class SearchActivity extends AppCompatActivity {
     public static String CURRENT_USER_UUID_KEY = "current_user_uuid";
@@ -91,7 +95,10 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 country = adapterView.getItemAtPosition(position).toString();
-                System.out.println("selected " + country);
+
+                TextView homeVisa = findViewById(R.id.home_value);
+                String countryPair = homeVisa.getText().toString() + " - " + country;
+                checkFavouritePair(countryPair);
 
                 Bundle countryBundle = new Bundle();
                 countryBundle.putString("home", homeCountry);
@@ -132,7 +139,6 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         favoriteBtn.setOnClickListener(v -> {
-//            saveFavouritePair();
             Fragment favoriteFragment = new FavouriteFragment();
             favoriteFragment.setArguments(getUserInfo());
             fragmentManager.beginTransaction()
@@ -171,44 +177,85 @@ public class SearchActivity extends AppCompatActivity {
         button.setBackgroundColor(getResources().getColor(R.color.turquoise, theme));
     }
 
-    private void toggleFavourite() {
-        Button favButton = findViewById(R.id.button_fav);
-
-        if (favButton.getTag().toString().equalsIgnoreCase("false")) {
-            favButton.setTag("true");
-            favButton.setBackgroundResource(R.drawable.ic_favorite_filled);
-            saveFavouritePair();
-        } else {
-            favButton.setTag("false");
-            favButton.setBackgroundResource(R.drawable.ic_favorite_bordered);
-        }
-    }
-
     /**
-     * Save favourite to Firestore.
+     * Toggle favourite button
      */
-    //TODO: Implement a favourite button. Call this when the button is clicked.
-    private void saveFavouritePair() {
+    private void toggleFavourite() {
         TextView homeVisa = findViewById(R.id.home_value);
         String homeVisaValue = homeVisa.getText().toString();
 
         String countryPair = homeVisaValue + " - " + country;
 
+        if (addToFavBtn.getTag().toString().equalsIgnoreCase("false")) {
+            addToFavBtn.setTag("true");
+            addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_filled);
+            saveFavouritePair();
+        } else {
+            addToFavBtn.setTag("false");
+            addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_bordered);
+            deleteFavouritePair(countryPair);
+        }
+    }
+
+    /**
+     * Save favourite to Firestore when the favourite button is clicked
+     */
+    private void saveFavouritePair() {
+        TextView homeVisa = findViewById(R.id.home_value);
+        String homeVisaValue = homeVisa.getText().toString();
+
+        String countryPair = homeVisaValue + " - " + country;
+        Map<String, Object> favPair = new HashMap<>();
+        favPair.put("home", homeVisaValue);
+        favPair.put("destination", country);
+
         db = FirebaseFirestore.getInstance();
         assert currentUser != null;
         db.collection("favourite")
                 .document(currentUser.getUid())
-                .update("list", FieldValue.arrayUnion(countryPair))
+                .update(countryPair, favPair)
                 .addOnSuccessListener(o ->
                         Toast.makeText(this, "Added favourite", Toast.LENGTH_SHORT))
                 .addOnFailureListener(e ->
                         initializeFavouriteList(countryPair));
     }
 
-    private void deleteFavouritePair() {
-
+    /**
+     * Delete the country pair from the Firestore on favorite button toggle
+     * @param countryPair a string that contains home - destination countries
+     */
+    private void deleteFavouritePair(String countryPair) {
+        db = FirebaseFirestore.getInstance();
+        assert currentUser != null;
+        db.collection("favourite")
+                .document(currentUser.getUid())
+                .update(countryPair, FieldValue.delete())
+                .addOnSuccessListener(o ->
+                        Toast.makeText(this, "Deleted from favourite", Toast.LENGTH_SHORT))
+                .addOnFailureListener(e ->
+                        initializeFavouriteList(countryPair));
     }
 
+    /**
+     * Check if the country pair exists in the favourite collection on Firestore
+     * @param countryPair a string that contains home - destination countries
+     */
+    private void checkFavouritePair(String countryPair){
+        db = FirebaseFirestore.getInstance();
+
+        db.collection("favourite")
+                .document(currentUser.getUid())
+                .get()
+                .addOnCompleteListener(task -> {
+                    Map<String, Object> favPair = task.getResult().getData();
+                    if(favPair.containsKey(countryPair)){
+                        addToFavBtn.setTag("true");
+                        addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_filled);
+                    }
+                })
+                .addOnSuccessListener(o -> System.out.println("pair checked success"))
+                .addOnFailureListener(e -> Log.e(TAG, e.getMessage()));
+    }
 
     /**
      * Add an array field named 'list' to user's favourite collection.
