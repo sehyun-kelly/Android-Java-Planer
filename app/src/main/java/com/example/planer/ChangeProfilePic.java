@@ -45,7 +45,7 @@ public class ChangeProfilePic extends AppCompatActivity {
         StorageReference picRef = storageRef.child("ProfilePics").child(user.getUid());
 
         profilePic = findViewById(R.id.profilePic);
-        Glide.with(this).load(picRef).centerCrop().into(profilePic);
+        Glide.with(this).load(picRef).placeholder(R.drawable.profile).centerCrop().into(profilePic);
         selectImageBtn = findViewById(R.id.selectImageBtn);
         saveChangesBtn = findViewById(R.id.saveChangesBtn);
         selectImageBtn.setOnClickListener(new View.OnClickListener() {

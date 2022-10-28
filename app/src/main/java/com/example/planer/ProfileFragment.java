@@ -48,7 +48,6 @@ public class ProfileFragment extends Fragment {
     DocumentReference userDoc;
     FirebaseStorage storage;
     StorageReference storageRef;
-    StorageReference picRef;
 
     CircleImageView profilePicBtn;
     EditText usernameField;
@@ -90,7 +89,7 @@ public class ProfileFragment extends Fragment {
 
                     // Update profile pic
                     profilePicBtn = requireView().findViewById(R.id.profilePic);
-                    Glide.with(this).load(picRef).centerCrop().into(profilePicBtn);
+                    Glide.with(this).load(picRef).placeholder(R.drawable.profile).centerCrop().into(profilePicBtn);
 
                     // Update fields using firebase user doc
                     TextView userHeader = requireView().findViewById(R.id.username);
@@ -114,14 +113,6 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        StorageReference picRef = storageRef.child("ProfilePics").child(user.getUid());
-        profilePicBtn = requireView().findViewById(R.id.profilePic);
-        Glide.with(this).load(picRef).centerCrop().into(profilePicBtn);
     }
 
     public void changeProfilePic(View view)
