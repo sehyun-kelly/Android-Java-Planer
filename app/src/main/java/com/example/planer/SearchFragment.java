@@ -1,36 +1,34 @@
 package com.example.planer;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.example.planer.favourite.FavouriteCountriesAdapter;
-import com.example.planer.favourite.FavouriteCountry;
+import com.example.planer.ranking.CovidRestriction;
+import com.example.planer.ranking.RecommendationLevel;
+import com.example.planer.ranking.Visa;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.w3c.dom.Text;
-
+import java.text.DecimalFormat;
 import java.util.Map;
-import java.util.List;
 
 public class SearchFragment extends Fragment {
     private FirebaseFirestore db;
     private String homeCountry;
     private String countrySelected;
+
+    private CardView scoreCard;
+    private TextView score;
     private TextView airport;
     private TextView visaInfoText;
     private TextView advisory;
@@ -74,6 +72,8 @@ public class SearchFragment extends Fragment {
         CardView currency = requireView().findViewById(R.id.currencyCard);
         currency.setOnClickListener(this::gotoCurrency);
 
+        score = view.findViewById(R.id.score);
+        scoreCard = view.findViewById(R.id.score_card);
         airport = view.findViewById(R.id.airportInfo);
         visaInfoText = view.findViewById(R.id.visaInfo);
         advisory = view.findViewById(R.id.restrictionCovidDetail);
@@ -101,11 +101,6 @@ public class SearchFragment extends Fragment {
                         calculateScore();
                     }
                 });
-    }
-
-    private void calculateScore() {
-        //TODO visaInfoText
-        //TODO advisory
     }
 
     private void updateVisaCard() {
@@ -149,10 +144,58 @@ public class SearchFragment extends Fragment {
     }
 
     private void getRiskLevelImage(String advisory) {
-        if (advisory.contains("normal")) riskLevelIcon.setImageResource(R.drawable.normal);
-        if (advisory.contains("caution")) riskLevelIcon.setImageResource(R.drawable.high_caution);
-        if (advisory.contains("non-essential"))
+        if (advisory.contains("normal")) {
+            riskLevelIcon.setImageResource(R.drawable.normal);
+            return;
+        }
+        if (advisory.contains("caution")) {
+            riskLevelIcon.setImageResource(R.drawable.high_caution);
+            return;
+        }
+        if (advisory.contains("non-essential")) {
             riskLevelIcon.setImageResource(R.drawable.avoid_non_essential);
-        if (advisory.contains("all travel")) riskLevelIcon.setImageResource(R.drawable.no_travel);
+            return;
+        }
+        if (advisory.contains("all travel")) {
+            riskLevelIcon.setImageResource(R.drawable.no_travel);
+        }
+    }
+
+    private void calculateScore() {
+        int totalScore = 0;
+        int factors = 0;
+
+        if (visaContent != null) {
+            totalScore += Visa.findScoreByDescription(visaContent);
+            factors++;
+        }
+        if (advisoryContent != null) {
+            totalScore += CovidRestriction.findScoreByDescription(advisoryContent);
+            factors++;
+        }
+
+        double scaledScore = (factors != 0) ? (double) totalScore / factors : 0;
+
+        changeScoreCardBackground(scaledScore);
+
+        DecimalFormat df = new DecimalFormat("###.##");
+        score.setText(df.format(scaledScore));
+    }
+
+    private void changeScoreCardBackground(double score) {
+        RecommendationLevel recommendation = RecommendationLevel.findRecommendationLevel(score);
+        switch (recommendation) {
+            case STRONGLY_RECOMMENDED:
+                scoreCard.setCardBackgroundColor(Color.GREEN);
+                return;
+            case RECOMMENDED:
+                scoreCard.setCardBackgroundColor(Color.CYAN);
+                return;
+            case URGENCY_ONLY:
+                scoreCard.setCardBackgroundColor(Color.parseColor("#FFA500"));
+                return;
+            case NOT_RECOMMENDED:
+                scoreCard.setCardBackgroundColor(Color.GRAY);
+        }
     }
 }
