@@ -249,8 +249,11 @@ public class SearchActivity extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     Map<String, Object> favPair = task.getResult().getData();
                     if(favPair.containsKey(countryPair)){
-                        addToFavBtn.setTag("true");
+                        addToFavBtn.setTag(R.string.fav_true);
                         addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_filled);
+                    } else {
+                        addToFavBtn.setTag(R.string.fav_false);
+                        addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_bordered);
                     }
                 })
                 .addOnSuccessListener(o -> System.out.println("pair checked success"))
