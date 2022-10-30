@@ -36,6 +36,9 @@ public class SearchFragment extends Fragment {
     private TextView advisory;
     private ImageView riskLevelIcon;
 
+    private String visaContent;
+    private String advisoryContent;
+
     public SearchFragment() {
         super(R.layout.fragment_search);
     }
@@ -90,12 +93,19 @@ public class SearchFragment extends Fragment {
                             if (key.equalsIgnoreCase("airport")) {
                                 airport.setText(value.toString());
                             } else if (key.equalsIgnoreCase("advisory")) {
-                                advisory.setText(value.toString());
-                                getRiskLevelImage(value.toString());
+                                advisoryContent = value.toString();
+                                advisory.setText(advisoryContent);
+                                getRiskLevelImage(advisoryContent);
                             }
                         });
+                        calculateScore();
                     }
                 });
+    }
+
+    private void calculateScore() {
+        //TODO visaInfoText
+        //TODO advisory
     }
 
     private void updateVisaCard() {
@@ -109,7 +119,8 @@ public class SearchFragment extends Fragment {
                         assert group != null;
                         group.forEach((key, value) -> {
                             if (key.equalsIgnoreCase(countrySelected)) {
-                                visaInfoText.setText(value.toString());
+                                visaContent = value.toString();
+                                visaInfoText.setText(visaContent);
                             }
                         });
                     }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SearchFragment">
 
     <LinearLayout
@@ -13,13 +13,43 @@
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/airportCard"
+            android:id="@+id/score_card"
+            style="@style/customizedCardView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:contentPadding="10dp">
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/score_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/score"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="100" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/airportCard"
+            style="@style/customizedCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,12 +78,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/visaCard"
+            style="@style/customizedCardView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:contentPadding="10dp">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -83,12 +110,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/travelRestrictionsCard"
+            style="@style/customizedCardView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:contentPadding="10dp">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -147,12 +171,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/weatherCard"
+            style="@style/customizedCardView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:contentPadding="10dp">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:id="@+id/weather"
@@ -177,12 +198,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/currencyCard"
+            style="@style/customizedCardView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:contentPadding="10dp">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
