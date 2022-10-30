@@ -1,6 +1,6 @@
 package com.example.planer.ranking;
 
-public enum CovidRestrictionScore {
+public enum CovidRestriction {
     NORMAL("Take normal security precautions", 100),
     CAUTION("Exercise a high degree of caution", 60),
     AVOIDED("Avoid non-essential travel", 30),
@@ -15,7 +15,16 @@ public enum CovidRestrictionScore {
      */
     public final int score;
 
-    CovidRestrictionScore(final String description, final int score) {
+    public static int findScoreByDescription(String descriptionGiven) {
+        for (CovidRestriction covidRestriction : values()) {
+            if (descriptionGiven.contains(covidRestriction.description)) {
+                return covidRestriction.score;
+            }
+        }
+        return 0;
+    }
+
+    CovidRestriction(final String description, final int score) {
         this.description = description;
         this.score = score;
     }

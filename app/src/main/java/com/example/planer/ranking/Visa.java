@@ -1,6 +1,6 @@
 package com.example.planer.ranking;
 
-public enum VisaScore {
+public enum Visa {
     VISA_FREE("visa free", 100, -1, -1),
     ON_ARRIVAL("visa on arrival", 95, -1, -1),
     LIMIT_181_360("visa free 181 to 360 days", 95, 181, 360),
@@ -31,7 +31,25 @@ public enum VisaScore {
      */
     public final int upper_limit;
 
-    VisaScore(final String description, final int score, final int lower_limit, final int upper_limit) {
+    public static int findScoreByDescription(String descriptionGiven) {
+        for (Visa visa : values()) {
+            if (visa.description.equals(descriptionGiven)) {
+                return visa.score;
+            } else {
+                try {
+                    int daysVisaFree = Integer.parseInt(descriptionGiven);
+                    if (visa.lower_limit <= daysVisaFree && visa.upper_limit >= daysVisaFree) {
+                        return visa.score;
+                    }
+                } catch (NumberFormatException e) {
+                    // do nothing
+                }
+            }
+        }
+        return 0;
+    }
+
+    Visa(final String description, final int score, final int lower_limit, final int upper_limit) {
         this.description = description;
         this.score = score;
         this.lower_limit = lower_limit;
