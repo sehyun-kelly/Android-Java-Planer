@@ -43,17 +43,18 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ProfileFragment extends Fragment {
     static final String TAG = "Android";
 
+    // Firebase
     FirebaseUser user;
     FirebaseFirestore db;
     DocumentReference userDoc;
     FirebaseStorage storage;
     StorageReference storageRef;
 
+    // Profile page Views
     CircleImageView profilePicBtn;
     EditText usernameField;
     TextView emailField;
     EditText countryField;
-
     Button updateBtn;
     Button logoutBtn;
 
@@ -62,8 +63,7 @@ public class ProfileFragment extends Fragment {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         db = FirebaseFirestore.getInstance();
-        storage = FirebaseStorage.getInstance();
-        storageRef = storage.getReference();
+        storageRef = FirebaseStorage.getInstance().getReference();
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 

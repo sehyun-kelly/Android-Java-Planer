@@ -61,6 +61,8 @@ public class SearchActivity extends AppCompatActivity {
 
         // Load home country from Firestore and set 'Destination Country' spinner
         getUserHomeCountry(db);
+
+
     }
 
     public void getUserHomeCountry(FirebaseFirestore db) {
