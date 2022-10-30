@@ -30,7 +30,9 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout="@layout/fragment_favourite"
+        tools:visibility="gone" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/search_activity_group"
@@ -117,7 +119,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_country"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.038"
+        tools:layout="@layout/fragment_search" />
 
     <LinearLayout
         android:id="@+id/navigation_bar"
@@ -151,7 +154,7 @@
             android:drawableTop="@drawable/ic_favorite"
             android:text="@string/favourite"
             android:textSize="15sp"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
         <android.widget.Button
             android:id="@+id/nav_profile"
