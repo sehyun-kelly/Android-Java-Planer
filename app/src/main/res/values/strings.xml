@@ -9,8 +9,11 @@
     <string name="search">Search</string>
     <string name="favourite">Favourite</string>
 
+    <string name="fav_false">false</string>
+    <string name="fav_true">true</string>
+
     <!-- Temporary Change to redirect to currency page -->
-    <string name="profile">Currency</string>
+    <string name="profile">Profile</string>
 
 
     <string name="passport_held">Passport Held</string>
