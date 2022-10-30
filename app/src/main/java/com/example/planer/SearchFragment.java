@@ -123,6 +123,8 @@ public class SearchFragment extends Fragment {
 
     public void gotoCurrency(View view) {
         Intent intent = new Intent(getActivity(), CurrencyConverterActivity.class);
+        intent.putExtra("home", homeCountry);
+        intent.putExtra("destination", countrySelected);
         startActivity(intent);
     }
 
