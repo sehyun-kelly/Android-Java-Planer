@@ -37,6 +37,11 @@ public class SearchFragment extends Fragment {
     private String visaContent;
     private String advisoryContent;
 
+    private String conditions;
+    private String weatherIcon;
+    private double temperature;
+    private String weatherAdvisory;
+
     public SearchFragment() {
         super(R.layout.fragment_search);
     }

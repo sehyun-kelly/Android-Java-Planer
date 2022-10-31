@@ -68,5 +68,6 @@
     <string name="save_changes">save changes</string>
     <string name="select_a_new_image">Select a new image</string>
     <string name="change_profile_picture">Change Profile Picture</string>
+    <string name="current_weather">Current Weather</string>
 
 </resources>

@@ -184,15 +184,47 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/weather"
+                    android:text="@string/current_weather"
                     android:textColor="#3B3B3B" />
 
-                <TextView
+                <LinearLayout
                     android:id="@+id/weatherBlank"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/corner_rounded" />
+                    android:background="@drawable/corner_rounded"
+                    android:weightSum="3">
+                <LinearLayout
+                    android:id="@+id/weatherConditions"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/conditions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <ImageView
+                        android:id="@+id/conditionsIcon"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/temp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:id="@+id/weatherAdvisory"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"/>
+                </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
