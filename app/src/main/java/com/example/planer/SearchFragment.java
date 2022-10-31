@@ -143,7 +143,6 @@ public class SearchFragment extends Fragment {
                     }
                 });
     }
-
     private void updateWeather() {
         // get countrySelected, query db for capital, send capital into api call, pick apart json and update views
         db.collection("countries")
