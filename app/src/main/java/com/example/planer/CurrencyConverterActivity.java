@@ -34,38 +34,45 @@ public class CurrencyConverterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currency_converter);
 
-        // Currency converter onClick is set through XML
         // Okay, so instead of having a list of countries I need to
-        // get the country name from the bundle passed in from the
-        // search.
+        // get the home and destination country from intent extras
 
-        // Set homeCountry and destinationCountry
         Intent intent = getIntent();
 
         // Create new currency converter and pass in home and destination
-        this.cC = new CurrencyConverter(intent.getStringExtra("home"), intent.getStringExtra("destination"));
+        this.cC = new CurrencyConverter(
+                intent.getStringExtra("home"),
+                intent.getStringExtra("destination")
+        );
 
-        // Get home text
-        // Get destination text
+        // Get home text view
+        // Get destination text view
         TextView homeCountry = findViewById(R.id.cc_home_country);
         TextView destinationCountry = findViewById(R.id.cc_destination_country);
 
-        // Add home to home text
-        // Add destination to destination text
+        // Add home country to textView
+        // Add destination country to destination textView
         homeCountry.setText(cC.getHome());
         destinationCountry.setText(cC.getDestination());
 
         // Update cC rates
-        cC.updateRate();
+        TextView rate = findViewById(R.id.conversion_rate);
+        cC.updateRate(getApplicationContext(), () -> {
+            rate.setText("" + cC.getRate());
+        });
 
         // Display rate
-        TextView rate = findViewById(R.id.conversion_rate);
-        rate.setText(new Double(cC.getRate()).toString());
+        Log.d("Android", "Conversion rate in Currency Converter :" + cC.getRate());
+
 
         // I scoured the internet for a sleek way to set on click listeners
         // I tried putting it in the XML but I couldn't find a attribute : (
         // I like how simple the code is. I didn't want to change the aesthetic.
         setUpGrossLookingOnClickListeners();
+    }
+
+    interface SetRateCallBack {
+
     }
 
 
@@ -116,3 +123,4 @@ public class CurrencyConverterActivity extends AppCompatActivity {
         });
     }
 }
+
