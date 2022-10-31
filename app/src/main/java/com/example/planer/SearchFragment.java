@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.planer.currecnyconverter.CurrencyConverter;
 import com.example.planer.favourite.FavouriteCountriesAdapter;
 import com.example.planer.favourite.FavouriteCountry;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -35,6 +36,9 @@ public class SearchFragment extends Fragment {
     private TextView visaInfoText;
     private TextView advisory;
     private ImageView riskLevelIcon;
+
+    // Currecny Converter
+    private CurrencyConverter cC =  new CurrencyConverter();
 
     public SearchFragment() {
         super(R.layout.fragment_search);
@@ -75,7 +79,23 @@ public class SearchFragment extends Fragment {
         visaInfoText = view.findViewById(R.id.visaInfo);
         advisory = view.findViewById(R.id.restrictionCovidDetail);
         riskLevelIcon = view.findViewById(R.id.imageView);
+
+
+        if (homeCountry != null || countrySelected != null) {
+            cC.setHome(homeCountry);
+            cC.setDestination(countrySelected);
+
+            TextView rate = view.findViewById(R.id.currencyBlank);
+
+            Log.d("Android", "HOME AND DEST: " + cC.getHome() + " " + cC.getDestination());
+
+            cC.updateRate(getContext(), () -> {
+                rate.setText(cC.toString());
+            });
+        }
+
     }
+
 
     private void updateDataFromCountries(){
         db.collection("countries")

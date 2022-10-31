@@ -36,6 +36,8 @@ public class CurrencyConverter {
 
     private String home;
     private String destination;
+    private String homeAbrev;
+    private String destinationAbrev;
     private double homeRate;
     private double destinationRate;
 
@@ -122,23 +124,20 @@ public class CurrencyConverter {
         Map<String, String> countries = new HashMap<>();
 
         // Map ISO countries to country name
+        // TODO must make currecny code filter faster.
         String[] countryCodes = Locale.getISOCountries();
         for (String countryCode : countryCodes){
             Locale locale = new Locale("", countryCode);
-            String iso = locale.getISO3Country();
-            String code = locale.getCountry();
-            String name = locale.getDisplayCountry();
-
             Currency c = Currency.getInstance(locale);
             if (c != null) {
                 countries.put(locale.getDisplayCountry(), Currency.getInstance(locale).getCurrencyCode());
             }
         }
 
-        String homeAbbreviation = countries.get(this.home);
-        String destinationAbbreviation = countries.get(this.destination);
+        this.homeAbrev = countries.get(this.home);
+        this.destinationAbrev = countries.get(this.destination);
 
-        String url ="https://api.apilayer.com/exchangerates_data/latest?symbols=" + destinationAbbreviation + "&base=" + homeAbbreviation;
+        String url ="https://api.apilayer.com/exchangerates_data/latest?symbols=" + this.destinationAbrev + "&base=" + this.homeAbrev;
 
         mStringRequest = new StringRequest(Request.Method.GET, url,
             new Response.Listener<String>() {
@@ -149,7 +148,7 @@ public class CurrencyConverter {
                     JSONObject json = new JSONObject(response);
                     JSONObject rates = json.getJSONObject("rates");
                     // We are only getting one rate.
-                    double rate = rates.getDouble(destinationAbbreviation);
+                    double rate = rates.getDouble(destinationAbrev);
                     setRate(rate);
                     callBack.run();
                 } catch (JSONException e) {
@@ -176,7 +175,10 @@ public class CurrencyConverter {
         };
 
         mRequestQueue.add(mStringRequest);
+    }
 
+    public String toString() {
+        return this.homeAbrev + " - " + this.destinationAbrev + " : " + this.getRate();
     }
 }
 
