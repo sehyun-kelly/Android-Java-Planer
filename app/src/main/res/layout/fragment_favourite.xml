@@ -6,20 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/favourite_logo"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:gravity="center"
-        android:importantForAccessibility="no"
-        android:src="@drawable/planer_white_bg"
-        app:layout_constraintDimensionRatio="1:1" />
-
     <TextView
         style="@style/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/favourite"/>
+        android:layout_margin="16dp"
+        android:text="@string/favourite" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
@@ -27,8 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
-        android:padding="10dp"
         android:background="@drawable/corner_rounded"
+        android:padding="10dp"
         app:layoutManager="LinearLayoutManager"
         tools:context=".FavouriteFragment"
         tools:listitem="@layout/fragment_favourite_item" />

@@ -57,7 +57,7 @@ public class WeatherActivity extends AppCompatActivity {
                     R.string.no_city, Toast.LENGTH_SHORT).show();
         } else {
             // City has been entered, init key + URL base
-            String APPID = "6ce8f403d3cbee49efdb370cafcc65c3";
+            String APPID = BuildConfig.WEATHER_KEY;
             String URL = "http://api.openweathermap.org/data/2.5/weather";
             // complete URL
             if (!country.equals("")) {
