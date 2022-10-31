@@ -78,7 +78,6 @@ public class CurrencyConverter {
     }
 
     private void setRate(double rate) {
-        Log.d("Android", "Success rate: " + rate);
         this.homeRate = rate;
         this.destinationRate = 1 / rate;
     }
@@ -110,8 +109,7 @@ public class CurrencyConverter {
     /**
      * TODO
      *
-     * I am going to black box this for now.
-     * This function will be accessing the API
+     * This function became extra nasty. I don't like how much time this took.
      * @return
      */
     private void getRateAPI(Context context, Runnable callBack) {
@@ -147,7 +145,6 @@ public class CurrencyConverter {
             @Override
             public void onResponse(String response) {
                 // response
-                Log.d("Response", response);
                 try {
                     JSONObject json = new JSONObject(response);
                     JSONObject rates = json.getJSONObject("rates");

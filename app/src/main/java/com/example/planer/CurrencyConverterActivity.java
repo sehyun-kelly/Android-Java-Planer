@@ -61,10 +61,6 @@ public class CurrencyConverterActivity extends AppCompatActivity {
             rate.setText("" + cC.getRate());
         });
 
-        // Display rate
-        Log.d("Android", "Conversion rate in Currency Converter :" + cC.getRate());
-
-
         // I scoured the internet for a sleek way to set on click listeners
         // I tried putting it in the XML but I couldn't find a attribute : (
         // I like how simple the code is. I didn't want to change the aesthetic.
