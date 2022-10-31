@@ -1,23 +1,33 @@
 package com.example.planer;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.example.planer.ranking.CovidRestriction;
 import com.example.planer.ranking.RecommendationLevel;
 import com.example.planer.ranking.Visa;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 import java.util.Map;
@@ -37,10 +47,11 @@ public class SearchFragment extends Fragment {
     private String visaContent;
     private String advisoryContent;
 
-    private String conditions;
-    private String weatherIcon;
-    private double temperature;
-    private String weatherAdvisory;
+    DecimalFormat df = new DecimalFormat("#.#");
+    private TextView weatherCity;
+    private TextView conditions;
+    private ImageView conditionsIcon;
+    private TextView temperature;
 
     public SearchFragment() {
         super(R.layout.fragment_search);
@@ -57,6 +68,7 @@ public class SearchFragment extends Fragment {
             System.out.println("search : " + countrySelected);
             updateVisaCard();
             updateDataFromCountries();
+            updateWeather();
         }
     }
 
@@ -83,6 +95,11 @@ public class SearchFragment extends Fragment {
         visaInfoText = view.findViewById(R.id.visaInfo);
         advisory = view.findViewById(R.id.restrictionCovidDetail);
         riskLevelIcon = view.findViewById(R.id.imageView);
+
+        weatherCity = view.findViewById(R.id.currentWeather);
+        conditions = view.findViewById(R.id.conditions);
+        conditionsIcon = view.findViewById(R.id.conditionsIcon);
+        temperature = view.findViewById(R.id.temp);
     }
 
     private void updateDataFromCountries() {
@@ -125,6 +142,61 @@ public class SearchFragment extends Fragment {
                         });
                     }
                 });
+    }
+
+    private void updateWeather() {
+        // get countrySelected, query db for capital, send capital into api call, pick apart json and update views
+        db.collection("countries")
+                .document(countrySelected)
+                .get()
+                .addOnCompleteListener(task-> {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot doc = task.getResult();
+                        Map<String, Object> group = doc.getData();
+                        assert group != null;
+                        group.forEach((key, value) -> {
+                            if (key.equalsIgnoreCase("capital")) {
+                                String currWeather = "Current weather in " + value.toString();
+                                String capital = value.toString();
+                                weatherCity.setText(currWeather);
+
+                                // Call api
+                                String APPID = BuildConfig.WEATHER_KEY;
+                                String URL = "http://api.openweathermap.org/data/2.5/weather";
+                                String tempUrl = URL + "?q=" + capital + "&appid=" + APPID;
+                                StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                                        tempUrl, response -> {
+                                    Log.d("response", response);
+                                    try {
+                                        JSONObject jsonResponse = new JSONObject(response);
+                                        JSONArray jsonArray = jsonResponse.getJSONArray("weather");
+                                        JSONObject jsonObjectWeather = jsonArray.getJSONObject(0);
+                                        JSONObject jsonObjectMain = jsonResponse.getJSONObject("main");
+
+                                        String iconCode = jsonObjectWeather.getString("icon");
+                                        String iconUrl = "http://openweathermap.org/img/wn/";
+                                        iconUrl += iconCode + "@4x.png";
+                                        Glide.with(this).load(iconUrl).into(conditionsIcon);
+
+                                        // Get and store relevant data from your JSONObjects
+                                        String description = jsonObjectWeather.getString("description");
+                                        double temp = jsonObjectMain.getDouble("temp") - 273.15;
+                                        String tempStr = "" + df.format(temp) + "°C";
+
+                                        // Set views' values using data gathered above
+                                        conditions.setText(description);
+                                        temperature.setText(tempStr);
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }, error -> Toast.makeText(getContext(),
+                                        error.toString().trim(), Toast.LENGTH_SHORT).show());
+                                RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+                                requestQueue.add(stringRequest);
+                            }
+                });
+            }
+        });
     }
 
 
