@@ -47,7 +47,6 @@ public class ChangeProfilePic extends AppCompatActivity {
             Glide.with(ChangeProfilePic.this).load(imageUri)
                     .centerCrop().into(profilePic);
         });
-
         selectImageBtn = findViewById(R.id.selectImageBtn);
         saveChangesBtn = findViewById(R.id.saveChangesBtn);
         selectImageBtn.setOnClickListener(v -> selectImage());
