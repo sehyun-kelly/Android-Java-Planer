@@ -57,7 +57,7 @@
         android:layout_weight="1"
         android:contentDescription="@string/weather_graphic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/getWeatherBtn"
         app:srcCompat="@drawable/weather1"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"/>
@@ -76,11 +76,10 @@
         app:layout_constraintVertical_bias="0.484" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/getWeatherBtn"
         android:layout_width="268dp"
         android:layout_height="44dp"
-        android:onClick="getWeather"
-        android:text="@string/get_weather"
+        android:text="@string/refresh"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +94,7 @@
         android:textAlignment="viewStart"
         android:textSize="50sp"
         app:layout_constraintStart_toEndOf="@+id/icon"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/getWeatherBtn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

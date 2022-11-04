@@ -36,6 +36,7 @@ public class SearchFragment extends Fragment {
     private FirebaseFirestore db;
     private String homeCountry;
     private String countrySelected;
+    private String capital;
 
     private CardView scoreCard;
     private TextView score;
@@ -156,7 +157,7 @@ public class SearchFragment extends Fragment {
                         group.forEach((key, value) -> {
                             if (key.equalsIgnoreCase("capital")) {
                                 String currWeather = "Current weather in " + value.toString();
-                                String capital = value.toString();
+                                capital = value.toString();
                                 weatherCity.setText(currWeather);
 
                                 // Call api
@@ -200,7 +201,11 @@ public class SearchFragment extends Fragment {
 
 
     public void gotoWeather(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putString("city", capital);
+        bundle.putString("country", countrySelected);
         Intent intent = new Intent(getActivity(), WeatherActivity.class);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 
