@@ -9,6 +9,8 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -42,7 +44,6 @@ public class SearchActivity extends AppCompatActivity {
     Button searchBtn;
     Button favoriteBtn;
     Button profileBtn;
-
     Button addToFavBtn;
 
     @Override
@@ -122,8 +123,10 @@ public class SearchActivity extends AppCompatActivity {
 
         Fragment searchCard = new SearchFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.card_fragment, searchCard);
+        FragmentTransaction fragmentTransaction = fragmentManager
+                .beginTransaction()
+                .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
+                .replace(R.id.card_fragment, searchCard);
         fragmentTransaction.commit();
 
         searchBtn.setOnClickListener(v -> {
@@ -141,6 +144,7 @@ public class SearchActivity extends AppCompatActivity {
             Fragment favoriteFragment = new FavouriteFragment();
             favoriteFragment.setArguments(getUserInfo());
             fragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.page_fragment, favoriteFragment, "currentFragment")
                     .addToBackStack(null)
                     .commit();
@@ -149,6 +153,7 @@ public class SearchActivity extends AppCompatActivity {
 
         profileBtn.setOnClickListener(v -> {
             fragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.page_fragment, new ProfileFragment(), "currentFragment")
                     .addToBackStack(null)
                     .commit();

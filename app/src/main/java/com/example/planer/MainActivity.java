@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         if (currentUser != null) {
             Intent intent = new Intent(this, SearchActivity.class);
             startActivity(intent);
-
         }
     }
 

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -16,6 +18,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,10 +41,14 @@ public class WeatherActivity extends AppCompatActivity {
     String city;
     String country;
 
+    Animation fadeIn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+
+        fadeIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
 
         // Set to today's date
         TextView date = findViewById(R.id.currentDate);
@@ -123,7 +130,7 @@ public class WeatherActivity extends AppCompatActivity {
                             String iconCode = jsonObjectWeather.getString("icon");
                             String iconUrl = "http://openweathermap.org/img/wn/";
                             iconUrl += iconCode + "@4x.png";
-                            Glide.with(WeatherActivity.this).load(iconUrl).into(ivIcon);
+                            Glide.with(WeatherActivity.this).load(iconUrl).transition(DrawableTransitionOptions.withCrossFade(500)).into(ivIcon);
 
                             // Get and store relevant data from your JSONObjects
                             String description = jsonObjectWeather.getString("description");
@@ -137,6 +144,7 @@ public class WeatherActivity extends AppCompatActivity {
 
                             String tempStr = "" + df.format(temp) + "°C";
                             temperature.setText(tempStr);
+                            temperature.startAnimation(fadeIn);
                             output += "Current weather in " + city1 + ":\n" +
                                     "\nConditions:   " + description +
                                     "\nFeels like:     " + df.format(feelsLike) + "°C" +
@@ -145,6 +153,7 @@ public class WeatherActivity extends AppCompatActivity {
                                     "\n\nWind:           " + wind + " m/s" +
                                     "\nClouds:        " + clouds + "%";
                             tvResult.setText(output);
+                            tvResult.startAnimation(fadeIn);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
