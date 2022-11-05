@@ -2,6 +2,7 @@ package com.example.planer;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.bumptech.glide.Glide;
 import com.example.planer.ranking.CovidRestriction;
 import com.example.planer.ranking.RecommendationLevel;
 import com.example.planer.ranking.Visa;
+import com.example.planer.ranking.WeatherCondition;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -47,6 +49,7 @@ public class SearchFragment extends Fragment {
 
     private String visaContent;
     private String advisoryContent;
+    private int weatherCode = 0;
 
     DecimalFormat df = new DecimalFormat("#.#");
     private TextView weatherCity;
@@ -96,7 +99,6 @@ public class SearchFragment extends Fragment {
         visaInfoText = view.findViewById(R.id.visaInfo);
         advisory = view.findViewById(R.id.restrictionCovidDetail);
         riskLevelIcon = view.findViewById(R.id.imageView);
-
         weatherCity = view.findViewById(R.id.currentWeather);
         conditions = view.findViewById(R.id.conditions);
         conditionsIcon = view.findViewById(R.id.conditionsIcon);
@@ -142,14 +144,16 @@ public class SearchFragment extends Fragment {
                             }
                         });
                     }
+                    calculateScore();
                 });
     }
+
     private void updateWeather() {
         // get countrySelected, query db for capital, send capital into api call, pick apart json and update views
         db.collection("countries")
                 .document(countrySelected)
                 .get()
-                .addOnCompleteListener(task-> {
+                .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         DocumentSnapshot doc = task.getResult();
                         Map<String, Object> group = doc.getData();
@@ -173,6 +177,10 @@ public class SearchFragment extends Fragment {
                                         JSONObject jsonObjectWeather = jsonArray.getJSONObject(0);
                                         JSONObject jsonObjectMain = jsonResponse.getJSONObject("main");
 
+                                        int idCode = jsonObjectWeather.getInt("id");
+                                        weatherCode = idCode;
+                                        calculateScore();
+
                                         String iconCode = jsonObjectWeather.getString("icon");
                                         String iconUrl = "http://openweathermap.org/img/wn/";
                                         iconUrl += iconCode + "@4x.png";
@@ -194,9 +202,9 @@ public class SearchFragment extends Fragment {
                                 RequestQueue requestQueue = Volley.newRequestQueue(getContext());
                                 requestQueue.add(stringRequest);
                             }
+                        });
+                    }
                 });
-            }
-        });
     }
 
 
@@ -252,6 +260,10 @@ public class SearchFragment extends Fragment {
         }
         if (advisoryContent != null) {
             totalScore += CovidRestriction.findScoreByDescription(advisoryContent);
+            factors++;
+        }
+        if (weatherCode != 0) {
+            totalScore += WeatherCondition.findScoreByWeatherCode(weatherCode);
             factors++;
         }
 
