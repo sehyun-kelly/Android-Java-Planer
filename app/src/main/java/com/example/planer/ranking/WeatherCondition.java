@@ -2,6 +2,10 @@ package com.example.planer.ranking;
 
 import com.google.android.gms.common.util.ArrayUtils;
 
+/*
+ * See https://openweathermap.org/weather-conditions
+ * for all supported weather conditions.
+ */
 public enum WeatherCondition {
     THUNDERSTORM(new int[]{}, 10, -1),      //2xx
     DRIZZLE(new int[]{300, 301}, 70, 80),   //3xx
@@ -10,8 +14,23 @@ public enum WeatherCondition {
     ATMOSPHERE(new int[]{741}, 30, 70),     //7xx
     CLOUD(new int[]{800}, 90, 100);         //8xx
 
+    /**
+     * Stores the id of certain exceptional cases.
+     *
+     * Exceptional cases are the weather conditions
+     * that are already classified but are not as
+     * extreme as other cases in the same class.
+     */
     public final int[] exceptions;
+
+    /**
+     * Score for a weather condition.
+     */
     public final int score;
+
+    /**
+     * Score for an exception weather condition.
+     */
     public final int exceptionScore;
 
     public static int findScoreByWeatherCode(int code) {
