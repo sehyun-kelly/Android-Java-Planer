@@ -259,23 +259,26 @@ public class SearchFragment extends Fragment implements Runnable {
         int factors = 0;
 
         if (visaContent != null) {
-            totalScore += Visa.findScoreByDescription(visaContent);
-            factors++;
+            int weight = 2;
+            totalScore += Visa.findScoreByDescription(visaContent) * weight;
+            factors += weight;
         }
         if (advisoryContent != null) {
-            totalScore += CovidRestriction.findScoreByDescription(advisoryContent);
-            factors++;
+            int weight = 4;
+            totalScore += CovidRestriction.findScoreByDescription(advisoryContent) * weight;
+            factors += weight;
         }
         if (weatherCode != 0) {
-            totalScore += WeatherCondition.findScoreByWeatherCode(weatherCode);
-            factors++;
+            int weight = 1;
+            totalScore += WeatherCondition.findScoreByWeatherCode(weatherCode) * weight;
+            factors += weight;
         }
 
         double scaledScore = (factors != 0) ? (double) totalScore / factors : 0;
 
         changeScoreCardBackground(scaledScore);
 
-        DecimalFormat df = new DecimalFormat("###.##");
+        DecimalFormat df = new DecimalFormat("###");
         score.setText(df.format(scaledScore));
     }
 
