@@ -34,7 +34,7 @@ import org.json.JSONObject;
 import java.text.DecimalFormat;
 import java.util.Map;
 
-public class SearchFragment extends Fragment {
+public class SearchFragment extends Fragment implements Runnable {
     private FirebaseFirestore db;
     private String homeCountry;
     private String countrySelected;
@@ -50,6 +50,9 @@ public class SearchFragment extends Fragment {
     private String visaContent;
     private String advisoryContent;
     private int weatherCode = 0;
+
+    private final int NUMBER_OF_CONDITIONS = 3;
+    private int lock = 0;
 
     DecimalFormat df = new DecimalFormat("#.#");
     private TextView weatherCity;
@@ -73,6 +76,7 @@ public class SearchFragment extends Fragment {
             updateVisaCard();
             updateDataFromCountries();
             updateWeather();
+            run();
         }
     }
 
@@ -121,9 +125,9 @@ public class SearchFragment extends Fragment {
                                 advisoryContent = value.toString();
                                 advisory.setText(advisoryContent);
                                 getRiskLevelImage(advisoryContent);
+                                lock++;
                             }
                         });
-                        calculateScore();
                     }
                 });
     }
@@ -141,10 +145,10 @@ public class SearchFragment extends Fragment {
                             if (key.equalsIgnoreCase(countrySelected)) {
                                 visaContent = value.toString();
                                 visaInfoText.setText(visaContent);
+                                lock++;
                             }
                         });
                     }
-                    calculateScore();
                 });
     }
 
@@ -179,7 +183,7 @@ public class SearchFragment extends Fragment {
 
                                         int idCode = jsonObjectWeather.getInt("id");
                                         weatherCode = idCode;
-                                        calculateScore();
+                                        lock++;
 
                                         String iconCode = jsonObjectWeather.getString("icon");
                                         String iconUrl = "http://openweathermap.org/img/wn/";
@@ -290,5 +294,22 @@ public class SearchFragment extends Fragment {
             case NOT_RECOMMENDED:
                 scoreCard.setCardBackgroundColor(Color.GRAY);
         }
+    }
+
+    @Override
+    public void run() {
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                synchronized (this) {
+                    while (lock != NUMBER_OF_CONDITIONS) {
+                        // do nothing
+                    }
+
+                    requireActivity().runOnUiThread(() -> calculateScore());
+                }
+            }
+        };
+        thread.start();
     }
 }
