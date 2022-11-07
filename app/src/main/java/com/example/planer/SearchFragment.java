@@ -19,6 +19,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.example.planer.currecnyconverter.CurrencyConverter;
 import com.example.planer.ranking.CovidRestriction;
 import com.example.planer.ranking.RecommendationLevel;
 import com.example.planer.ranking.Visa;
@@ -45,6 +46,7 @@ public class SearchFragment extends Fragment implements Runnable {
     private TextView visaInfoText;
     private TextView advisory;
     private ImageView riskLevelIcon;
+    private TextView rate;
 
     private String visaContent;
     private String advisoryContent;
@@ -78,6 +80,7 @@ public class SearchFragment extends Fragment implements Runnable {
             updateVisaCard();
             updateDataFromCountries();
             updateWeather();
+            updateCurrency();
             run();
         }
     }
@@ -105,22 +108,7 @@ public class SearchFragment extends Fragment implements Runnable {
         visaInfoText = view.findViewById(R.id.visaInfo);
         advisory = view.findViewById(R.id.restrictionCovidDetail);
         riskLevelIcon = view.findViewById(R.id.imageView);
-
-
-        if (homeCountry != null || countrySelected != null) {
-            cC.setHome(homeCountry);
-            cC.setDestination(countrySelected);
-
-            TextView rate = view.findViewById(R.id.currencyBlank);
-
-            Log.d("Android", "HOME AND DEST: " + cC.getHome() + " " + cC.getDestination());
-
-            cC.updateRate(getContext(), () -> {
-                rate.setText(cC.toString());
-            });
-        }
-
-
+        rate = view.findViewById(R.id.currencyBlank);
         weatherCity = view.findViewById(R.id.currentWeather);
         conditions = view.findViewById(R.id.conditions);
         conditionsIcon = view.findViewById(R.id.conditionsIcon);
@@ -229,6 +217,19 @@ public class SearchFragment extends Fragment implements Runnable {
                 });
     }
 
+    private void updateCurrency() {
+        if (homeCountry != null || countrySelected != null) {
+            cC.setHome(homeCountry);
+            cC.setDestination(countrySelected);
+
+            Log.d("Android", "HOME AND DEST: " + cC.getHome() + " " + cC.getDestination());
+
+            cC.updateRate(getContext(), () -> {
+                rate.setText(cC.toString());
+            });
+        }
+
+    }
 
     public void gotoWeather(View view) {
         Bundle bundle = new Bundle();

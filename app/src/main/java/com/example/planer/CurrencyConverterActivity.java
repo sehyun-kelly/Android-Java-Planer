@@ -75,7 +75,7 @@ public class CurrencyConverterActivity extends AppCompatActivity {
     /**
      * Home to Destination
      */
-    protected void convertCurrencyHD(View view) {
+    public void convertCurrencyHD(View view) {
         EditText home = findViewById(R.id.currency_input);
         EditText destination = findViewById(R.id.currency_output);
         double homeValue = Double.parseDouble(home.getText().toString());
@@ -86,7 +86,7 @@ public class CurrencyConverterActivity extends AppCompatActivity {
     /**
      * Destination to Home
      */
-    protected void convertCurrencyDH(View view) {
+    public void convertCurrencyDH(View view) {
         EditText home = findViewById(R.id.currency_input);
         EditText destination = findViewById(R.id.currency_output);
         double destinationValue = Double.parseDouble(destination.getText().toString());
