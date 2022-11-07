@@ -1,6 +1,7 @@
 package com.example.planer.favourite;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -14,9 +15,11 @@ import java.util.ArrayList;
 public class FavouriteCountriesAdapter extends RecyclerView.Adapter<FavouriteCountriesAdapter.ViewHolder> {
 
     private final ArrayList<FavouriteCountry> countryList;
+    private FavouriteCallbackListener favouriteCallbackListener;
 
-    public FavouriteCountriesAdapter(ArrayList<FavouriteCountry> items) {
-        countryList = items;
+    public FavouriteCountriesAdapter(ArrayList<FavouriteCountry> items, FavouriteCallbackListener favouriteCallbackListener) {
+        this.countryList = items;
+        this.favouriteCallbackListener = favouriteCallbackListener;
     }
 
     @NonNull
@@ -29,8 +32,10 @@ public class FavouriteCountriesAdapter extends RecyclerView.Adapter<FavouriteCou
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mItem = countryList.get(position);
-        holder.mContentView.setText(countryList.get(position).name);
+        holder.contentView.setOnClickListener(v -> {
+            favouriteCallbackListener.onFavouritePairClick(countryList.get(position).name);
+        });
+        holder.countryPair.setText(countryList.get(position).name);
     }
 
     @Override
@@ -39,12 +44,13 @@ public class FavouriteCountriesAdapter extends RecyclerView.Adapter<FavouriteCou
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mContentView;
-        public FavouriteCountry mItem;
+        public final CardView contentView;
+        public final TextView countryPair;
 
         public ViewHolder(FragmentFavouriteItemBinding binding) {
             super(binding.getRoot());
-            mContentView = binding.countryName;
+            contentView = binding.favCard;
+            countryPair = binding.countryName;
         }
     }
 }

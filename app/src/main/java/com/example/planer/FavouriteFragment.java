@@ -1,7 +1,9 @@
 package com.example.planer;
 
+import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,12 +15,14 @@ import android.view.ViewGroup;
 
 import com.example.planer.favourite.FavouriteCountriesAdapter;
 import com.example.planer.favourite.FavouriteCountry;
+import com.example.planer.favourite.FavouriteCallbackListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
+
+import io.grpc.Context;
 
 public class FavouriteFragment extends Fragment {
     public static final String TAG = FavouriteFragment.class.getName();
@@ -31,6 +35,8 @@ public class FavouriteFragment extends Fragment {
 
     public FavouriteFragment() {
     }
+
+    private FavouriteCallbackListener favouriteCallbackListener;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,9 +54,15 @@ public class FavouriteFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_favourite, container, false);
 
         RecyclerView recyclerView = view.findViewById(R.id.list);
-        favouriteCountriesAdapter = new FavouriteCountriesAdapter(favouriteCountries);
+        favouriteCountriesAdapter = new FavouriteCountriesAdapter(favouriteCountries, favouriteCallbackListener);
         recyclerView.setAdapter(favouriteCountriesAdapter);
         return view;
+    }
+
+    @Override
+    public void onAttach(@NonNull android.content.Context context) {
+        super.onAttach(context);
+        favouriteCallbackListener = (FavouriteCallbackListener) context;
     }
 
     @Override
