@@ -10,7 +10,8 @@
         style="@style/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
         android:text="@string/favourite" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -18,7 +19,8 @@
         android:name="com.example.planer.FavouriteFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
         android:background="@drawable/corner_rounded"
         android:padding="10dp"
         app:layoutManager="LinearLayoutManager"
