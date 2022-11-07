@@ -72,9 +72,6 @@ public class SearchFragment extends Fragment implements Runnable {
             homeCountry = getArguments().getString("home");
             countrySelected = getArguments().getString("country");
             System.out.println("search : " + countrySelected);
-            updateVisaCard();
-            updateDataFromCountries();
-            updateWeather();
             run();
         }
     }
@@ -304,6 +301,10 @@ public class SearchFragment extends Fragment implements Runnable {
             @Override
             public void run() {
                 synchronized (this) {
+                    updateVisaCard();
+                    updateDataFromCountries();
+                    updateWeather();
+
                     while (lock != NUMBER_OF_CONDITIONS) {
                         // do nothing
                     }
