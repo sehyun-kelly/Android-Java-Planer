@@ -136,7 +136,7 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
                 fragmentManager.beginTransaction()
                         .remove(fragment)
                         .addToBackStack(null)
-                        .commitAllowingStateLoss();
+                        .commit();
             }
             buttonFocusedEffect(searchBtn);
         });
@@ -148,7 +148,7 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
                     .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.page_fragment, favoriteFragment, "currentFragment")
                     .addToBackStack(null)
-                    .commitAllowingStateLoss();
+                    .commit();
             buttonFocusedEffect(favoriteBtn);
         });
 
@@ -157,7 +157,7 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
                     .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.page_fragment, new ProfileFragment(), "currentFragment")
                     .addToBackStack(null)
-                    .commitAllowingStateLoss();
+                    .commit();
             buttonFocusedEffect(profileBtn);
         });
     }
