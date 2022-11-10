@@ -1,5 +1,7 @@
 package com.example.planer;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -9,6 +11,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -37,16 +40,18 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
     private FirebaseUser currentUser;
     private FirebaseFirestore db;
 
-    private String homeCountry;
-    private String country;
-    private ArrayList<String> countries;
-
     private TextView passportHeld;
-    private Spinner destinationCountry;
+    private Spinner destinationCountriesList;
     private Button searchBtn;
     private Button favoriteBtn;
     private Button profileBtn;
     private Button addToFavBtn;
+
+    private String homeCountry;
+    private String destinationCountry;
+    private ArrayList<String> countries;
+    private boolean isFavourite = false;
+    private int hiddenCountryIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +62,11 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
         db = FirebaseFirestore.getInstance();
 
         passportHeld = findViewById(R.id.home_value);
-        destinationCountry = findViewById(R.id.spinner_country);
+        destinationCountriesList = findViewById(R.id.spinner_country);
         addToFavBtn = findViewById(R.id.button_fav);
         addToFavBtn.setOnClickListener(v -> toggleFavourite());
 
+        countries = CountryDriver.readCountries();
         // Load home country from Firestore and set 'Destination Country' spinner
         getUserHomeCountry(db);
     }
@@ -86,24 +92,47 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
     }
 
     private void onBindViewToData() {
-        countries = CountryDriver.readCountries();
-        destinationCountry = findViewById(R.id.spinner_country);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countries);
+        hiddenCountryIndex = countries.indexOf(homeCountry);
+        destinationCountriesList = findViewById(R.id.spinner_country);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, countries) {
+            @Override
+            public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                View country = null;
+                if (position == hiddenCountryIndex) {
+                    TextView hiddenCountry = new TextView(getContext());
+                    hiddenCountry.setVisibility(View.GONE);
+                    hiddenCountry.setHeight(0);
+                    country = hiddenCountry;
+                    country.setVisibility(View.GONE);
+                }
+                else {
+                    country = super.getDropDownView(position, null, parent);
+                }
+                return country;
+            }
+        };
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        destinationCountry.setAdapter(adapter);
+        destinationCountriesList.setAdapter(adapter);
 
-        destinationCountry.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        destinationCountriesList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                country = adapterView.getItemAtPosition(position).toString();
+                destinationCountry = adapterView.getItemAtPosition(position).toString();
 
                 TextView homeVisa = findViewById(R.id.home_value);
-                String countryPair = homeVisa.getText().toString() + " - " + country;
+                String countryPair;
+                if (!isFavourite) {
+                    homeVisa.setText(homeCountry);
+                    countryPair = homeCountry + " - " + destinationCountry;
+                } else {
+                    countryPair = homeVisa.getText().toString() + " - " + destinationCountry;
+                    isFavourite = false;
+                }
                 checkFavouritePair(countryPair);
 
                 Bundle countryBundle = new Bundle();
                 countryBundle.putString("home", homeCountry);
-                countryBundle.putString("country", country);
+                countryBundle.putString("country", destinationCountry);
 
                 Fragment searchFragment = new SearchFragment();
                 searchFragment.setArguments(countryBundle);
@@ -188,7 +217,7 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
         TextView homeVisa = findViewById(R.id.home_value);
         String homeVisaValue = homeVisa.getText().toString();
 
-        String countryPair = homeVisaValue + " - " + country;
+        String countryPair = homeVisaValue + " - " + destinationCountry;
 
         if (addToFavBtn.getTag().toString().equalsIgnoreCase("false")) {
             addToFavBtn.setTag("true");
@@ -208,10 +237,10 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
         TextView homeVisa = findViewById(R.id.home_value);
         String homeVisaValue = homeVisa.getText().toString();
 
-        String countryPair = homeVisaValue + " - " + country;
+        String countryPair = homeVisaValue + " - " + destinationCountry;
         Map<String, String> favPair = new HashMap<>();
         favPair.put("home", homeVisaValue);
-        favPair.put("destination", country);
+        favPair.put("destination", destinationCountry);
 
         db = FirebaseFirestore.getInstance();
         assert currentUser != null;
@@ -279,7 +308,8 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
     public void updateFavouritePair(String passport, String destination) {
         passportHeld.setText(passport);
         int id = countries.indexOf(destination);
-        destinationCountry.setSelection(id);
+        isFavourite = true;
+        destinationCountriesList.setSelection(id);
     }
 
     @Override
