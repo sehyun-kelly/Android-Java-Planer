@@ -21,8 +21,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.Map;
 
-import io.grpc.Context;
-
 public class FavouriteFragment extends Fragment {
     public static final String TAG = FavouriteFragment.class.getName();
 
@@ -80,6 +78,5 @@ public class FavouriteFragment extends Fragment {
                 // When finish reading all data, notify adapter
                 .addOnSuccessListener(o -> favouriteCountriesAdapter.notifyDataSetChanged())
                 .addOnFailureListener(e -> Log.e(TAG, e.getMessage()));
-
     }
 }
