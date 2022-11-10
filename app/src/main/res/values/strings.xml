@@ -70,4 +70,11 @@
     <string name="change_profile_picture">Change Profile Picture</string>
     <string name="current_weather">Current Weather</string>
 
+    <!-- Used in Search Fragment -->
+    <string name="visa_description_title">Visa information</string>
+    <string name="visa_description_content">Shows the type of visa you need when visiting this
+        country.\n\nFor visa-free regimes, the number of visa-free days is specified whenever
+        available. When not available (for example, in some EU countries days are not limited),
+        \'visa free\' is shown.\n\nSource:
+        <a href="https://www.passportindex.org">https://www.passportindex.org</a>.</string>
 </resources>
