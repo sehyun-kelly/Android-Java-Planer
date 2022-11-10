@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -53,6 +54,21 @@ public class FavouriteFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.list);
         favouriteCountriesAdapter = new FavouriteCountriesAdapter(favouriteCountries, favouriteCallbackListener);
         recyclerView.setAdapter(favouriteCountriesAdapter);
+
+        SearchView searchBar = view.findViewById(R.id.search_bar);
+        searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                favouriteCountriesAdapter.getFilter().filter(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                favouriteCountriesAdapter.getFilter().filter(newText);
+                return true;
+            }
+        });
         return view;
     }
 
@@ -76,7 +92,7 @@ public class FavouriteFragment extends Fragment {
                     favPair.forEach((k, v) -> favouriteCountries.add(new FavouriteCountry(k)));
                 })
                 // When finish reading all data, notify adapter
-                .addOnSuccessListener(o -> favouriteCountriesAdapter.notifyDataSetChanged())
+                .addOnSuccessListener(o -> favouriteCountriesAdapter.notifyDataLoaded())
                 .addOnFailureListener(e -> Log.e(TAG, e.getMessage()));
     }
 }
