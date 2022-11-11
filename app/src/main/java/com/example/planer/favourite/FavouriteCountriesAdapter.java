@@ -12,9 +12,6 @@ import android.widget.TextView;
 import com.example.planer.databinding.FragmentFavouriteItemBinding;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Locale;
 
 public class FavouriteCountriesAdapter extends RecyclerView.Adapter<FavouriteCountriesAdapter.ViewHolder> {
