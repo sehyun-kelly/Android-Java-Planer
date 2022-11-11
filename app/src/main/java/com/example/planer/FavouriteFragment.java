@@ -10,8 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 
 import com.example.planer.favourite.FavouriteCountriesAdapter;
 import com.example.planer.favourite.FavouriteCountry;
@@ -69,6 +72,22 @@ public class FavouriteFragment extends Fragment {
                 return true;
             }
         });
+
+        ImageButton imageButton = view.findViewById(R.id.favourite_sort_menu);
+        PopupMenu popupMenu = new PopupMenu(getContext(), imageButton);
+        popupMenu.inflate(R.menu.favourite_sort_menu);
+        popupMenu.setOnMenuItemClickListener(item -> {
+            switch (item.getItemId()) {
+                case (R.id.from_a_to_z):
+                    favouriteCountriesAdapter.sortFavouritePair(1);
+                    break;
+                case (R.id.from_z_to_a):
+                    favouriteCountriesAdapter.sortFavouritePair(2);
+                    break;
+            }
+            return true;
+        });
+        imageButton.setOnClickListener(v -> popupMenu.show());
         return view;
     }
 

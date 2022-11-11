@@ -70,4 +70,9 @@
     <string name="change_profile_picture">Change Profile Picture</string>
     <string name="current_weather">Current Weather</string>
 
+    <!-- Used in Favourite Fragment -->
+    <string name="sort_method">Sort method</string>
+    <string name="from_a_to_z">From A to Z</string>
+    <string name="from_z_to_a">From Z to A</string>
+
 </resources>
