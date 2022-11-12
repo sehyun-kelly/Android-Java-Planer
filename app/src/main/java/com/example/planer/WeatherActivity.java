@@ -1,9 +1,13 @@
 package com.example.planer;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,9 +15,10 @@ import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,65 +31,97 @@ import java.util.Calendar;
 public class WeatherActivity extends AppCompatActivity {
 
     EditText etCity, etCountry;
-    TextView tvResult;
+    Button refreshBtn;
     ImageView ivIcon;
     TextView temperature;
+    TextView tvResult;
     DecimalFormat df = new DecimalFormat("#.#");
+
+    // To hold bundle values from SearchActivity.java
+    String city;
+    String country;
+
+    Animation fadeIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
 
+        fadeIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+
+        // Set to today's date
         TextView date = findViewById(R.id.currentDate);
         DateFormat dateInstance = SimpleDateFormat.getDateInstance();
         String dateStr = dateInstance.format(Calendar.getInstance().getTime());
         date.setText(dateStr);
 
-        etCountry = findViewById(R.id.country_name);
+        // Unpack bundle and set view IDs
+        Bundle bundle = getIntent().getExtras();
+        city = bundle.getString("city");
+        country = bundle.getString("country");
         etCity = findViewById(R.id.city_name);
-        tvResult = findViewById(R.id.weatherResults);
+        etCity.setText(city);
+        etCountry = findViewById(R.id.country_name);
+        etCountry.setText(country);
+
+        // Set remaining view IDs
         ivIcon = findViewById(R.id.icon);
         temperature = findViewById(R.id.temperature);
+        tvResult = findViewById(R.id.weatherResults);
+
+        // Show weather of country capital from SearchActivity
+        String initWeatherCall = getApiUrl();
+        GetWeatherAsync initialCall = new GetWeatherAsync();
+        initialCall.execute(initWeatherCall);
+
+        // Set onClickListener so user can change cities and get updated weather info
+        refreshBtn = findViewById(R.id.getWeatherBtn);
+        refreshBtn.setOnClickListener(view -> {
+            String updateURL = getApiUrl();
+            GetWeatherAsync updateWeather = new GetWeatherAsync();
+            updateWeather.execute(updateURL);
+        });
     }
 
-    public void getWeather(View view) {
-        String tempUrl;
-        String city = etCity.getText().toString().trim();
-        String country = etCountry.getText().toString().trim();
-        if(city.isEmpty()) {
-            Toast.makeText(WeatherActivity.this,
-                    R.string.no_city, Toast.LENGTH_SHORT).show();
+    /**
+     * Reads EditText views and creates a URL for openWeatherAPI call
+     * @return String
+     */
+    @SuppressLint("SetTextI18n")
+    private String getApiUrl() {
+        String tempUrl = "";
+        String cityName = etCity.getText().toString().trim();
+        if (cityName.equals("")) {
+            tvResult.setText("City field can not be empty!");
         } else {
-            // City has been entered, init key + URL base
-            String APPID = BuildConfig.WEATHER_KEY;
+            // API info
             String URL = "http://api.openweathermap.org/data/2.5/weather";
-            // complete URL
-            if (!country.equals("")) {
-                tempUrl = URL + "?q=" + city + "," + country + "&appid=" + APPID;
-            } else {
-                tempUrl = URL + "?q=" + city + "&appid=" + APPID;
-            }
-            /* StringRequest obj via Volley to get JSON as string
-            (read as: 'GET' from 'tempUrl' the 'response'; a string)
-             */
-            StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                    tempUrl, response -> {
-                        Log.d("response", response); /* Copy this giant 1 ln string from Logcat
-                        and paste into an online JSON object viewer (e.g., http://jsonviewer.stack.hu/)
-                        to see obj structure
-                        */
-                        String output = "";
+            String WEATHERKEY = BuildConfig.WEATHER_KEY;
+            tempUrl = URL + "?q=" + cityName + "&appid=" + WEATHERKEY;
+        }
+        return tempUrl;
+    }
+
+    /**
+     * AsyncTask inner class for getting weather info (used in onCreate and refreshBtn)
+     */
+    private class GetWeatherAsync extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... strings) {
+            RequestQueue queue = Volley.newRequestQueue(WeatherActivity.this);
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, strings[0],
+                    null, response -> {
                         try {
                             /* Create new JSONObjects and JSONArrays as necessary
                             (see online JSON object to verify array vs object)
                              */
-                            JSONObject jsonResponse = new JSONObject(response);
-                            JSONArray jsonArray = jsonResponse.getJSONArray("weather");
+                            String output = "";
+                            JSONObject jsonObjectMain = response.getJSONObject("main");
+                            JSONArray jsonArray = response.getJSONArray("weather");
                             JSONObject jsonObjectWeather = jsonArray.getJSONObject(0);
-                            JSONObject jsonObjectMain = jsonResponse.getJSONObject("main");
-                            JSONObject jsonObjectWind = jsonResponse.getJSONObject("wind");
-                            JSONObject jsonObjectClouds = jsonResponse.getJSONObject("clouds");
+                            JSONObject jsonObjectWind = response.getJSONObject("wind");
+                            JSONObject jsonObjectClouds = response.getJSONObject("clouds");
 
                             /* Get the icon code jsonObjectWeather, plug it into the necessary URL,
                             use Glide library to easily replace the img in ImageView with
@@ -93,7 +130,7 @@ public class WeatherActivity extends AppCompatActivity {
                             String iconCode = jsonObjectWeather.getString("icon");
                             String iconUrl = "http://openweathermap.org/img/wn/";
                             iconUrl += iconCode + "@4x.png";
-                            Glide.with(this).load(iconUrl).into(ivIcon);
+                            Glide.with(WeatherActivity.this).load(iconUrl).transition(DrawableTransitionOptions.withCrossFade(500)).into(ivIcon);
 
                             // Get and store relevant data from your JSONObjects
                             String description = jsonObjectWeather.getString("description");
@@ -103,11 +140,11 @@ public class WeatherActivity extends AppCompatActivity {
                             int humidity = jsonObjectMain.getInt("humidity");
                             String wind = jsonObjectWind.getString("speed");
                             String clouds = jsonObjectClouds.getString("all");
-                            String city1 = jsonResponse.getString("name");
+                            String city1 = response.getString("name");
 
-                            // Set views' values using data gathered above
                             String tempStr = "" + df.format(temp) + "°C";
                             temperature.setText(tempStr);
+                            temperature.startAnimation(fadeIn);
                             output += "Current weather in " + city1 + ":\n" +
                                     "\nConditions:   " + description +
                                     "\nFeels like:     " + df.format(feelsLike) + "°C" +
@@ -116,16 +153,14 @@ public class WeatherActivity extends AppCompatActivity {
                                     "\n\nWind:           " + wind + " m/s" +
                                     "\nClouds:        " + clouds + "%";
                             tvResult.setText(output);
-
+                            tvResult.startAnimation(fadeIn);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                    }, error -> Toast.makeText(getApplicationContext(),
-                    error.toString().trim(), Toast.LENGTH_SHORT).show());
-
-            // https://google.github.io/volley/simple.html
-            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-            requestQueue.add(stringRequest);
+                    }, error -> Toast.makeText(WeatherActivity.this, error.toString(),
+                    Toast.LENGTH_SHORT).show());
+            queue.add(request);
+            return null;
         }
     }
 }

@@ -9,9 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.planer.currecnyconverter.CurrencyConverter;
-import com.example.planer.favourite.FavouriteCountriesAdapter;
-import com.example.planer.favourite.FavouriteCountry;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -22,9 +19,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.example.planer.currecnyconverter.CurrencyConverter;
 import com.example.planer.ranking.CovidRestriction;
 import com.example.planer.ranking.RecommendationLevel;
 import com.example.planer.ranking.Visa;
+import com.example.planer.ranking.WeatherCondition;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -35,10 +34,11 @@ import org.json.JSONObject;
 import java.text.DecimalFormat;
 import java.util.Map;
 
-public class SearchFragment extends Fragment {
+public class SearchFragment extends Fragment implements Runnable {
     private FirebaseFirestore db;
     private String homeCountry;
     private String countrySelected;
+    private String capital;
 
     private CardView scoreCard;
     private TextView score;
@@ -46,9 +46,14 @@ public class SearchFragment extends Fragment {
     private TextView visaInfoText;
     private TextView advisory;
     private ImageView riskLevelIcon;
+    private TextView rate;
 
     private String visaContent;
     private String advisoryContent;
+    private int weatherCode = 0;
+
+    private final int NUMBER_OF_CONDITIONS = 3;
+    private int lock = 0;
 
     DecimalFormat df = new DecimalFormat("#.#");
     private TextView weatherCity;
@@ -75,6 +80,8 @@ public class SearchFragment extends Fragment {
             updateVisaCard();
             updateDataFromCountries();
             updateWeather();
+            updateCurrency();
+            run();
         }
     }
 
@@ -101,22 +108,7 @@ public class SearchFragment extends Fragment {
         visaInfoText = view.findViewById(R.id.visaInfo);
         advisory = view.findViewById(R.id.restrictionCovidDetail);
         riskLevelIcon = view.findViewById(R.id.imageView);
-
-
-        if (homeCountry != null || countrySelected != null) {
-            cC.setHome(homeCountry);
-            cC.setDestination(countrySelected);
-
-            TextView rate = view.findViewById(R.id.currencyBlank);
-
-            Log.d("Android", "HOME AND DEST: " + cC.getHome() + " " + cC.getDestination());
-
-            cC.updateRate(getContext(), () -> {
-                rate.setText(cC.toString());
-            });
-        }
-
-
+        rate = view.findViewById(R.id.currencyBlank);
         weatherCity = view.findViewById(R.id.currentWeather);
         conditions = view.findViewById(R.id.conditions);
         conditionsIcon = view.findViewById(R.id.conditionsIcon);
@@ -139,9 +131,9 @@ public class SearchFragment extends Fragment {
                                 advisoryContent = value.toString();
                                 advisory.setText(advisoryContent);
                                 getRiskLevelImage(advisoryContent);
+                                lock++;
                             }
                         });
-                        calculateScore();
                     }
                 });
     }
@@ -159,17 +151,19 @@ public class SearchFragment extends Fragment {
                             if (key.equalsIgnoreCase(countrySelected)) {
                                 visaContent = value.toString();
                                 visaInfoText.setText(visaContent);
+                                lock++;
                             }
                         });
                     }
                 });
     }
+
     private void updateWeather() {
         // get countrySelected, query db for capital, send capital into api call, pick apart json and update views
         db.collection("countries")
                 .document(countrySelected)
                 .get()
-                .addOnCompleteListener(task-> {
+                .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         DocumentSnapshot doc = task.getResult();
                         Map<String, Object> group = doc.getData();
@@ -177,7 +171,7 @@ public class SearchFragment extends Fragment {
                         group.forEach((key, value) -> {
                             if (key.equalsIgnoreCase("capital")) {
                                 String currWeather = "Current weather in " + value.toString();
-                                String capital = value.toString();
+                                capital = value.toString();
                                 weatherCity.setText(currWeather);
 
                                 // Call api
@@ -192,6 +186,10 @@ public class SearchFragment extends Fragment {
                                         JSONArray jsonArray = jsonResponse.getJSONArray("weather");
                                         JSONObject jsonObjectWeather = jsonArray.getJSONObject(0);
                                         JSONObject jsonObjectMain = jsonResponse.getJSONObject("main");
+
+                                        int idCode = jsonObjectWeather.getInt("id");
+                                        weatherCode = idCode;
+                                        lock++;
 
                                         String iconCode = jsonObjectWeather.getString("icon");
                                         String iconUrl = "http://openweathermap.org/img/wn/";
@@ -214,14 +212,31 @@ public class SearchFragment extends Fragment {
                                 RequestQueue requestQueue = Volley.newRequestQueue(getContext());
                                 requestQueue.add(stringRequest);
                             }
+                        });
+                    }
                 });
-            }
-        });
     }
 
+    private void updateCurrency() {
+        if (homeCountry != null || countrySelected != null) {
+            cC.setHome(homeCountry);
+            cC.setDestination(countrySelected);
+
+            Log.d("Android", "HOME AND DEST: " + cC.getHome() + " " + cC.getDestination());
+
+            cC.updateRate(getContext(), () -> {
+                rate.setText(cC.toString());
+            });
+        }
+
+    }
 
     public void gotoWeather(View view) {
+        Bundle bundle = new Bundle();
+        bundle.putString("city", capital);
+        bundle.putString("country", countrySelected);
         Intent intent = new Intent(getActivity(), WeatherActivity.class);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 
@@ -265,19 +280,26 @@ public class SearchFragment extends Fragment {
         int factors = 0;
 
         if (visaContent != null) {
-            totalScore += Visa.findScoreByDescription(visaContent);
-            factors++;
+            int weight = 2;
+            totalScore += Visa.findScoreByDescription(visaContent) * weight;
+            factors += weight;
         }
         if (advisoryContent != null) {
-            totalScore += CovidRestriction.findScoreByDescription(advisoryContent);
-            factors++;
+            int weight = 4;
+            totalScore += CovidRestriction.findScoreByDescription(advisoryContent) * weight;
+            factors += weight;
+        }
+        if (weatherCode != 0) {
+            int weight = 1;
+            totalScore += WeatherCondition.findScoreByWeatherCode(weatherCode) * weight;
+            factors += weight;
         }
 
         double scaledScore = (factors != 0) ? (double) totalScore / factors : 0;
 
         changeScoreCardBackground(scaledScore);
 
-        DecimalFormat df = new DecimalFormat("###.##");
+        DecimalFormat df = new DecimalFormat("###");
         score.setText(df.format(scaledScore));
     }
 
@@ -296,5 +318,22 @@ public class SearchFragment extends Fragment {
             case NOT_RECOMMENDED:
                 scoreCard.setCardBackgroundColor(Color.GRAY);
         }
+    }
+
+    @Override
+    public void run() {
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                synchronized (this) {
+                    while (lock != NUMBER_OF_CONDITIONS) {
+                        // do nothing
+                    }
+
+                    requireActivity().runOnUiThread(() -> calculateScore());
+                }
+            }
+        };
+        thread.start();
     }
 }

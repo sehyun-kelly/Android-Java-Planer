@@ -1,28 +1,25 @@
 package com.example.planer;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+/**
+ * Class for handling profile pic uploads to Firebase Storage
+ */
 public class ChangeProfilePic extends AppCompatActivity {
 
     CircleImageView profilePic;
@@ -42,33 +39,35 @@ public class ChangeProfilePic extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference();
-        StorageReference picRef = storageRef.child("ProfilePics").child(user.getUid());
 
         profilePic = findViewById(R.id.profilePic);
-        Glide.with(this).load(picRef).placeholder(R.drawable.profile).centerCrop().into(profilePic);
+        StorageReference picRef = storageRef.child("ProfilePics/" + user.getUid());
+        picRef.getDownloadUrl().addOnSuccessListener(uri -> {
+            imageUri = uri;
+            Glide.with(ChangeProfilePic.this).load(imageUri)
+                    .centerCrop().into(profilePic);
+        });
         selectImageBtn = findViewById(R.id.selectImageBtn);
         saveChangesBtn = findViewById(R.id.saveChangesBtn);
-        selectImageBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectImage();
-            }
-        });
-        saveChangesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                uploadImage();
-            }
-        });
+        selectImageBtn.setOnClickListener(v -> selectImage());
+        saveChangesBtn.setOnClickListener(v -> uploadImage());
     }
 
+    /**
+     * Select an image to upload from the user's device
+     */
     private void selectImage() {
-        Intent intent = new Intent();
+        Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, 100);
     }
 
+    /**
+     * Update profile pic view to show successful selection
+     * @param requestCode arbitrary
+     * @param resultCode arbitrary
+     * @param data result from selectImage()
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -78,25 +77,23 @@ public class ChangeProfilePic extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * Upload the selected image to Firebase Storage, finishing the activity.
+     */
     private void uploadImage() {
         String filename = user.getUid();
         storageRef = FirebaseStorage.getInstance().getReference("ProfilePics/" + filename);
         if (imageUri != null) {
             storageRef.putFile(imageUri)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Toast.makeText(getApplicationContext(), "Profile Picture Changed", Toast.LENGTH_SHORT).show();
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(getApplicationContext(), "Upload Failed", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                    .addOnSuccessListener(taskSnapshot -> {
+                        Toast.makeText(getApplicationContext(), "Profile Picture Changed",
+                                Toast.LENGTH_SHORT).show();
+                        finish();
+                    }).addOnFailureListener(e -> Toast.makeText(getApplicationContext(),
+                            "Upload Failed", Toast.LENGTH_SHORT).show());
         } else {
-            Toast.makeText(this, "Please select a new image before saving", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please select an image before saving",
+                    Toast.LENGTH_SHORT).show();
         }
     }
 }
