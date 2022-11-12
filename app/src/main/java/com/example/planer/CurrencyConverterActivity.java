@@ -23,6 +23,61 @@ public class CurrencyConverterActivity extends AppCompatActivity {
 
     // TODO
     CurrencyConverter cC;
+    EditText home;
+    EditText destination;
+
+
+    private TextWatcher homeWatcher = new TextWatcher() {
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before,
+                                  int count) {
+            if (home.getText().toString().equals("")) {
+                destination.setText("0.00");
+                return;
+            }
+            destination.setText(new Double(cC.convertHD(Double.parseDouble(home.getText().toString()))).toString());
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count,
+                                      int after) {
+            destination.removeTextChangedListener(destWatcher);
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+            destination.addTextChangedListener(destWatcher);
+        }
+
+    };
+    private TextWatcher destWatcher = new TextWatcher() {
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before,
+                                  int count) {
+            if (destination.getText().toString().equals("")) {
+                home.setText("0.00");
+                return;
+            }
+
+            home.setText(new Double(cC.convertDH(Double.parseDouble(destination.getText().toString()))).toString());
+        }
+
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count,
+                                      int after) {
+            home.removeTextChangedListener(homeWatcher);
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+            home.addTextChangedListener(homeWatcher);
+        }
+    };
 
     /**
      * @param { String } home
@@ -96,27 +151,13 @@ public class CurrencyConverterActivity extends AppCompatActivity {
     // Ew stinky listeners. This belongs at the bottom of the file.
     // Nasty
     private void setUpGrossLookingOnClickListeners() {
-        EditText home = findViewById(R.id.currency_input);
-        EditText destination = findViewById(R.id.currency_output);
-
-        // So weird. I don't like
-        home.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void afterTextChanged(Editable s) {}
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start,
-                                          int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start,
-                                      int before, int count) {
-                if (!s.toString().equals("")) {
-                    destination.setText(new Double(cC.convertHD(Double.valueOf(s.toString()))).toString());
-                }
-            }
-        });
+        this.home = findViewById(R.id.currency_input);
+        this.destination = findViewById(R.id.currency_output);
+        home.addTextChangedListener(homeWatcher);
+        destination.addTextChangedListener(destWatcher);
     }
+
 }
+
+
 
