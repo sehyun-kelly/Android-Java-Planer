@@ -126,7 +126,12 @@ public class SearchFragment extends Fragment implements Runnable {
                                 airport.setText(value.toString());
                             } else if (key.equalsIgnoreCase("advisory")) {
                                 advisoryContent = value.toString();
-                                advisory.setText(advisoryContent);
+                                String restriction;
+                                if(advisoryContent.contains("normal")) restriction = "Take normal security";
+                                else if(advisoryContent.contains("non-essential")) restriction = "Avoid non-essential travel";
+                                else if(advisoryContent.contains("high")) restriction = "High degree of caution";
+                                else restriction = advisoryContent;
+                                advisory.setText(restriction);
                                 getRiskLevelImage(advisoryContent);
                                 lock++;
                             }
