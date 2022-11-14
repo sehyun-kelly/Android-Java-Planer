@@ -8,11 +8,14 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="299dp"
-        android:layout_height="92dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Travel restrictions activity; work in progress"
         android:textAlignment="center"
+        android:layout_margin="30dp"
         android:textSize="25sp"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="319dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

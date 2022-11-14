@@ -1,5 +1,7 @@
 package com.example.planer;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -9,6 +11,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.planer.data.CountryDriver;
+import com.example.planer.favourite.FavouriteCallbackListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -29,20 +33,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity implements FavouriteCallbackListener {
     public static String CURRENT_USER_UUID_KEY = "current_user_uuid";
     public static final String TAG = "ActivityMain";
 
     private FirebaseUser currentUser;
     private FirebaseFirestore db;
 
-    public String homeCountry;
-    private String country;
+    private TextView passportHeld;
+    private Spinner destinationCountriesList;
+    private Button searchBtn;
+    private Button favoriteBtn;
+    private Button profileBtn;
+    private Button addToFavBtn;
 
-    Button searchBtn;
-    Button favoriteBtn;
-    Button profileBtn;
-    Button addToFavBtn;
+    private String homeCountry;
+    private String destinationCountry;
+    private ArrayList<String> countries;
+    private boolean isFavourite = false;
+    private int hiddenCountryIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +61,14 @@ public class SearchActivity extends AppCompatActivity {
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         db = FirebaseFirestore.getInstance();
 
+        passportHeld = findViewById(R.id.home_value);
+        destinationCountriesList = findViewById(R.id.spinner_country);
         addToFavBtn = findViewById(R.id.button_fav);
         addToFavBtn.setOnClickListener(v -> toggleFavourite());
 
+        countries = CountryDriver.readCountries();
         // Load home country from Firestore and set 'Destination Country' spinner
         getUserHomeCountry(db);
-
-
     }
 
     public void getUserHomeCountry(FirebaseFirestore db) {
@@ -68,9 +78,8 @@ public class SearchActivity extends AppCompatActivity {
                 DocumentSnapshot document = task.getResult();
                 if (document.exists()) {
                     // Update country field using firebase user doc
-                    TextView home_val = findViewById(R.id.home_value);
                     homeCountry = (String) document.get("country");
-                    home_val.setText(homeCountry);
+                    passportHeld.setText(homeCountry);
                     onBindViewToData();
                     Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                 } else {
@@ -83,24 +92,47 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void onBindViewToData() {
-        ArrayList<String> countries = CountryDriver.readCountries();
-        Spinner countrySpinner = findViewById(R.id.spinner_country);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countries);
+        hiddenCountryIndex = countries.indexOf(homeCountry);
+        destinationCountriesList = findViewById(R.id.spinner_country);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, countries) {
+            @Override
+            public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                View country = null;
+                if (position == hiddenCountryIndex) {
+                    TextView hiddenCountry = new TextView(getContext());
+                    hiddenCountry.setVisibility(View.GONE);
+                    hiddenCountry.setHeight(0);
+                    country = hiddenCountry;
+                    country.setVisibility(View.GONE);
+                }
+                else {
+                    country = super.getDropDownView(position, null, parent);
+                }
+                return country;
+            }
+        };
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        countrySpinner.setAdapter(adapter);
+        destinationCountriesList.setAdapter(adapter);
 
-        countrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        destinationCountriesList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                country = adapterView.getItemAtPosition(position).toString();
+                destinationCountry = adapterView.getItemAtPosition(position).toString();
 
                 TextView homeVisa = findViewById(R.id.home_value);
-                String countryPair = homeVisa.getText().toString() + " - " + country;
+                String countryPair;
+                if (!isFavourite) {
+                    homeVisa.setText(homeCountry);
+                    countryPair = homeCountry + " - " + destinationCountry;
+                } else {
+                    countryPair = homeVisa.getText().toString() + " - " + destinationCountry;
+                    isFavourite = false;
+                }
                 checkFavouritePair(countryPair);
 
                 Bundle countryBundle = new Bundle();
                 countryBundle.putString("home", homeCountry);
-                countryBundle.putString("country", country);
+                countryBundle.putString("country", destinationCountry);
 
                 Fragment searchFragment = new SearchFragment();
                 searchFragment.setArguments(countryBundle);
@@ -159,7 +191,6 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
-
     public void buttonFocusedEffect(View button) {
         Resources.Theme theme = getTheme();
         if (button.equals(searchBtn)) {
@@ -186,7 +217,7 @@ public class SearchActivity extends AppCompatActivity {
         TextView homeVisa = findViewById(R.id.home_value);
         String homeVisaValue = homeVisa.getText().toString();
 
-        String countryPair = homeVisaValue + " - " + country;
+        String countryPair = homeVisaValue + " - " + destinationCountry;
 
         if (addToFavBtn.getTag().toString().equalsIgnoreCase("false")) {
             addToFavBtn.setTag("true");
@@ -206,10 +237,10 @@ public class SearchActivity extends AppCompatActivity {
         TextView homeVisa = findViewById(R.id.home_value);
         String homeVisaValue = homeVisa.getText().toString();
 
-        String countryPair = homeVisaValue + " - " + country;
-        Map<String, Object> favPair = new HashMap<>();
+        String countryPair = homeVisaValue + " - " + destinationCountry;
+        Map<String, String> favPair = new HashMap<>();
         favPair.put("home", homeVisaValue);
-        favPair.put("destination", country);
+        favPair.put("destination", destinationCountry);
 
         db = FirebaseFirestore.getInstance();
         assert currentUser != null;
@@ -218,12 +249,12 @@ public class SearchActivity extends AppCompatActivity {
                 .update(countryPair, favPair)
                 .addOnSuccessListener(o ->
                         Toast.makeText(this, "Added favourite", Toast.LENGTH_SHORT))
-                .addOnFailureListener(e ->
-                        initializeFavouriteList(countryPair));
+                .addOnFailureListener(e -> Log.e(TAG, e.getMessage()));
     }
 
     /**
      * Delete the country pair from the Firestore on favorite button toggle
+     *
      * @param countryPair a string that contains home - destination countries
      */
     private void deleteFavouritePair(String countryPair) {
@@ -234,50 +265,32 @@ public class SearchActivity extends AppCompatActivity {
                 .update(countryPair, FieldValue.delete())
                 .addOnSuccessListener(o ->
                         Toast.makeText(this, "Deleted from favourite", Toast.LENGTH_SHORT))
-                .addOnFailureListener(e ->
-                        initializeFavouriteList(countryPair));
+                .addOnFailureListener(e -> Log.e(TAG, e.getMessage()));
     }
 
     /**
      * Check if the country pair exists in the favourite collection on Firestore
+     *
      * @param countryPair a string that contains home - destination countries
      */
-    private void checkFavouritePair(String countryPair){
-//        db = FirebaseFirestore.getInstance();
-//
-//        db.collection("favourite")
-//                .document(currentUser.getUid())
-//                .get()
-//                .addOnCompleteListener(task -> {
-//                    Map<String, Object> favPair = task.getResult().getData();
-//                    if(favPair.containsKey(countryPair)){
-//                        addToFavBtn.setTag(R.string.fav_true);
-//                        addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_filled);
-//                    } else {
-//                        addToFavBtn.setTag(R.string.fav_false);
-//                        addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_bordered);
-//                    }
-//                })
-//                .addOnSuccessListener(o -> System.out.println("pair checked success"))
-//                .addOnFailureListener(e -> Log.e(TAG, e.getMessage()));
-    }
-
-    /**
-     * Add an array field named 'list' to user's favourite collection.
-     * Initialize this 'list' with a value.
-     *
-     * @param value a given String
-     */
-    private void initializeFavouriteList(String value) {
-        HashMap<String, Object> docData = new HashMap<>();
-        ArrayList<String> listOfCountries = new ArrayList<>();
-        listOfCountries.add(value);
-
-        docData.put("list", listOfCountries);
+    private void checkFavouritePair(String countryPair) {
+        db = FirebaseFirestore.getInstance();
 
         db.collection("favourite")
                 .document(currentUser.getUid())
-                .set(docData);
+                .get()
+                .addOnCompleteListener(task -> {
+                    Map<String, Object> favPair = task.getResult().getData();
+                    if (favPair.containsKey(countryPair)) {
+                        addToFavBtn.setTag(R.string.fav_true);
+                        addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_filled);
+                    } else {
+                        addToFavBtn.setTag(R.string.fav_false);
+                        addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_bordered);
+                    }
+                })
+                .addOnSuccessListener(o -> System.out.println("pair checked success"))
+                .addOnFailureListener(e -> Log.e(TAG, e.getMessage()));
     }
 
     /**
@@ -289,5 +302,34 @@ public class SearchActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString(CURRENT_USER_UUID_KEY, currentUser.getUid());
         return bundle;
+    }
+
+    @Override
+    public void updateFavouritePair(String passport, String destination) {
+        passportHeld.setText(passport);
+        int id = countries.indexOf(destination);
+        isFavourite = true;
+        destinationCountriesList.setSelection(id);
+    }
+
+    @Override
+    public void onFavouritePairClick(String countryPair) {
+        db.collection("favourite")
+                .document(currentUser.getUid())
+                .get()
+                // Retrieve all country pairs
+                .addOnCompleteListener(task -> {
+                    searchBtn.callOnClick();
+                    DocumentSnapshot document = task.getResult();
+                    Map<String, Object> favPair = document.getData();
+                    if (favPair == null) return;
+                    favPair.forEach((k, v) -> {
+                        if (k.equals(countryPair)) {
+                            Map<String, String> value = (Map<String, String>) v;
+                            updateFavouritePair(value.get("home"), value.get("destination"));
+                        }
+                    });
+                })
+                .addOnFailureListener(e -> Log.e(TAG, e.getMessage()));
     }
 }

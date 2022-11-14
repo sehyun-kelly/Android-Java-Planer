@@ -76,11 +76,7 @@ public class SearchFragment extends Fragment implements Runnable {
             db = FirebaseFirestore.getInstance();
             homeCountry = getArguments().getString("home");
             countrySelected = getArguments().getString("country");
-            System.out.println(countrySelected);
-            updateVisaCard();
-            updateDataFromCountries();
-            updateWeather();
-            updateCurrency();
+            System.out.println("search : " + countrySelected);
             run();
         }
     }
@@ -326,6 +322,11 @@ public class SearchFragment extends Fragment implements Runnable {
             @Override
             public void run() {
                 synchronized (this) {
+                    updateVisaCard();
+                    updateDataFromCountries();
+                    updateWeather();
+                    updateCurrency();
+
                     while (lock != NUMBER_OF_CONDITIONS) {
                         // do nothing
                     }
