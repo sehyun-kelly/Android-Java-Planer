@@ -19,10 +19,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.example.planer.currecnyconverter.CurrencyConverter;
 import com.example.planer.ranking.CovidRestriction;
 import com.example.planer.ranking.RecommendationLevel;
 import com.example.planer.ranking.Visa;
 import com.example.planer.ranking.WeatherCondition;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -45,6 +47,7 @@ public class SearchFragment extends Fragment implements Runnable {
     private TextView visaInfoText;
     private TextView advisory;
     private ImageView riskLevelIcon;
+    private TextView rate;
 
     private String visaContent;
     private String advisoryContent;
@@ -58,6 +61,9 @@ public class SearchFragment extends Fragment implements Runnable {
     private TextView conditions;
     private ImageView conditionsIcon;
     private TextView temperature;
+
+    // Currecny Converter
+    private CurrencyConverter cC =  new CurrencyConverter();
 
     public SearchFragment() {
         super(R.layout.fragment_search);
@@ -82,16 +88,16 @@ public class SearchFragment extends Fragment implements Runnable {
 
         // OnClickListeners to switch to new activities when clicking cards (Visa, Covid, Weather)
         CardView visa = requireView().findViewById(R.id.visaCard);
-        visa.setOnClickListener(this::gotoVisa);
+        visa.findViewById(R.id.visa).setOnClickListener(v -> goToVisa());
 
         CardView travelRestrictions = requireView().findViewById(R.id.travelRestrictionsCard);
-        travelRestrictions.setOnClickListener(this::gotoRestrictions);
+        travelRestrictions.setOnClickListener(v -> goToRestrictions());
 
         CardView weather = requireView().findViewById(R.id.weatherCard);
-        weather.setOnClickListener(this::gotoWeather);
+        weather.setOnClickListener(v -> goToWeather());
 
         CardView currency = requireView().findViewById(R.id.currencyCard);
-        currency.setOnClickListener(this::gotoCurrency);
+        currency.setOnClickListener(v -> goToCurrency());
 
         score = view.findViewById(R.id.score);
         scoreCard = view.findViewById(R.id.score_card);
@@ -99,6 +105,7 @@ public class SearchFragment extends Fragment implements Runnable {
         visaInfoText = view.findViewById(R.id.visaInfo);
         advisory = view.findViewById(R.id.restrictionCovidDetail);
         riskLevelIcon = view.findViewById(R.id.imageView);
+        rate = view.findViewById(R.id.currencyBlank);
         weatherCity = view.findViewById(R.id.currentWeather);
         conditions = view.findViewById(R.id.conditions);
         conditionsIcon = view.findViewById(R.id.conditionsIcon);
@@ -207,8 +214,21 @@ public class SearchFragment extends Fragment implements Runnable {
                 });
     }
 
+    private void updateCurrency() {
+        if (homeCountry != null || countrySelected != null) {
+            cC.setHome(homeCountry);
+            cC.setDestination(countrySelected);
 
-    public void gotoWeather(View view) {
+            Log.d("Android", "HOME AND DEST: " + cC.getHome() + " " + cC.getDestination());
+
+            cC.updateRate(getContext(), () -> {
+                rate.setText(cC.toString());
+            });
+        }
+
+    }
+
+    public void goToWeather() {
         Bundle bundle = new Bundle();
         bundle.putString("city", capital);
         bundle.putString("country", countrySelected);
@@ -217,17 +237,24 @@ public class SearchFragment extends Fragment implements Runnable {
         startActivity(intent);
     }
 
-    public void gotoCurrency(View view) {
+    public void goToCurrency() {
         Intent intent = new Intent(getActivity(), CurrencyConverterActivity.class);
+        intent.putExtra("home", homeCountry);
+        intent.putExtra("destination", countrySelected);
         startActivity(intent);
     }
 
-    public void gotoVisa(View view) {
-        Intent intent = new Intent(getActivity(), VisaActivity.class);
-        startActivity(intent);
+    public void goToVisa() {
+        BottomSheetDialog dialog = new BottomSheetDialog(requireContext(), R.style.SheetDialog);
+        dialog.setContentView(R.layout.layout_bottom_sheet);
+        TextView dialogHeader = dialog.findViewById(R.id.title);
+        TextView dialogContent = dialog.findViewById(R.id.content);
+        dialogHeader.setText(R.string.visa_description_title);
+        dialogContent.setText(R.string.visa_description_content);
+        dialog.show();
     }
 
-    public void gotoRestrictions(View view) {
+    public void goToRestrictions() {
         Intent intent = new Intent(getActivity(), TravelRestrictionsActivity.class);
         startActivity(intent);
     }
@@ -304,6 +331,7 @@ public class SearchFragment extends Fragment implements Runnable {
                     updateVisaCard();
                     updateDataFromCountries();
                     updateWeather();
+                    updateCurrency();
 
                     while (lock != NUMBER_OF_CONDITIONS) {
                         // do nothing

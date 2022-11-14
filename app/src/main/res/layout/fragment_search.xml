@@ -91,6 +91,7 @@
 
                 <TextView
                     android:id="@+id/visa"
+                    android:drawableEnd="@drawable/ic_baseline_help_outline_24"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/visa"
@@ -267,6 +268,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginTop="5dp"
+                    android:text="@string/loading"
+                    android:textSize="30sp"
                     android:background="@drawable/corner_rounded" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
