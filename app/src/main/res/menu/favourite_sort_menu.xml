@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/from_a_to_z"
+        android:title="@string/from_a_to_z"/>
+    <item android:id="@+id/from_z_to_a"
+        android:title="@string/from_z_to_a"/>
+</menu>

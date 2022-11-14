@@ -57,6 +57,7 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        getSupportActionBar().setTitle("Search");
 
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         db = FirebaseFirestore.getInstance();
@@ -160,6 +161,7 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
         fragmentTransaction.commit();
 
         searchBtn.setOnClickListener(v -> {
+            getSupportActionBar().setTitle("Search");
             Fragment fragment = fragmentManager.findFragmentByTag("currentFragment");
             if (fragment != null) {
                 fragmentManager.beginTransaction()
@@ -171,6 +173,7 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
         });
 
         favoriteBtn.setOnClickListener(v -> {
+            getSupportActionBar().setTitle("Favourite");
             Fragment favoriteFragment = new FavouriteFragment();
             favoriteFragment.setArguments(getUserInfo());
             fragmentManager.beginTransaction()
@@ -182,6 +185,7 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
         });
 
         profileBtn.setOnClickListener(v -> {
+            getSupportActionBar().setTitle("Profile");
             fragmentManager.beginTransaction()
                     .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
                     .replace(R.id.page_fragment, new ProfileFragment(), "currentFragment")

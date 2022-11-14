@@ -78,4 +78,10 @@
         available. When not available (for example, in some EU countries days are not limited),
         \'visa free\' is shown.\n\nSource:
         <a href="https://www.passportindex.org">https://www.passportindex.org</a>.</string>
+
+    <!-- Used in Favourite Fragment -->
+    <string name="sort_method">Sort method</string>
+    <string name="from_a_to_z">From A to Z</string>
+    <string name="from_z_to_a">From Z to A</string>
+
 </resources>
