@@ -24,6 +24,7 @@ import com.example.planer.ranking.CovidRestriction;
 import com.example.planer.ranking.RecommendationLevel;
 import com.example.planer.ranking.Visa;
 import com.example.planer.ranking.WeatherCondition;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -87,16 +88,16 @@ public class SearchFragment extends Fragment implements Runnable {
 
         // OnClickListeners to switch to new activities when clicking cards (Visa, Covid, Weather)
         CardView visa = requireView().findViewById(R.id.visaCard);
-        visa.setOnClickListener(this::gotoVisa);
+        visa.findViewById(R.id.visa).setOnClickListener(v -> goToVisa());
 
         CardView travelRestrictions = requireView().findViewById(R.id.travelRestrictionsCard);
-        travelRestrictions.setOnClickListener(this::gotoRestrictions);
+        travelRestrictions.setOnClickListener(v -> goToRestrictions());
 
         CardView weather = requireView().findViewById(R.id.weatherCard);
-        weather.setOnClickListener(this::gotoWeather);
+        weather.setOnClickListener(v -> goToWeather());
 
         CardView currency = requireView().findViewById(R.id.currencyCard);
-        currency.setOnClickListener(this::gotoCurrency);
+        currency.setOnClickListener(v -> goToCurrency());
 
         score = view.findViewById(R.id.score);
         scoreCard = view.findViewById(R.id.score_card);
@@ -227,7 +228,7 @@ public class SearchFragment extends Fragment implements Runnable {
 
     }
 
-    public void gotoWeather(View view) {
+    public void goToWeather() {
         Bundle bundle = new Bundle();
         bundle.putString("city", capital);
         bundle.putString("country", countrySelected);
@@ -236,19 +237,24 @@ public class SearchFragment extends Fragment implements Runnable {
         startActivity(intent);
     }
 
-    public void gotoCurrency(View view) {
+    public void goToCurrency() {
         Intent intent = new Intent(getActivity(), CurrencyConverterActivity.class);
         intent.putExtra("home", homeCountry);
         intent.putExtra("destination", countrySelected);
         startActivity(intent);
     }
 
-    public void gotoVisa(View view) {
-        Intent intent = new Intent(getActivity(), VisaActivity.class);
-        startActivity(intent);
+    public void goToVisa() {
+        BottomSheetDialog dialog = new BottomSheetDialog(requireContext(), R.style.SheetDialog);
+        dialog.setContentView(R.layout.layout_bottom_sheet);
+        TextView dialogHeader = dialog.findViewById(R.id.title);
+        TextView dialogContent = dialog.findViewById(R.id.content);
+        dialogHeader.setText(R.string.visa_description_title);
+        dialogContent.setText(R.string.visa_description_content);
+        dialog.show();
     }
 
-    public void gotoRestrictions(View view) {
+    public void goToRestrictions() {
         Intent intent = new Intent(getActivity(), TravelRestrictionsActivity.class);
         startActivity(intent);
     }
