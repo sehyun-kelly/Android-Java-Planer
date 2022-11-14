@@ -41,7 +41,7 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
     private FirebaseFirestore db;
 
     private TextView passportHeld;
-    private Spinner destinationCountriesList;
+    private Spinner destinationCountrySpinner;
     private Button searchBtn;
     private Button favoriteBtn;
     private Button profileBtn;
@@ -63,7 +63,7 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
         db = FirebaseFirestore.getInstance();
 
         passportHeld = findViewById(R.id.home_value);
-        destinationCountriesList = findViewById(R.id.spinner_country);
+        destinationCountrySpinner = findViewById(R.id.spinner_country);
         addToFavBtn = findViewById(R.id.button_fav);
         addToFavBtn.setOnClickListener(v -> toggleFavourite());
 
@@ -94,7 +94,7 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
 
     private void onBindViewToData() {
         hiddenCountryIndex = countries.indexOf(homeCountry);
-        destinationCountriesList = findViewById(R.id.spinner_country);
+        destinationCountrySpinner = findViewById(R.id.spinner_country);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, countries) {
             @Override
             public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -113,27 +113,30 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
             }
         };
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        destinationCountriesList.setAdapter(adapter);
+        destinationCountrySpinner.setAdapter(adapter);
 
-        destinationCountriesList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        destinationCountrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                destinationCountry = adapterView.getItemAtPosition(position).toString();
+                if (position == hiddenCountryIndex) return;
 
+                destinationCountry = adapterView.getItemAtPosition(position).toString();
                 TextView homeVisa = findViewById(R.id.home_value);
+
                 String countryPair;
+                Bundle countryBundle = new Bundle();
+                countryBundle.putString("country", destinationCountry);
+
                 if (!isFavourite) {
                     homeVisa.setText(homeCountry);
+                    countryBundle.putString("home", homeCountry);
                     countryPair = homeCountry + " - " + destinationCountry;
                 } else {
                     countryPair = homeVisa.getText().toString() + " - " + destinationCountry;
+                    countryBundle.putString("home", homeVisa.getText().toString());
                     isFavourite = false;
                 }
                 checkFavouritePair(countryPair);
-
-                Bundle countryBundle = new Bundle();
-                countryBundle.putString("home", homeCountry);
-                countryBundle.putString("country", destinationCountry);
 
                 Fragment searchFragment = new SearchFragment();
                 searchFragment.setArguments(countryBundle);
@@ -313,7 +316,12 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
         passportHeld.setText(passport);
         int id = countries.indexOf(destination);
         isFavourite = true;
-        destinationCountriesList.setSelection(id);
+
+        // Reset destination country to an invalid value.
+        // Have to do this before setting the real value or else
+        // it's not updating (when the destination is the same).
+        destinationCountrySpinner.setSelection(countries.indexOf(homeCountry), true);
+        destinationCountrySpinner.setSelection(id);
     }
 
     @Override
