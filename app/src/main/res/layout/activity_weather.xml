@@ -71,9 +71,9 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/weather_graphic"
         android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@id/temperature"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/getWeatherBtn"
-        app:layout_constraintEnd_toStartOf="@id/temperature"
         app:srcCompat="@drawable/weather1" />
 
     <TextView
@@ -84,8 +84,8 @@
         android:text="@string/zero"
         android:textAlignment="viewStart"
         android:textSize="50sp"
-        app:layout_constraintStart_toEndOf="@+id/icon"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/icon"
         app:layout_constraintTop_toBottomOf="@+id/getWeatherBtn" />
 
 
