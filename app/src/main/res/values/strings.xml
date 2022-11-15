@@ -72,12 +72,25 @@
     <string name="current_weather">Current Weather</string>
 
     <!-- Used in Search Fragment -->
-    <string name="visa_description_title">Visa information</string>
+    <string name="score_description_title">Scoring</string>
+    <string name="score_description_content">Score are calculated based on visa requirement,
+        current travel restrictions, and current weather conditions.\n\n
+        The system will then give you a color-coded recommendation, which suggests how convenient
+        it is for you to visit this country. Recommendation is divided into 4 levels:\n
+        - <b>Strongly recommended - <font color="green">GREEN</font></b>\nYou can easily go into this country and the weather
+        condition is nice for travelling.\n
+        - <b>Recommended - <font color="blue">BLUE</font></b>\nYou can go into this country and the weather condition is suitable
+        for travelling.\n
+        - <b>Urgency only - <font color="#ff6347">ORANGE</font></b>\nYou shouldn\'t go to this country unless necessary because of
+        restrictions or bad weather.\n
+        - <b>Not recommended - <font color="grey">GREY</font></b>\nYou shouldn\'t go to this country because of strict restrictions
+        or bad weather.</string>
+    <string name="visa_description_title">Visa</string>
     <string name="visa_description_content">Shows the type of visa you need when visiting this
         country.\n\nFor visa-free regimes, the number of visa-free days is specified whenever
         available. When not available (for example, in some EU countries days are not limited),
         \'visa free\' is shown.\n\nSource: https://www.passportindex.org.</string>
-    <string name="airport_description_title">Airport information</string>
+    <string name="airport_description_title">Airport</string>
     <string name="airport_description_content">Shows the biggest airport (in name and code) in
         each country.\n\nSource: https://www.everycountryintheworld.com/airports/</string>
 

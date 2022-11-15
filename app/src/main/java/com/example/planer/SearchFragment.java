@@ -244,6 +244,10 @@ public class SearchFragment extends Fragment implements Runnable {
     public void goToScore() {
         BottomSheetDialog dialog = new BottomSheetDialog(requireContext(), R.style.SheetDialog);
         dialog.setContentView(R.layout.layout_bottom_sheet);
+        TextView dialogHeader = dialog.findViewById(R.id.title);
+        TextView dialogContent = dialog.findViewById(R.id.content);
+        dialogHeader.setText(R.string.score_description_title);
+        dialogContent.setText(R.string.score_description_content);
         dialog.show();
     }
 
