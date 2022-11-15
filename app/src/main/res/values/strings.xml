@@ -77,6 +77,9 @@
         country.\n\nFor visa-free regimes, the number of visa-free days is specified whenever
         available. When not available (for example, in some EU countries days are not limited),
         \'visa free\' is shown.\n\nSource: https://www.passportindex.org.</string>
+    <string name="airport_description_title">Airport information</string>
+    <string name="airport_description_content">Shows the biggest airport (in name and code) in
+        each country.\n\nSource: https://www.everycountryintheworld.com/airports/</string>
 
     <!-- Used in Favourite Fragment -->
     <string name="sort_method">Sort method</string>
