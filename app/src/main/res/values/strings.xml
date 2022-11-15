@@ -73,7 +73,7 @@
 
     <!-- Used in Search Fragment -->
     <string name="score_description_title">Scoring</string>
-    <string name="score_description_content">Score are calculated based on visa requirement,
+    <string name="score_description_content">Score is calculated based on visa requirement,
         current travel restrictions, and current weather conditions.\n\n
         The system will then give you a color-coded recommendation, which suggests how convenient
         it is for you to visit this country. Recommendation is divided into 4 levels:\n
