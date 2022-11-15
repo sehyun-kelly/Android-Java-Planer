@@ -1,0 +1,709 @@
+Afghanistan,https://www.gov.uk/foreign-travel-advice/afghanistan
+Afghanistan,https://af.usembassy.gov/covid-19-information/
+Afghanistan,https://moph.gov.af/en/all-news
+Albania,https://www.gov.uk/foreign-travel-advice/albania
+Albania,https://al.usembassy.gov/updates_covid19/
+Albania,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Albania,https://infocoronavirus2019.al/
+Algeria,https://www.gov.uk/foreign-travel-advice/algeria
+Algeria,https://dz.usembassy.gov/covid-19-information/
+Algeria,http://covid19.cipalgerie.com/en/
+Andorra,https://www.gov.uk/foreign-travel-advice/andorra
+Andorra,https://al.usembassy.gov/updates_covid19/
+Angola,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Angola,https://ao.usembassy.gov/covid-19-information/
+Angola,https://www.gov.uk/foreign-travel-advice/angola
+Angola,https://governo.gov.ao/ao/
+Antigua and Barbuda,https://www.gov.uk/foreign-travel-advice/antigua-and-barbuda
+Antigua and Barbuda,https://bb.usembassy.gov/covid-19-information/
+Antigua and Barbuda,https://ab.gov.ag/detail_page.php?page=42
+Argentina,https://ar.usembassy.gov/covid-19/
+Argentina,https://www.gov.uk/foreign-travel-advice/argentina
+Argentina,https://www.argentina.gob.ar/coronavirus/preguntasfrecuentes
+Armenia,https://www.gov.uk/foreign-travel-advice/armenia
+Armenia,https://www.osac.gov/Content/Report/8758856f-821d-41c5-b360-18d5acf392aa
+Armenia,https://am.usembassy.gov/u-s-citizen-services/covid-19-information/
+Armenia,https://www.gov.am/en/covid-travel-restrictions/
+Australia,https://covid19.homeaffairs.gov.au/frequently-asked-questions
+Australia,https://au.usembassy.gov/covid-19-information/
+Australia,https://www.gov.uk/foreign-travel-advice/australia
+Australia,https://www.australia.gov.au/
+Austria,https://at.usembassy.gov/covid-19-information-february-25-2020/
+Austria,https://www.gov.uk/foreign-travel-advice/austria
+Austria,https://reopen.europa.eu/en/map/AUT
+Austria,https://www.austria.org/coronavirus/
+Azerbaijan,https://www.gov.uk/foreign-travel-advice/azerbaijan
+Azerbaijan,https://az.usembassy.gov/covid-19-information-for-azerbaijan/
+Bahamas,https://www.gov.uk/foreign-travel-advice/bahamas
+Bahamas,https://www.osac.gov/Content/Report/a06ac56a-c28c-4061-9642-18631b272680
+Bahamas,https://travel.gov.bs/
+Bahrain,https://www.gov.uk/foreign-travel-advice/bahrain
+Bahrain,https://bh.usembassy.gov/covid-19-information/
+Bahrain,https://www.covidchecker.com/en/
+Bahrain,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Bahrain,https://www.moh.gov.bh/?lang=en
+Bangladesh,https://www.gov.uk/foreign-travel-advice/bangladesh
+Bangladesh,https://bd.usembassy.gov/covid-19-information/
+Bangladesh,https://corona.gov.bd/
+Barbados,https://www.gov.uk/foreign-travel-advice/barbados
+Barbados,https://bb.usembassy.gov/covid-19-information/
+Barbados,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Belarus,https://www.gov.uk/foreign-travel-advice/belarus
+Belarus,https://be.usembassy.gov/covid-19-information/
+Belgium,https://www.gov.uk/foreign-travel-advice/belgium
+Belgium,https://be.usembassy.gov/covid-19-information/
+Belgium,https://reopen.europa.eu/en/map/BEL
+Belize,https://www.gov.uk/foreign-travel-advice/belize
+Belize,https://bz.usembassy.gov/covid-19-information/
+Belize,https://www.covidchecker.com/en/
+Benin,https://www.gov.uk/foreign-travel-advice/benin
+Benin,https://www.osac.gov/Content/Report/7911f78a-0f13-4fb8-926a-184937101eac
+Benin,https://bj.usembassy.gov/info-covid19/
+Benin,https://www.gouv.bj/coronavirus/
+Bhutan,https://in.usembassy.gov/covid-19-information/
+Bhutan,https://www.gov.bt/covid19/
+Bolivia,https://www.gov.uk/foreign-travel-advice/bolivia
+Bolivia,https://bo.usembassy.gov/covid-19-information/
+Bolivia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Bolivia,https://www.minsalud.gob.bo/
+Bosnia and Herzegovina,https://www.osac.gov/Content/Report/e70c4ff6-e856-4717-aaa5-18e9a1c9976d
+Bosnia and Herzegovina,https://www.gov.uk/foreign-travel-advice/bosnia-and-herzegovina
+Bosnia and Herzegovina,https://ba.usembassy.gov/covid-19-information/
+Bosnia and Herzegovina,http://www.granpol.gov.ba/?lang=en
+Botswana,https://www.osac.gov/Content/Report/291d48ea-be4d-4f25-b5b5-18f1a52770b4
+Botswana,https://www.gov.uk/foreign-travel-advice/botswana
+Botswana,https://bw.usembassy.gov/covid-19-information/
+Botswana,https://www.gov.bw/
+Brazil,https://br.usembassy.gov/covid-19-information/
+Brazil,https://coronavirus.saude.gov.br/
+Brunei,https://www.gov.uk/foreign-travel-advice/brunei
+Brunei,https://bn.usembassy.gov/u-s-citizen-services-covid-19-information/
+Brunei,http://www.moh.gov.bn/SitePages/COVID-19.aspx
+Bulgaria,https://www.osac.gov/Content/Report/3d8bc487-eedc-4b7a-bf2d-18d3b92cb327
+Bulgaria,https://www.gov.uk/foreign-travel-advice/bulgaria
+Bulgaria,https://bg.usembassy.gov/novel-coronavirus-covid-19-information/
+Bulgaria,https://reopen.europa.eu/en/map/BGR
+Bulgaria,https://coronavirus.bg/
+Burkina Faso,https://www.gov.uk/foreign-travel-advice/burkina-faso
+Burkina Faso,https://bf.usembassy.gov/u-s-citizen-services/covid-19-information/
+Burkina Faso,https://www.osac.gov/Content/Report/9d60a68b-f341-4a73-b79c-18d72fd52348
+Burkina Faso,https://www.covidchecker.com/en/
+Burkina Faso,https://www.sante.gov.bf/accueil
+Burundi,https://www.gov.uk/foreign-travel-advice/burundi/entry-requirements
+Burundi,https://bi.usembassy.gov/embassy/
+Burundi,http://minisante.bi/
+Cambodia,https://www.gov.uk/foreign-travel-advice/cambodia
+Cambodia,https://kh.usembassy.gov/covid-19-information/
+Cambodia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Cambodia,http://moh.gov.kh/?lang=en
+Cameroon,https://www.gov.uk/foreign-travel-advice/cameroon
+Cameroon,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Cameroon,https://cm.usembassy.gov/health-alert-u-s-embassy-yaounde/
+Cameroon,http://covid19.minsante.cm/
+Canada,https://www.osac.gov/Content/Report/7e7d5729-00b1-4154-b268-18fffa3bd562
+Canada,https://www.gov.uk/foreign-travel-advice/canada/staying-during-coronavirus
+Central African Republic,https://www.gov.uk/foreign-travel-advice/central-african-republic
+Central African Republic,https://cf.usembassy.gov/covid-19-information/
+Chad,https://sante-tchad.org/
+Chad,https://www.osac.gov/Content/Report/1c6630e9-150e-4c67-997e-18387db7883a
+Chad,https://www.gov.uk/foreign-travel-advice/chad/staying-during-coronavirus
+Chad,https://td.usembassy.gov/covid-19-information/
+Chile,https://www.osac.gov/Content/Report/711d9a25-ed17-46fa-9f2b-18db6ceda365
+Chile,https://www.gov.uk/foreign-travel-advice/chile
+Chile,https://cl.usembassy.gov/covid-19-information/
+Chile,https://chile.gob.cl/chile/en/medidas-de-prevencion-ante-el-nuevo-coronavirus
+Chile,https://www.gob.cl/coronavirus/
+China,https://www.gov.uk/foreign-travel-advice/china
+China,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+China,https://china.usembassy-china.org.cn/covid-19-information/
+China,http://en.nhc.gov.cn/
+Colombia,https://www.gov.uk/foreign-travel-advice/colombia
+Colombia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Colombia,https://co.usembassy.gov/covid-19-information/
+Colombia,https://www.minsalud.gov.co/portada-covid-19.html
+Colombia,https://www.gov.uk/foreign-travel-advice/comoros
+Colombia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Colombia,https://mg.usembassy.gov/u-s-citizen-services/security-and-travel-information/covid-19-information/
+Colombia,https://stopcoronavirus.km/
+Congo,https://cg.usembassy.gov/covid-19-information/
+Congo,https://www.gov.uk/foreign-travel-advice/congo
+Congo,https://www.osac.gov/Content/Report/efd9ddd4-8644-4c4c-a5d8-19004a09e5ef
+Congo,https://www.osac.gov/Content/Report/efd9ddd4-8644-4c4c-a5d8-19004a09e5ef
+Congo,http://www.sante.gouv.cg/
+Costa Rica,https://www.gov.uk/foreign-travel-advice/costa-rica
+Costa Rica,https://www.osac.gov/Content/Report/41a6a45-2594-42af-aca6-19004cf1073e
+Costa Rica,https://cr.usembassy.gov/covid-19-information/
+Costa Rica,https://www.covidchecker.com/en/
+Costa Rica,https://www.visitcostarica.com/en/costa-rica/planning-your-trip/entry-requirements
+Croatia,https://www.gov.uk/foreign-travel-advice/croatia/entry-requirements
+Croatia,https://hr.usembassy.gov/covid-19-information-2/
+Croatia, https://reopen.europa.eu/en/map/HRV
+Croatia,https://www.koronavirus.hr/
+Cuba,https://cu.usembassy.gov/covid-19-information/
+Cuba,https://www.gov.uk/foreign-travel-advice/cuba
+Cuba,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Cuba,https://salud.msp.gob.cu/#
+Cyprus,https://www.gov.uk/foreign-travel-advice/cyprus
+Cyprus,https://cy.usembassy.gov/covid-19-information/
+Cyprus,https://www.osac.gov/Content/Report/26a87239-cdf4-493c-989f-18d7340ef965
+Cyprus,https://reopen.europa.eu/en/map/CYP
+Cyprus,http://www.cyprus.gov.cy/portal/portal.nsf/citizen_en?OpenForm&access=0&SectionId=citizen&CategoryId=none&SelectionId=home&print=0&lang=en
+Czech Republic,https://cz.usembassy.gov/covid-19-information/
+Czech Republic,https://www.gov.uk/foreign-travel-advice/czech-republic
+Czech Republic,https://reopen.europa.eu/en/map/CZE
+North Korea,https://www.gov.uk/foreign-travel-advice/north-korea
+North Korea,https://www.kayak.com/travel-restrictions#north-korea
+Denmark,https://www.gov.uk/foreign-travel-advice/denmark
+Denmark,https://dk.usembassy.gov/u-s-citizen-services/security-and-travel-information/covid-19-information/
+Denmark,https://www.osac.gov/Content/Report/9d48bef5-7259-438c-ba2d-190464f5bc61
+Denmark,https://reopen.europa.eu/en/map/DNK
+Denmark,https://politi.dk/en/travel
+Djibouti,https://dj.usembassy.gov/covid-19-information-26-march-2020/
+Djibouti,https://www.osac.gov/Content/Report/afff3e75-13cd-4a8f-be9d-18942a94479e
+Djibouti,https://www.gov.uk/foreign-travel-advice/djibouti
+Dominica,https://www.kayak.com/travel-restrictions/
+Dominica,https://www.gov.uk/foreign-travel-advice/dominica
+Dominica,https://bb.usembassy.gov/covid-19-information/
+Dominican Republic,https://www.gov.uk/foreign-travel-advice/dominican-republic
+Dominican Republic,https://do.usembassy.gov/u-s-citizen-services/covid-19-information/
+Dominican Republic,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Dominican Republic,https://coronavirusrd.gob.do/category/noticias/page/2/
+Ecuador,https://www.gov.uk/foreign-travel-advice/ecuador
+Ecuador,https://ec.usembassy.gov/covid-19-information-ecu-2/
+Ecuador,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Ecuador,https://www.salud.gob.ec/coronavirus-covid-19/
+Egypt,https://www.gov.uk/foreign-travel-advice/egypt
+Egypt,https://eg.usembassy.gov/u-s-citizen-services/covid-19-information/
+Egypt,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+El Salvador,https://www.gov.uk/foreign-travel-advice/el-salvador
+El Salvador,https://sv.usembassy.gov/covid-19-information/
+El Salvador,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+El Salvador,https://covid19.gob.sv/
+El Salvador,https://www.covidchecker.com/en/
+Equatorial Guinea,https://www.gov.uk/foreign-travel-advice/equatorial-guinea
+Equatorial Guinea,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Equatorial Guinea,https://gq.usembassy.gov/covid-19-information/
+Equatorial Guinea,https://www.guineaecuatorialpress.com/index.php
+Eritrea,https://www.gov.uk/foreign-travel-advice/eritrea
+Eritrea,https://er.usembassy.gov/covid-19-information/
+Eritrea,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Eritrea,https://shabait.com/2017/10/03/home-away-from-home/
+Estonia,https://reopen.europa.eu/en/map/EST
+Estonia,https://www.gov.uk/foreign-travel-advice/estonia
+Estonia,https://ee.usembassy.gov/covid-19-information/
+Estonia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Estonia,https://www.terviseamet.ee/en/covid19
+Eswatini,https://www.gov.uk/foreign-travel-advice/eswatini
+Eswatini,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Eswatini,https://sz.usembassy.gov/covid-19-information/
+Eswatini,https://twitter.com/EswatiniGovern1
+Ethiopia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Ethiopia,https://www.gov.uk/foreign-travel-advice/ethiopia/entry-requirements
+Ethiopia,https://et.usembassy.gov/covid-19-information/
+Ethiopia,https://twitter.com/FMoHealth/
+Fiji,https://www.fiji.gov.fj/Media-Centre/News
+Fiji,https://www.gov.uk/foreign-travel-advice/fiji
+Fiji,https://fj.usembassy.gov/u-s-citizen-services/covid-19-information/
+Finland,https://www.raja.fi/current_issues/guidelines_for_border_traffic
+Finland,https://fi.usembassy.gov/covid-19-information/
+Finland,https://reopen.europa.eu/en/map/FIN
+Finland,https://thl.fi/en/web/infectious-diseases-and-vaccinations/what-s-new/coronavirus-covid-19-latest-updates
+France,https://www.osac.gov/Content/Report/77718f5d-4182-42cf-986c-18d5170370aa
+France,https://fr.usembassy.gov/covid-19-information/
+France,https://www.gov.uk/foreign-travel-advice/france
+France,https://reopen.europa.eu/en/map/FRA
+France,https://www.gouvernement.fr/info-coronavirus
+Gabon,https://www.gov.uk/foreign-travel-advice/gabon
+Gabon,https://ga.usembassy.gov/covid-19-information/
+Gabon,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Gabon,https://infoscoronavirusgabon.com/
+Gambia,https://www.gov.uk/foreign-travel-advice/the-gambia
+Gambia,https://gm.usembassy.gov/country-specific-coronavirus-information/
+Gambia,https://www.osac.gov/Content/Report/32b12479-5bf5-4224-adf1-190ebb9037cd
+Gambia,http://www.moh.gov.gm/covid-19-report/
+Georgia,https://www.osac.gov/Content/Report/5450d901-e85a-4464-b8d3-18e375372031
+Georgia,https://ge.usembassy.gov/covid-19-information-on-georgia/
+Georgia,https://www.gov.uk/foreign-travel-advice/georgia/entry-requirements
+Georgia,https://stopcov.ge/
+Germany,https://www.auswaertiges-amt.de/en/einreiseundaufenthalt/coronavirus
+Germany,https://www.gov.uk/foreign-travel-advice/germany/staying-during-coronavirus
+Germany,https://de.usembassy.gov/covid-19-information/
+Germany,https://reopen.europa.eu/en/map/DEU
+Germany,https://www.germany.info/us-en/service/covid-19/2321562#:~:text=The%20Federal%20Ministry%20of%20Health,undergo%20a%20Covid%2D19%20test.
+Ghana,https://www.osac.gov/Content/Report/22c4e630-b2cc-462d-b65d-1842fc781262
+Ghana,https://gh.usembassy.gov/ghana-covid-19-information/
+Ghana,https://www.gov.uk/foreign-travel-advice/ghana
+Ghana,http://moi.gov.gh/president-akufo-addo-addresses-nation-on-updates-to-ghanas-enhanced-response-to-the-coronavirus-pandemic/
+Greece,https://www.gov.uk/foreign-travel-advice/greece
+Greece,https://gr.usembassy.gov/covid-19-information/
+Greece,https://reopen.europa.eu/en/map/GRC
+Greece,https://travel.gov.gr/#/
+Grenada,https://www.gov.uk/foreign-travel-advice/grenada/entry-requirements
+Grenada,https://bb.usembassy.gov/covid-information-grenada/
+Grenada,https://www.osac.gov/Content/Report/22c4e630-b2cc-462d-b65d-1842fc781262
+Grenada,https://gov.gd/
+Guatemala,https://www.gov.uk/foreign-travel-advice/guatemala
+Guatemala,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Guatemala,https://gt.usembassy.gov/alert-covid-19/
+Guatemala,https://tablerocovid.mspas.gob.gt/
+Guinea,https://www.osac.gov/Content/Report/43657e78-8bc0-406b-b678-1842fa9a6420
+Guinea,https://www.gov.uk/foreign-travel-advice/guinea
+Guinea,https://gn.usembassy.gov/u-s-citizen-services/
+Guinea,https://anss-guinee.org/
+Guinea-Bissau,https://www.osac.gov/Content/Report/ad35b884-c374-4467-910c-183b06a7468b
+Guinea-Bissau,https://www.gov.uk/foreign-travel-advice/guinea-bissau
+Guinea-Bissau,https://gw.usmission.gov/covid-19-information/
+Guinea-Bissau,https://covid19gb.com/
+Guyana,https://www.gov.uk/foreign-travel-advice/guyana
+Guyana,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Guyana,https://gy.usembassy.gov/covid-19-information/
+Haiti,https://www.kayak.com/travel-restrictions/
+Haiti,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Haiti,https://www.mspp.gouv.ht/
+Honduras,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Honduras,https://www.gov.uk/foreign-travel-advice/honduras
+Honduras,https://hn.usembassy.gov/u-s-citizen-services/covid-19-information/
+Honduras,https://covid19honduras.org/
+Hong Kong,https://www.gov.uk/foreign-travel-advice/hong-kong
+Hong Kong,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Hong Kong,https://hk.usconsulate.gov/covid-19-information/
+Hong Kong,https://www.gov.hk/en/residents/
+Hungary,https://www.gov.uk/foreign-travel-advice/hungary/entry-requirements
+Hungary,https://hu.usembassy.gov/covid-19/
+Hungary,https://reopen.europa.eu/en/map/HUN
+Hungary,https://koronavirus.gov.hu/#/
+Iceland,https://is.usembassy.gov/covid-19-information/
+Iceland,https://reopen.europa.eu/en/map/ISL
+Iceland,https://www.gov.uk/foreign-travel-advice/iceland
+Iceland,https://www.covid.is/english
+India,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+India,https://www.gov.uk/foreign-travel-advice/india
+India,https://in.usembassy.gov/u-s-citizen-services/covid-19-information/
+India,https://www.civilaviation.gov.in/en/
+Indonesia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Indonesia,https://www.gov.uk/foreign-travel-advice/indonesia/staying-during-coronavirus
+Indonesia,https://id.usembassy.gov/u-s-citizen-services/covid-19-information/
+Indonesia,https://www.covid19.go.id/
+iran,https://www.gov.uk/foreign-travel-advice/iran
+iran,https://ir.usembassy.gov/covid-19-information/
+iran,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+iran,https://behdasht.gov.ir/
+Iraq,https://www.kayak.com/travel-restrictions/
+Iraq,https://www.gov.uk/foreign-travel-advice/iraq
+Iraq,https://www.covidchecker.com/en/
+Iraq,https://iq.usembassy.gov/covid-19-information/
+Iraq,https://www.facebook.com/MOH.GOV.IQ
+Ireland,https://www.gov.uk/foreign-travel-advice/ireland
+Ireland,https://ie.usembassy.gov/covid-19-information/
+Ireland,https://reopen.europa.eu/en/map/IRL
+Ireland,https://www.gov.ie/en/news/7e0924-latest-updates-on-covid-19-coronavirus/
+Israel,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Israel,https://www.gov.uk/foreign-travel-advice/israel
+Israel,https://il.usembassy.gov/covid-19-information/
+Israel,https://www.gov.il/en/departments/ministry_of_health
+Italy,https://it.usembassy.gov/covid-19-information/
+Italy,https://www.gov.uk/foreign-travel-advice/italy
+Italy,https://reopen.europa.eu/en/map/ITA
+Italy,https://www.esteri.it/mae/en/ministero/normativaonline/decreto-iorestoacasa-domande-frequenti/focus-cittadini-italiani-in-rientro-dall-estero-e-cittadini-stranieri-in-italia.html
+Jamaica,https://www.gov.uk/foreign-travel-advice/jamaica
+Jamaica,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Jamaica,https://jm.usembassy.gov/covid-19-information-jamaica/
+Jamaica,https://www.moh.gov.jm/
+Japan,https://jp.usembassy.gov/covid-19-information/
+Japan,https://www.gov.uk/foreign-travel-advice/japan/coronavirus
+Japan,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Japan,https://www.mofa.go.jp/ca/fna/page4e_001053.html
+Jordan,https://www.osac.gov/Content/Report/cefb291f-84df-4d66-b1b5-18d7384aa1f4
+Jordan,https://www.gov.uk/foreign-travel-advice/jordan/staying-during-coronavirus
+Jordan,https://jo.usembassy.gov/covid-19-information/
+Jordan,https://corona.moh.gov.jo/en/page/1031/FAQs
+Jordan,https://www.moh.gov.jo/
+Kazakhstan,https://www.gov.uk/foreign-travel-advice/kazakhstan/safety-and-security#local-travel
+Kazakhstan,https://www.osac.gov/Content/Report/28d22011-27ed-4ee9-b8b0-184298f8e0d5
+Kazakhstan,https://kz.usembassy.gov/covid-19-information/
+Kazakhstan,https://www.coronavirus2020.kz/kz
+Kenya,https://www.osac.gov/Content/Report/eb77c55d-fbca-4670-9c2d-18e154a19666/
+Kenya,https://www.gov.uk/foreign-travel-advice/kenya
+Kenya,https://ke.usembassy.gov/covid-19-information/
+Kenya,https://www.health.go.ke/
+Kiribati,https://www.gov.uk/foreign-travel-advice/kiribati
+Kiribati,https://fj.usembassy.gov/u-s-citizen-services/covid-19-information/
+Kosovo,https://www.gov.uk/foreign-travel-advice/kosovo
+Kosovo,https://xk.usembassy.gov/news-events/
+Kuwait,https://www.gov.uk/foreign-travel-advice/kuwait
+Kuwait,https://www.osac.gov/Content/Report/29825692-2888-41b4-8113-190e31ad7290
+Kuwait,https://www.kuna.net.kw/Default.aspx?language=en
+Kyrgyzstan,https://www.covidchecker.com/en/
+Kyrgyzstan,https://kg.usembassy.gov/covid-19-information/
+Kyrgyzstan,https://www.osac.gov/Content/Report/0b188dc8-9621-4fc3-8f2c-18dbba6df20c
+Kyrgyzstan,http://med.kg/en/
+Laos,https://www.gov.uk/foreign-travel-advice/laos
+Laos,https://la.usembassy.gov/covid-19-information/
+Laos,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Laos,http://www.mofa.gov.la/
+Latvia,https://www.gov.uk/foreign-travel-advice/latvia
+Latvia,https://lv.usembassy.gov/covid-19-information/
+Latvia,https://reopen.europa.eu/en/map/LVA
+Latvia,https://www.mfa.gov.lv/en/
+Lebanon,https://www.gov.uk/foreign-travel-advice/lebanon
+Lebanon,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Lebanon,https://lb.usembassy.gov/covid-19-information/
+Lebanon,https://www.moph.gov.lb/en
+Lesotho,https://www.gov.uk/foreign-travel-advice/lesotho/health#coronavirus
+Lesotho,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Lesotho,https://ls.usembassy.gov/lesotho-country-specific-information-on-coronavirus-worldwide-outbreak/
+Lesotho,https://www.gov.ls/ministry-of-health/
+Liberia,https://www.osac.gov/Content/Report/051c92cd-f8fd-4b6e-ad7f-18e3e886d763
+Liberia,https://www.gov.uk/foreign-travel-advice/liberia
+Liberia,https://lr.usembassy.gov/covid-19-information/
+Liberia,http://moh.gov.lr/
+Libya,https://www.kayak.com/travel-restrictions/
+Libya,https://www.gov.uk/foreign-travel-advice/libya
+Libya,https://ly.usembassy.gov/embassy/
+Libya,https://covid19.ly/
+Liechtenstein,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Liechtenstein,https://www.gov.uk/foreign-travel-advice/liechtenstein/health#coronavirus
+Liechtenstein,https://ch.usembassy.gov/covid-19-info/
+Lithuania,lt.usembassy.gov/covid-19-information/
+Lithuania,https://reopen.europa.eu/en/map/LTU
+Lithuania,https://www.gov.uk/foreign-travel-advice/lithuania/entry-requirements
+Lithuania,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Lithuania,https://koronastop.lrv.lt/en
+Luxembourg,https://lu.usembassy.gov/covid-19-information/
+Luxembourg,https://reopen.europa.eu/en/map/LUX
+Luxembourg,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Luxembourg,https://msan.gouvernement.lu/en/dossiers/2020/corona-virus.html
+Macao,https://www.gov.uk/foreign-travel-advice/macao
+Macao,https://hk.usconsulate.gov/covid-19-information/
+Macao,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Macao,https://www.gov.mo/en/entity-page/entity-552/
+Madagascar,https://www.kayak.com/travel-restrictions/
+Madagascar,https://www.gov.uk/foreign-travel-advice/madagascar
+Madagascar,https://mg.usembassy.gov/u-s-citizen-services/security-and-travel-information/covid-19-information/
+Malawi,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Malawi,https://mw.usembassy.gov/covid-19-information/
+Malawi,https://www.gov.uk/foreign-travel-advice/malawi
+Malawi,https://www.health.gov.mw/
+Malaysia,https://www.gov.uk/foreign-travel-advice/malaysia
+Malaysia,https://my.usembassy.gov/u-s-citizen-services/covid-19-information/
+Malaysia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Malaysia,https://www.malaysia.gov.my/portal/index
+Maldives,https://mv.usmission.gov/covid-19-information/
+Maldives,https://www.gov.uk/foreign-travel-advice/maldives/staying-during-coronavirus
+Maldives,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Maldives,https://covid19.health.gov.mv/en/
+Mali,https://www.osac.gov/Content/Report/06d3ac5f-8cc7-4d5c-a986-18d92ab7e7ef
+Mali,https://ml.usembassy.gov/covid-19-information/
+Mali,https://www.gov.uk/foreign-travel-advice/mali
+Mali,http://www.sante.gov.ml/
+Malta,https://reopen.europa.eu/en/map/MLT
+Malta,https://www.gov.uk/foreign-travel-advice/malta
+Malta,https://mt.usembassy.gov/covid-19-information/
+Marshall Islands,https://mh.usembassy.gov/covid-19-information/
+Marshall Islands,https://www.gov.uk/foreign-travel-advice/marshall-islands/return-to-the-uk
+Marshall Islands,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Mauritania,https://www.gov.uk/foreign-travel-advice/mauritania
+Mauritania,https://mr.usembassy.gov/covid-19-information/
+Mauritania,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Mauritania,http://www.sante.gov.mr/
+Mauritius,https://www.gov.uk/foreign-travel-advice
+Mauritius,https://www.osac.gov/Content/Report/ccebe4a9-43c3-4aba-b86d-18d9259a3a75
+Mauritius,https://mu.usembassy.gov/covid-19-information/
+Mauritius,https://covid19.mu/
+Mexico,https://www.gov.uk/foreign-travel-advice/mexico
+Mexico,https://mx.usembassy.gov/covid-19-information/
+Mexico,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Micronesia,https://www.gov.uk/foreign-travel-advice/micronesia
+Micronesia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Micronesia,https://fm.usembassy.gov/covid-19-information/
+Monaco,https://www.gouv.mc/A-la-Une-du-Portail/CORONAVIRUS-Bilan-du-week-end-en-Principaute-de-Monaco
+Monaco,https://www.gov.uk/foreign-travel-advice/monaco
+Mongolia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Mongolia,https://mn.usembassy.gov/covid-19-information/
+Mongolia,https://www.gov.uk/foreign-travel-advice/mongolia/staying-during-coronavirus
+Mongolia,https://covid19.mohs.mn/
+Montenegro,https://www.gov.uk/foreign-travel-advice/montenegro/coronavirus
+Montenegro,http://www.gov.me/en/homepage/measures_and_recommendations/
+Montenegro,https://me.usembassy.gov/covid-19-information/
+Morocco,https://www.gov.uk/foreign-travel-advice/morocco
+Morocco,https://www.osac.gov/Content/Report/677054e5-7284-4630-9673-183851a95bd9
+Morocco,https://ma.usembassy.gov/25161/
+Morocco,http://sante.gov.ma/
+Mozambique,https://mz.usembassy.gov/covid-19-information/
+Mozambique,https://www.gov.uk/foreign-travel-advice/mozambique/staying-during-coronavirus
+Mozambique,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Mozambique,https://covid19.ins.gov.mz/
+Myanmar,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Myanmar,https://www.gov.uk/foreign-travel-advice/myanmar
+Myanmar,https://mm.usembassy.gov/covid-19-information/
+Namibia,https://na.usembassy.gov/covid-19-information/
+Namibia,https://www.gov.uk/foreign-travel-advice/namibia
+Namibia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Namibia,https://www.facebook.com/MoHSSNamibia/
+Nauru,https://www.gov.uk/foreign-travel-advice/nauru
+Nauru,https://fj.usembassy.gov/u-s-citizen-services/covid-19-information/
+Nauru,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Nepal,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Nepal,https://www.gov.uk/foreign-travel-advice/nepal/staying-during-coronavirus
+Nepal,https://np.usembassy.gov/covid-19-information/
+Netherlands,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Netherlands,https://www.gov.uk/foreign-travel-advice/netherlands/
+Netherlands,https://nl.usembassy.gov/covid-19-information-3/
+Netherlands,https://reopen.europa.eu/en/map/NLD
+Netherlands,https://www.government.nl/topics/coronavirus-covid-19/tackling-new-coronavirus-in-the-netherlands
+New Zealand,https://www.gov.uk/foreign-travel-advice/new-zealand/staying-during-coronavirus
+New Zealand,https://nz.usembassy.gov/covid-19-information/
+New Zealand,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+New Zealand,https://covid19.govt.nz/
+Nicaragua,https://www.gov.uk/foreign-travel-advice/nicaragua/staying-during-coronavirus
+Nicaragua,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Nicaragua,https://ni.usembassy.gov/covid-19-information/
+Nicaragua,http://www.minsa.gob.ni/
+Niger,https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/niger/
+Niger,https://ne.usembassy.gov/health-alert-niger-covid-19-updates-u-s-embassy-niamey-06022020/
+Niger,https://www.gov.uk/foreign-travel-advice/niger/staying-during-coronavirus
+Niger,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Niger,https://twitter.com/MinSanteNiger
+Nigeria,https://ng.usembassy.gov/u-s-citizen-services/covid-19-information/
+Nigeria,https://www.gov.uk/foreign-travel-advice/nigeria
+Nigeria,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+North Macedonia,https://www.gov.uk/foreign-travel-advice/north-macedonia/staying-during-coronavirus
+North Macedonia,https://mk.usembassy.gov/covid-19-information/
+North Macedonia,https://www.osac.gov/Content/Report/7d7da50e-41ef-4a96-a276-18e9d898b990
+Norway,https://no.usembassy.gov/covid-19-information/
+Norway,https://reopen.europa.eu/en/map/NOR
+Norway,https://www.gov.uk/foreign-travel-advice
+Norway,https://www.regjeringen.no/en/topics/koronavirus-covid-19/id2692388/
+Oman,https://www.gov.uk/foreign-travel-advice/oman/staying-during-coronavirus
+Oman,https://om.usembassy.gov/covid-19-information/
+Oman,https://twitter.com/OmanVSCovid19
+Oman,https://moh.gov.om/ar/web/guest/1
+Pakistan,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Pakistan,https://pk.usembassy.gov/covid-19-information/
+Pakistan,https://www.gov.uk/foreign-travel-advice
+Pakistan,http://covid.gov.pk/stats/pakistan
+Palau,https://pw.usembassy.gov/wp-content/uploads/sites/282/MOH-Directive-No.-90-20-Authorizing-Isolation-and-Quarantine-Measures.pdf
+Palau,https://www.gov.uk/foreign-travel-advice/palau
+Palau,https://www.kayak.com/travel-restrictions
+Panama,https://www.covidchecker.com/en/
+Panama,https://pa.usembassy.gov/covid-19-information/
+Panama,https://www.gov.uk/foreign-travel-advice/panama/staying-during-coronavirus
+Panama,http://www.minsa.gob.pa/destacado/coronavirus-covid-19
+Papua New Guinea,https://www.osac.gov/Content/Report/2941d48c-62e4-4be7-b095-19067045083b
+Papua New Guinea,https://pg.usembassy.gov/covid-19-information/
+Papua New Guinea,https://www.gov.uk/foreign-travel-advice/papua-new-guinea/entry-requirements
+Papua New Guinea,https://covid19.info.gov.pg/
+Paraguay,https://www.osac.gov/Content/Report/c8fbf3b3-a39d-489a-b9a2-185718411a21
+Paraguay,https://py.usembassy.gov/covid-19-information/
+Paraguay,https://www.gov.uk/foreign-travel-advice
+Paraguay,https://www.mspbs.gov.py/covid-19.php
+Peru,https://pe.usembassy.gov/covid-19-information/
+Peru,https://www.gov.uk/foreign-travel-advice/peru
+Peru,https://www.osac.gov/Content/Report/f2ed6789-9ab2-45ad-a3bb-18c5e62cb47d
+Peru,https://www.gob.pe/8736
+Philippines,https://ph.usembassy.gov/covid-19-information/
+Philippines,https://www.gov.uk/foreign-travel-advice
+Philippines,https://www.covid19.gov.ph/
+Poland,https://pl.usembassy.gov/covid-19-information/
+Poland,https://www.gov.uk/foreign-travel-advice/poland/staying-during-coronavirus
+Poland,https://reopen.europa.eu/en/map/POL
+Poland,https://www.gov.pl/web/coronavirus
+Portugal,https://pt.usembassy.gov/covid-19-information/
+Portugal,https://www.gov.uk/foreign-travel-advice/portugal
+Portugal,https://reopen.europa.eu/en/map/PRT
+Portugal,https://covid19.min-saude.pt/
+Qatar,https://www.gov.uk/foreign-travel-advice/qatar/staying-during-coronavirus
+Qatar,https://www.moph.gov.qa/english/Pages/Coronavirus2019.aspx
+Qatar,https://www.qatarairways.com/en/travel-alerts/COVID-19-update.html
+Qatar,https://www.moph.gov.qa/arabic/Pages/default.aspx
+South Korea,https://kr.usembassy.gov/022420-covid-19-information/
+South Korea,https://www.gov.uk/foreign-travel-advice/south-korea
+Moldova,https://www.osac.gov/Content/Report/0803d68f-4a3c-47f5-a926-18428cfc10d9
+Moldova,https://md.usembassy.gov/u-s-citizen-services/covid-19-information/
+Moldova,https://www.covidchecker.com/en/
+Moldova,https://www.gov.uk/foreign-travel-advice/moldova
+Romania,https://www.osac.gov/Content/Report/3ba33e09-670d-41a6-b898-18e9d9e2f7a7
+Romania,https://reopen.europa.eu/en/map/ROU
+Romania,https://ro.usembassy.gov/covid-19-information/
+Romania,https://www.gov.uk/foreign-travel-advice/romania
+Russia,https://ru.usembassy.gov/covid-19-information/
+Russia,https://www.covidchecker.com/en/
+Russia,https://xn--80aesfpebagmfblc0a.xn--p1ai/
+Rwanda,https://www.gov.uk/foreign-travel-advice/rwanda
+Rwanda,https://rw.usembassy.gov/health-alert-covid-19-information/
+Rwanda,https://www.osac.gov/Content/Report/01f52ef6-d0dd-4604-9c41-18f4419f116a
+Rwanda,https://www.moh.gov.rw/index.php?id=575
+Saint Kitts and Nevis,https://www.covidchecker.com/en/
+Saint Kitts and Nevis,https://bb.usembassy.gov/u-s-citizen-services/covid-19-information/
+Saint Kitts and Nevis,https://www.gov.uk/foreign-travel-advice/st-kitts-and-nevis
+Saint Kitts and Nevis,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Saint Lucia,https://bb.usembassy.gov/u-s-citizen-services/covid-19-information/
+Saint Lucia,https://www.gov.uk/foreign-travel-advice/st-lucia
+Saint Lucia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Saint Vincent and the Grenadines,https://bb.usembassy.gov/u-s-citizen-services/covid-19-information/
+Saint Vincent and the Grenadines,https://www.gov.uk/foreign-travel-advice/st-vincent-and-the-grenadines
+Samoa,https://www.gov.uk/foreign-travel-advice/samoa
+Samoa,https://ws.usembassy.gov/covid-19-information/
+San Marino,https://www.gov.uk/foreign-travel-advice/san-marino/staying-during-coronavirus
+Sao Tome and Principe,https://www.osac.gov/Content/Report/b5fac3cb-64a0-4acc-8b6c-18d3b4a959d7
+Sao Tome and Principe,https://ga.usembassy.gov/covid-19-information/
+Sao Tome and Principe,https://www.gov.uk/foreign-travel-advice/sao-tome-and-principe/entry-requirements
+Sao Tome and Principe,https://www.facebook.com/pg/governostp/posts/
+Saudi Arabia,https://www.gov.uk/foreign-travel-advice/saudi-arabia
+Saudi Arabia,https://sa.usembassy.gov/u-s-citizen-services/covid-19-information/
+Saudi Arabia,https://www.osac.gov/Content/Report/b5fac3cb-64a0-4acc-8b6c-18d3b4a959d7
+Saudi Arabia,https://www.moh.gov.sa/Pages/Default.aspx
+Senegal,https://www.gov.uk/foreign-travel-advice/senegal
+Senegal,https://www.covidchecker.com/en/
+Senegal,https://sn.usembassy.gov/covid-19-information/
+Senegal,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Senegal,https://cartosantesen.maps.arcgis.com/apps/opsdashboard/index.html#/d74c1c8960e1450d9ade59a8b5c9e9a7
+Serbia,https://rs.usembassy.gov/covid-19-information/
+Serbia,https://www.osac.gov/Content/Report/adcc91bd-9754-4a47-8a42-1852cc2b095f
+Serbia,https://www.gov.uk/foreign-travel-advice/serbia
+Serbia,https://covid19.rs/homepage-english/
+Seychelles,https://www.gov.uk/foreign-travel-advice/seychelles/entry-requirements
+Seychelles,https://mu.usembassy.gov/covid-19-seychelles/
+Seychelles,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Seychelles,http://www.health.gov.sc/
+Sierra Leone,https://www.gov.uk/foreign-travel-advice/sierra-leone
+Sierra Leone,https://sl.usembassy.gov/covid-19-information/
+Sierra Leone,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Singapore,https://www.gov.uk/foreign-travel-advice/singapore
+Singapore,https://sg.usembassy.gov/u-s-citizen-services/covid-19-information/
+Singapore,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Singapore,https://www.moh.gov.sg/
+Slovakia,https://sk.usembassy.gov/covid-19-information/
+Slovakia,https://www.gov.uk/foreign-travel-advice/slovakia/entry-requirements
+Slovakia,https://reopen.europa.eu/en/map/SVK
+Slovakia,https://www.mzv.sk/web/en/covid-19
+Slovenia,https://si.usembassy.gov/covid-19-information/
+Slovenia,https://reopen.europa.eu/en/map/SVN
+Slovenia,https://www.gov.uk/foreign-travel-advice/slovenia
+Slovenia,https://www.policija.si/eng/newsroom/news-archive/103470-crossing-the-state-border-during-the-coronavirus-epidemic
+Solomon Islands,https://pg.usembassy.gov/covid-19-information/
+Solomon Islands,https://www.gov.uk/foreign-travel-advice/solomon-islands
+Solomon Islands,https://www.kayak.com/travel-restrictions
+Somalia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Somalia,https://www.covidchecker.com/en/
+Somalia,https://so.usembassy.gov/covid-19-information/
+Somalia,https://www.gov.uk/foreign-travel-advice/somalia/entry-requirements
+Somalia,https://moh.gov.so/en/
+South Africa,https://za.usembassy.gov/covid-19-information-2/
+South Africa,https://pandemic.internationalsos.com/2019-ncov/ncov-travel-restrictions-flight-operations-and-screening
+South Africa,https://www.gov.uk/foreign-travel-advice/south-africa
+South Africa,https://www.gov.za/
+South Sudan,https://ss.usembassy.gov/covid-19-information/
+South Sudan,https://www.gov.uk/foreign-travel-advice/south-sudan
+South Sudan,https://www.covidchecker.com/en/
+Spain,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Spain,https://es.usembassy.gov/covid-19-information/
+Spain,https://www.gov.uk/foreign-travel-advice/spain
+Spain,https://reopen.europa.eu/en/map/ESP
+Spain,https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/situacionActual.htm
+Sri Lanka,https://www.gov.uk/foreign-travel-advice/indonesia/staying-during-coronavirus
+Sri Lanka,https://lk.usembassy.gov/covid-19-information/
+Sri Lanka,https://www.osac.gov/Content/Report/81062d37-aa5a-41a4-9027-19068bca8d13
+Sri Lanka,https://www.caa.lk/en/
+Sudan,https://www.gov.uk/foreign-travel-advice/sudan
+Sudan,https://www.osac.gov/Content/Report/69492027-078b-4ca6-9f43-18d5aad35ea5
+Sudan,https://sd.usembassy.gov/covid-19-information/
+Suriname,https://www.osac.gov/Content/Report/feb64421-b9e6-477b-9a97-18e1807ac1d7
+Suriname,https://sr.usembassy.gov/covid-19-information/
+Suriname,https://www.gov.uk/foreign-travel-advice/suriname
+Suriname,https://covid-19.sr/
+Sweden,https://www.gov.uk/foreign-travel-advice/sweden/entry-requirements
+Sweden,https://reopen.europa.eu/en/map/SWE
+Sweden,https://se.usembassy.gov/covid-19-coronavirus-information/
+Sweden,https://www.folkhalsomyndigheten.se/the-public-health-agency-of-sweden/
+Switzerland,https://www.gov.uk/foreign-travel-advice/switzerland/staying-during-coronavirus
+Switzerland,https://reopen.europa.eu/en/map/CHE
+Switzerland,https://ch.usembassy.gov/covid-19-info/
+Switzerland,https://www.dfae.admin.ch/eda/fr/home.html
+Switzerland,https://www.swissinfo.ch/eng/covid-19_coronavirus--the-situation-in-switzerland/45592192
+Syria,https://www.gov.uk/foreign-travel-advice/syria
+Syria,https://www.osac.gov/Content/Report/feb64421-b9e6-477b-9a97-18e1807ac1d7
+Taiwan,https://www.gov.uk/foreign-travel-advice/taiwan
+Taiwan,https://www.ait.org.tw/covid-19-information/
+Taiwan,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Tajikistan,https://www.gov.uk/foreign-travel-advice/tajikistan
+Tajikistan,https://tj.usembassy.gov/covid-19-information/
+Thailand,https://th.usembassy.gov/covid-19-information/
+Thailand,https://www.osac.gov/Content/Report/feb64421-b9e6-477b-9a97-18e1807ac1d7
+Thailand,https://www.gov.uk/foreign-travel-advice/thailand
+Thailand,https://ddc.moph.go.th/viralpneumonia/eng/index.php
+Timor-Leste,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Timor-Leste,https://www.gov.uk/foreign-travel-advice/timor-leste
+Timor-Leste,https://tl.usembassy.gov/coronavirus-covid-19-outbreak-first-identified-in-wuhan-china-travel-restrictions/
+Togo,https://www.osac.gov/Content/Report/a8210cf8-a761-49d9-b73e-1845add0a9ae
+Togo,https://www.gov.uk/foreign-travel-advice/togo
+Togo,https://tg.usembassy.gov/u-s-citizen-services/security-and-travel-information/covid-19/
+Togo,https://covid19.gouv.tg/
+Tonga,https://www.kayak.com/travel-restrictions/
+Tonga,https://fj.usembassy.gov/u-s-citizen-services/covid-19-information/
+Tonga,https://www.gov.uk/foreign-travel-advice/tonga
+Trinidad and Tobago,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Trinidad and Tobago,https://www.gov.uk/foreign-travel-advice/trinidad-and-tobago/staying-during-coronavirus
+Trinidad and Tobago,https://tt.usembassy.gov/covid-19-information/
+Tunisia,https://www.gov.uk/foreign-travel-advice/tunisia/staying-during-coronavirus
+Tunisia,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Tunisia,https://tn.usembassy.gov/updated-covid-19-message/
+Tunisia,https://covid-19.tn/
+Türkiye,https://tr.usembassy.gov/covid-19-information-2/
+Türkiye,https://www.osac.gov/Content/Search?contentTypes=Report%2CAnnouncement%2CNews%2CMedia%2CIncident
+Türkiye,https://www.gov.uk/foreign-travel-advice/turkey
+Türkiye,https://www.turkiye.gov.tr/
+Turkmenistan,https://tm.usembassy.gov/covid-19-information/
+Turkmenistan,https://www.gov.uk/foreign-travel-advice/turkmenistan/staying-during-coronavirus
+Tuvalu,https://fj.usembassy.gov/u-s-citizen-services/covid-19-information/
+Tuvalu,https://www.osac.gov/Content/Search?contentTypes=Report%2CAnnouncement%2CNews%2CMedia%2CIncident
+Tuvalu,https://www.gov.uk/foreign-travel-advice/tuvalu
+Uganda,https://www.osac.gov/Content/Report/0d6157d4-62ee-415d-97c7-1848a5650d7f
+Uganda,https://www.gov.uk/foreign-travel-advice/uganda/entry-requirements
+Uganda,https://ug.usembassy.gov/covid-19-information-page/
+Uganda,https://www.gou.go.ug/
+Ukraine,https://www.gov.uk/foreign-travel-advice/ukraine
+Ukraine,https://www.osac.gov/Content/Report/d9c4ce1c-8352-4f23-81be-18d3ba361523
+Ukraine,https://ua.usembassy.gov/covid-19-information/
+Ukraine,https://visitukraine.today/
+United Arab Emirates,https://www.gov.uk/foreign-travel-advice/united-arab-emirates
+United Arab Emirates,https://ae.usembassy.gov/u-s-citizen-services/covid-19-information/
+United Arab Emirates,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+United Arab Emirates,https://doh.gov.ae/en/covid-19
+United Kingdom,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+United Kingdom,https://uk.usembassy.gov/covid-19-coronavirus-information/
+United Kingdom,https://www.gov.uk/guidance/coronavirus-covid-19-travel-corridors#travel-corridors-countries-and-territories-exemption-list.
+Tanzania,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Tanzania,https://www.gov.uk/foreign-travel-advice/tanzania
+Tanzania,https://tz.usembassy.gov/covid-19-information/
+United States,https://www.gov.uk/foreign-travel-advice/usa
+United States,https://www.cbp.gov/travel/trusted-traveler-programs/global-entry
+United States,https://www.usa.gov/states-and-territories
+United States,https://www.cdc.gov/coronavirus/2019-ncov/travelers/index.html
+Uruguay,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Uruguay,https://www.gov.uk/foreign-travel-advice/uruguay
+Uruguay,https://uy.usembassy.gov/covid-19-information/
+Uruguay,https://www.gub.uy/ministerio-salud-publica/coronavirus
+Uzbekistan,https://www.covidchecker.com/en/
+Uzbekistan,https://uz.usembassy.gov/covid-19-information/
+Uzbekistan,https://www.gov.uk/foreign-travel-advice/uzbekistan
+Uzbekistan,https://coronavirus.uz/ru
+Vanuatu,https://pg.usembassy.gov/covid-19-information/
+Vanuatu,https://www.gov.uk/foreign-travel-advice/vanuatu/staying-during-coronavirus
+Venezuela,https://ve.usembassy.gov/covid-19-information/
+Venezuela,https://www.gov.uk/foreign-travel-advice/venezuela/entry-requirements
+Venezuela,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Venezuela,https://covid19.patria.org.ve/estadisticas-venezuela/
+Vietnam,http://news.chinhphu.vn/Home/PM-reaffirms-guideline-of-fending-off-second-COVID19-wave/20206/40541.vgp
+Vietnam,https://vn.usembassy.gov/u-s-citizen-services/covid-19-information/
+Vietnam,https://www.gov.uk/foreign-travel-advice/vietnam/staying-during-coronavirus
+Vietnam,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Vietnam,https://ncov.moh.gov.vn/
+Yemen,https://www.gov.uk/foreign-travel-advice/yemen
+Yemen,https://twitter.com/YSNECCOVID19
+Zambia,https://www.gov.uk/foreign-travel-advice/zambia
+Zambia,https://www.osac.gov/Content/Report/c35c7cf0-447b-4d2d-bbf9-1844947e383e
+Zambia,https://www.zambiaembassy.org/
+Zimbabwe,https://www.osac.gov/Content/Browse/Report?subContentTypes=Alerts%2CTravel%20Advisories
+Zimbabwe,https://zw.usembassy.gov/covid-19-information-2/
+Zimbabwe,https://www.gov.uk/foreign-travel-advice/zimbabwe/entry-requirements
