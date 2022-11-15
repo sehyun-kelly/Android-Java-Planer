@@ -84,4 +84,8 @@
     <string name="from_a_to_z">From A to Z</string>
     <string name="from_z_to_a">From Z to A</string>
 
+    <!-- Used in travel restriction activity -->
+    <string name="covid_links">Travel and Covid Restrictions</string>
+    <string name="link">link1</string>
+
 </resources>

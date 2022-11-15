@@ -1,194 +1,194 @@
-Afghanistan/Hamid Karzai International Airport (KBL)/Avoid all travel
-Albania/Tirana International Airport Nënë Tereza (TIA)/Take normal security precautions
-Algeria/Houari Boumediene Airport (ALG)/Exercise a high degree of caution (with regional advisories)
-Andorra/No airport. The nearest is Andorra–La Seu d’Urgell Airport, which despite the name is located in Spain./Take normal security precautions
-Angola/Quatro de Fevereiro International Airport (LAD)/Exercise a high degree of caution (with regional advisories)
-Antigua and Barbuda/V.C. Bird International Airport (ANU)/Take normal security precautions (with regional advisories)
-Argentina/Ministro Pistarini International Airport (EZE)/Take normal security precautions
-Armenia/Zvartnots International Airport Yerevan (EVN)/Take normal security precautions (with regional advisories)
-Australia/Sydney Airport (SYD)/Take normal security precautions
-Austria/Vienna International Airport (VIE)/Take normal security precautions
-Azerbaijan/Baku Heydar Aliyev International Airport (GYD)/Exercise a high degree of caution (with regional advisories)
-Bahamas/Lynden Pindling International Airport (NAS)/Exercise a high degree of caution
-Bahrain/Bahrain International Airport Manama (BAH)/Exercise a high degree of caution
-Bangladesh/Hazrat Shahjalal International Airport (DAC)/Exercise a high degree of caution (with regional advisories)
-Barbados/Grantley Adams International Airport (BGI)/Take normal security precautions
-Belarus/Minsk National Airport (MSQ)/Avoid all travel
-Belgium/Brussels Airport (BRU)/Exercise a high degree of caution
-Belize/Philip Goldson International Airport (BZE)/Exercise a high degree of caution
-Benin/Cotonou Cadjehoun Airport (COO)/Exercise a high degree of caution (with regional advisories)
-Bhutan/Paro International Airport (PBH)/Take normal security precautions
-Bolivia/Viru Viru International Airport (VVI)/Exercise a high degree of caution
-Bosnia and Herzegovina/Sarajevo International Airport (SJJ)/Exercise a high degree of caution
-Botswana/Sir Seretse Khama International Airport (GBE)/Take normal security precautions
-Brazil/Guarulhos International Airport São Paulo (GRU)/Exercise a high degree of caution
-Brunei/Brunei International Airport (BWN)/Take normal security precautions
-Bulgaria/Sofia Airport (SOF)/Take normal security precautions
-Burkina Faso/Ouagadougou Airport (OUA)/Avoid all travel
-Burundi/Bujumbura International Airport (BJM)/Avoid all travel
-Cambodia/Phnom Penh International Airport (PNH)/Exercise a high degree of caution
-Cameroon/MD-Douala International Airport (DLA)/Exercise a high degree of caution (with regional advisories)
-Canada/Toronto Pearson International Airport (YYZ)/Take normal security precautions
-Central African Republic/Bangui M’Poko International Airport (BGF)/Avoid all travel
-Chad/N’Djamena International Airport (NDJ)/Avoid non-essential travel (with regional advisories)
-Chile/Arturo Merino Benítez International Airport/Exercise a high degree of caution
-China/Beijing Capital International Airport (PEK)/Exercise a high degree of caution
-Colombia/El Dorado International Airport (BOG)/Exercise a high degree of caution (with regional advisories)
-Comoros/Prince Said Ibrahim International Airport (HAH)/Exercise a high degree of caution
-Congo/Ndjili International Airport (FIH)/Avoid non-essential travel (with regional advisories)
-Costa Rica/Juan Santamaría International Airport (SJO)/Exercise a high degree of caution
-Croatia/Zagreb Airport (ZAG)/Take normal security precautions
-Cuba/José Martí International Airport (HAV)/Take normal security precautions
-Cyprus/Larnaca International Airport (LCA)/Take normal security precautions (with regional advisories)
-Czech Republic/Václav Havel Airport Prague (PRG)/Take normal security precautions
-Denmark/Copenhagen Airport (CPH)/Take normal security precautions
-Djibouti/Ambouli International Airport (JIB)/Exercise a high degree of caution (with regional advisories)
-Dominica/Douglas–Charles Airport (DOM)/Take normal security precautions
-Dominican Republic/Las Americas Airport (SDQ)/Exercise a high degree of caution
-Ecuador/Mariscal Sucre International Airport (UIO)/Exercise a high degree of caution (with regional advisories)
-Egypt/Cairo Airport (CAI)/Exercise a high degree of caution (with regional advisories)
-El Salvador/Romero International Airport (SAL)/Exercise a high degree of caution
-Equatorial Guinea/Malabo International Airport Aeropuerto Internacional de Malabo (SSG)/Exercise a high degree of caution
-Eritrea/Asmara International Airport (ASM)/Avoid non-essential travel (with regional advisories)
-Estonia/Tallinn Airport (TLL)/Take normal security precautions
-Ethiopia/Addis Ababa Bole International Airport (ADD)/Avoid non-essential travel (with regional advisories)
-Fiji/Nadi International Airport (NAN)/Take normal security precautions
-Finland/Helsinki Airport (HEL)/Take normal security precautions
-France/Paris Charles de Gaulle (CDG)/Exercise a high degree of caution
-Gabon/Libreville Leon M’ba International Airport (LBV)/Exercise a high degree of caution
-Gambia/Banjul International Airport (BJL)/Exercise a high degree of caution
-Georgia/Tbilisi Airport (TBS)/Take normal security precautions (with regional advisories)
-Germany/Frankfurt Airport (FRA)/Take normal security precautions
-Ghana/Kotoka International Airport (ACC)/Exercise a high degree of caution
-Greece/Athens International Airport (ATH)/Take normal security precautions
-Grenada/Maurice Bishop Airport (GND)/Take normal security precautions
-Guatemala/La Aurora International Airport (GUA)/Exercise a high degree of caution (with regional advisories)
-Guinea/Conakry International Airport (CKY)/Exercise a high degree of caution
-Guinea-Bissau/Osvaldo Vieira International Airport (OXB)/Exercise a high degree of caution (with regional advisories)
-Guyana/Cheddi Jagan International Airport (GEO)/Exercise a high degree of caution
-Haiti/Toussaint Louverture International Airport (PAP)/Avoid non-essential travel (with regional advisories)
-Honduras/Ramon Villeda Morales International Airport (SAP)/Exercise a high degree of caution (with regional advisories)
-Hong Kong/Hong Kong International Airport (HKG)/Exercise a high degree of caution
-Hungary/Budapest Liszt Ferenc International Airport (BUD)/Take normal security precautions
-Iceland/Keflavik International Airport (KEF)/Take normal security precautions
-India/Indira Gandhi International Airport (DEL)/Exercise a high degree of caution (with regional advisories)
-Indonesia/Soekarno–Hatta International Airport (CGK)/Exercise a high degree of caution (with regional advisories)
-Iran/Mehrabad International Airport (THR)/Avoid all travel
-Iraq/Baghdad International Airport (BGW)/Avoid all travel
-Ireland/Dublin Airport (DUB)/Take normal security precautions
-Israel/Ben Gurion International Airport (TLV)/Exercise a high degree of caution (with regional advisories)
-Italy/Rome Leonardo da Vinci-Fiumicino (FCO)/Take normal security precautions
-Jamaica/Sangster International Airport (SIA)/Exercise a high degree of caution
-Japan/Narita International Airport (NRT)/Take normal security precautions
-Jordan/Queen Alia International Airport (AMM)/Exercise a high degree of caution
-Kazakhstan/Almaty International Airport (ALA)/Exercise a high degree of caution
-Kenya/Jomo Kenyatta International Airport (NBO)/Exercise a high degree of caution (with regional advisories)
-Kiribati/Bonriki International Airport (TRW)/Take normal security precautions
-Kosovo/Prishtina International Airport “Adem Jashari” (PRN)/Take normal security precautions (with regional advisories)
-Kuwait/Kuwait International Airport (KWI )/Exercise a high degree of caution (with regional advisories)
-Kyrgyzstan/Manas International Airport (FRU)/Exercise a high degree of caution
-Laos/Wattay International Airport Vientiane (VTE)/Exercise a high degree of caution (with regional advisories)
-Latvia/Riga International Airport (RIX)/Take normal security precautions
-Lebanon/Beirut Rafic Hariri International Airport (BEY)/Exercise a high degree of caution (with regional advisories)
-Lesotho/Moshoeshoe I International Airport (MSU)/Exercise a high degree of caution
-Liberia/Roberts International Airport Monrovia (ROB)/Exercise a high degree of caution
-Libya/Tripoli International Airport (TIP)/Avoid all travel
-Liechtenstein/No airport. The nearest is St. Gallen-Altenrhein Airport./Take normal security precautions
-Lithuania/Vilnius Airport (VNO)/Take normal security precautions
-Luxembourg/Luxembourg Airport (LUX)/Take normal security precautions
-Macao/Macau International Airport (MFM)/Exercise a high degree of caution
-Madagascar/Ivato International Airport (TNR)/Exercise a high degree of caution (with regional advisories)
-Malawi/Kamuzu International Airport (LLW)/Exercise a high degree of caution
-Malaysia/Kuala Lumpur International Airport (KUL)/Exercise a high degree of caution (with regional advisories)
-Maldives/Velana International Airport (MLE)/Exercise a high degree of caution
-Mali/Modibo Keita International Airport (BKO)/Avoid all travel
-Malta/Malta International Airport Valletta (MLA)/Take normal security precautions
-Marshall Islands/Marshall Islands International Airport Majuro Atoll (MAJ)/Take normal security precautions
-Mauritania/Nouakchott–Oumtounsy International Airport (NKC)/Avoid non-essential travel (with regional advisories)
-Mauritius/Sir Seewoosagur Ramgoolam International Airport (MRU)/Take normal security precautions
-Mexico/Mexico City International Airport (MEX)/Exercise a high degree of caution (with regional advisories)
-Micronesia/Kosrae International Airport (KSA)/Take normal security precautions
-Moldova/Chişinău International Airport (KIV)/Exercise a high degree of caution (with regional advisories)
-Monaco/No airport. The nearest airport is Nice./Take normal security precautions
-Mongolia/Buyant-Ukhaa International Airport (ULN)/Take normal security precautions
-Montenegro/Tivat Airport (TIV)/Take normal security precautions
-Morocco/Casablanca-Mohammed V (CMN)/Exercise a high degree of caution (with regional advisories)
-Mozambique/Maputo International Airport (LUM)/Exercise a high degree of caution (with regional advisories)
-Myanmar/Yangon International Airport (RGN)/Avoid all travel
-Namibia/Hosea Kutako International Airport (WDH)/Exercise a high degree of caution
-Nauru/Nauru International Airport (INU)/Take normal security precautions
-Nepal/Tribhuvan International Airport (LUA)/Exercise a high degree of caution
-Netherlands/Amsterdam Airport Schiphol (AMS)/Take normal security precautions
-New Zealand/Auckland Airport (AKL)/Take normal security precautions
-Nicaragua/Augusto C. Sandino International Airport (MGA)/Exercise a high degree of caution (with regional advisories)
-Niger/NIM Diori Hamani International Airport (NIM)/Avoid all travel (with regional advisories)
-Nigeria/Murtala Muhammed International Airport (LOS)/Avoid non-essential travel (with regional advisories)
-North Korea/Pyongyang Sunan International Airport (FNJ)/Avoid all travel
-North Macedonia/Skopje Alexander the Great Airport (SKP)/Take normal security precautions
-Norway/Oslo Airport (OSL)/Take normal security precautions
-Oman/Muscat International Airport (MCT)/Exercise a high degree of caution (with regional advisories)
-Pakistan/Jinnah International Airport (KHI)/Exercise a high degree of caution (with regional advisories)
-Palau/Roman Tmetuchl International Airport (ROR)/Take normal security precautions
-Panama/Tocumen International Airport (PTY)/Take normal security precautions (with regional advisories)
-Papua New Guinea/Port Moresby Jacksons International Airport (POM)/Avoid non-essential travel
-Paraguay/Silvio Pettirossi International Airport (ASU)/Exercise a high degree of caution
-Peru/Jorge Chávez International Airport Lima (LIM)/Exercise a high degree of caution (with regional advisories)
-Philippines/Ninoy Aquino International Airport (MNL)/Exercise a high degree of caution (with regional advisories)
-Poland/Warsaw Chopin Airport (WAW)/Take normal security precautions
-Portugal/Lisbon Airport (LIS)/Take normal security precautions
-Qatar/Hamad International Airport (DOH)/Take normal security precautions
-Romania/Henri Coanda International Airport (OTP)/Take normal security precautions
-Russia/Sheremetyevo International Airport (SVO)/Avoid all travel
-Rwanda/Kigali International Airport (KGL)/Exercise a high degree of caution (with regional advisories)
-Saint Kitts and Nevis/Robert L. Bradshaw International Airport (SKB)/Take normal security precautions
-Saint Lucia/Hewanorra International Airport (UVF)/Take normal security precautions
-Saint Vincent and the Grenadines/Argyle International Airport (SVD)/Take normal security precautions
-Samoa/Faleolo International Airport (APW)/Take normal security precautions
-San Marino/No airport. The nearest airport is Rimini./Take normal security precautions
-Sao Tome and Principe/São Tomé International Airport (TMS)/Take normal security precautions
-Saudi Arabia/King Fahd International Airport (DMM)/Exercise a high degree of caution (with regional advisories)
-Senegal/Dakar International Airport (DSS)/Exercise a high degree of caution
-Serbia/Belgrade Nikola Tesla Airport (BEG)/Take normal security precautions
-Seychelles/Seychelles International Airport (SEZ)/Take normal security precautions
-Sierra Leone/Lungi International Airport (FNA)/Exercise a high degree of caution
-Singapore/Singapore Changi Airport (SIN)/Take normal security precautions
-Slovakia/Bratislava Airport (BTS)/Take normal security precautions
-Slovenia/Ljubljana Jože Pučnik Airport (LJU)/Take normal security precautions
-Solomon Islands/Honiara International Airport (HIR)/Take normal security precautions
-Somalia/Aden Adde International Airport (MGQ)/Avoid all travel
-South Africa/Tambo International Airport Johannesburg (JNB)/Exercise a high degree of caution
-South Korea/Incheon International Airport (IIA)/Take normal security precautions
-South Sudan/Juba International Airport (JUB)/Avoid all travel
-Spain/Madrid Airport (MAD)/Take normal security precautions
-Sri Lanka/Bandaranaike International Airport (CMB)/Exercise a high degree of caution
-Sudan/Khartoum International Airport (KRT)/Avoid non-essential travel (with regional advisories)
-Suriname/Johan Adolf Pengel International Airport (PBM)/Take normal security precautions
-Eswatini/Matsapha Airport Manzini (MTS)/Exercise a high degree of caution
-Sweden/Stockholm-Arlanda Airport (ARN)/Take normal security precautions
-Switzerland/Zurich Airport (ZRH)/Take normal security precautions
-Syria/Damascus International Airport (DAM)/Avoid all travel
-Taiwan/Taiwan Taoyuan International Airport (TPE)/Take normal security precautions
-Tajikistan/Dushanbe Airport (DYU)/Exercise a high degree of caution (with regional advisories)
-Tanzania/Julius Nyerere International Airport (DAR)/Exercise a high degree of caution (with regional advisories)
-Thailand/Suvarnabhumi Airport (BKK)/Exercise a high degree of caution (with regional advisories)
-Timor-Leste/Presidente Nicolau Lobato International Airport (DIL)/Exercise a high degree of caution
-Togo/Lomé-Tokoin Airport (LFW)/Exercise a high degree of caution (with regional advisories)
-Tonga/Fua’amotu International Airport (TBU)/Take normal security precautions
-Trinidad and Tobago/Piarco International Airport (POS)/Exercise a high degree of caution
-Tunisia/Tunis-Carthage Airport (TUN)/Exercise a high degree of caution (with regional advisories)
-Türkiye/Istanbul Airport (IST)/Exercise a high degree of caution (with regional advisories)
-Turkmenistan/Ashgabat International Airport (ASB)/Exercise a high degree of caution (with regional advisories)
-Tuvalu/Funafuti International Airport (FUN)/Take normal security precautions
-Uganda/Entebbe International Airport (EBB)/Exercise a high degree of caution (with regional advisories)
-Ukraine/Boryspil International Airport (KBP)/Avoid all travel
-United Arab Emirates/Dubai International Airport (DXB)/Exercise a high degree of caution
-United Kingdom/London Heathrow (LHR)/Exercise a high degree of caution
-United States/Denver International Airport (DEN)/Take normal security precautions (with regional advisories)
-Uruguay/Carrasco International Airport (MVD)/Take normal security precautions (with regional advisories)
-Uzbekistan/Islam Karimov Tashkent International Airport (TAS)/Exercise a high degree of caution (with regional advisories)
-Vanuatu/Bauerfield International Airport Port Vila International Airport (VLI)/Take normal security precautions
-Venezuela/Simón Bolívar International Airport (CCS)/Avoid all travel
-Vietnam/Tân Sơn Nhất International Airport (SGN)/Exercise a high degree of caution
-Yemen/Sanaa International Airport (SAH)/Avoid all travel
-Zambia/Kenneth Kaunda International Airport (LUN)/Take normal security precautions (with regional advisories)
-Zimbabwe/Harare International Airport (HRE)/Exercise a high degree of caution
+Afghanistan/Hamid Karzai International Airport (KBL)/Avoid all travel/Kabul
+Albania/Tirana International Airport Nënë Tereza (TIA)/Take normal security precautions/Tirana
+Algeria/Houari Boumediene Airport (ALG)/Exercise a high degree of caution (with regional advisories)/Algiers
+Andorra/No airport. The nearest is Andorra–La Seu d’Urgell Airport, which despite the name is located in Spain./Take normal security precautions/Andorra la Vella
+Angola/Quatro de Fevereiro International Airport (LAD)/Exercise a high degree of caution (with regional advisories)/Luanda
+Antigua and Barbuda/V.C. Bird International Airport (ANU)/Take normal security precautions (with regional advisories)/St. John's
+Argentina/Ministro Pistarini International Airport (EZE)/Take normal security precautions/Buenos Aires
+Armenia/Zvartnots International Airport Yerevan (EVN)/Take normal security precautions (with regional advisories)/Yerevan
+Australia/Sydney Airport (SYD)/Take normal security precautions/Canberra
+Austria/Vienna International Airport (VIE)/Take normal security precautions/Vienna
+Azerbaijan/Baku Heydar Aliyev International Airport (GYD)/Exercise a high degree of caution (with regional advisories)/Baku
+Bahamas/Lynden Pindling International Airport (NAS)/Exercise a high degree of caution/Nassau
+Bahrain/Bahrain International Airport Manama (BAH)/Exercise a high degree of caution/Manama
+Bangladesh/Hazrat Shahjalal International Airport (DAC)/Exercise a high degree of caution (with regional advisories)/Dhaka
+Barbados/Grantley Adams International Airport (BGI)/Take normal security precautions/Bridgetown
+Belarus/Minsk National Airport (MSQ)/Avoid all travel/Minsk
+Belgium/Brussels Airport (BRU)/Exercise a high degree of caution/Brussels
+Belize/Philip Goldson International Airport (BZE)/Exercise a high degree of caution/Belmopan
+Benin/Cotonou Cadjehoun Airport (COO)/Exercise a high degree of caution (with regional advisories)/Porto-Novo
+Bhutan/Paro International Airport (PBH)/Take normal security precautions/Thimphu
+Bolivia/Viru Viru International Airport (VVI)/Exercise a high degree of caution/Sucre
+Bosnia and Herzegovina/Sarajevo International Airport (SJJ)/Exercise a high degree of caution/Sarajevo
+Botswana/Sir Seretse Khama International Airport (GBE)/Take normal security precautions/Gaborone
+Brazil/Guarulhos International Airport São Paulo (GRU)/Exercise a high degree of caution/Brasília
+Brunei/Brunei International Airport (BWN)/Take normal security precautions/Bandar Seri Begawan
+Bulgaria/Sofia Airport (SOF)/Take normal security precautions/Sofia
+Burkina Faso/Ouagadougou Airport (OUA)/Avoid all travel/Ouagadougou
+Burundi/Bujumbura International Airport (BJM)/Avoid all travel/Bujumbura
+Cambodia/Phnom Penh International Airport (PNH)/Exercise a high degree of caution/Phnom Penh
+Cameroon/MD-Douala International Airport (DLA)/Exercise a high degree of caution (with regional advisories)/Yaoundé
+Canada/Toronto Pearson International Airport (YYZ)/Take normal security precautions/Ottawa
+Central African Republic/Bangui M’Poko International Airport (BGF)/Avoid all travel/Bangui
+Chad/N’Djamena International Airport (NDJ)/Avoid non-essential travel (with regional advisories)/N'Djamena
+Chile/Arturo Merino Benítez International Airport/Exercise a high degree of caution/Santiago
+China/Beijing Capital International Airport (PEK)/Exercise a high degree of caution/Beijing
+Colombia/El Dorado International Airport (BOG)/Exercise a high degree of caution (with regional advisories)/Bogotá
+Comoros/Prince Said Ibrahim International Airport (HAH)/Exercise a high degree of caution/Moroni
+Congo/Ndjili International Airport (FIH)/Avoid non-essential travel (with regional advisories)/Kinshasa
+Costa Rica/Juan Santamaría International Airport (SJO)/Exercise a high degree of caution/San José
+Croatia/Zagreb Airport (ZAG)/Take normal security precautions/Zagreb
+Cuba/José Martí International Airport (HAV)/Take normal security precautions/Havana
+Cyprus/Larnaca International Airport (LCA)/Take normal security precautions (with regional advisories)/Nicosia
+Czech Republic/Václav Havel Airport Prague (PRG)/Take normal security precautions/Prague
+Denmark/Copenhagen Airport (CPH)/Take normal security precautions/Copenhagen
+Djibouti/Ambouli International Airport (JIB)/Exercise a high degree of caution (with regional advisories)/Djibouti
+Dominica/Douglas–Charles Airport (DOM)/Take normal security precautions/Roseau
+Dominican Republic/Las Americas Airport (SDQ)/Exercise a high degree of caution/Santo Domingo
+Ecuador/Mariscal Sucre International Airport (UIO)/Exercise a high degree of caution (with regional advisories)/Quito
+Egypt/Cairo Airport (CAI)/Exercise a high degree of caution (with regional advisories)/Cairo
+El Salvador/Romero International Airport (SAL)/Exercise a high degree of caution/San Salvador
+Equatorial Guinea/Malabo International Airport Aeropuerto Internacional de Malabo (SSG)/Exercise a high degree of caution/Malabo
+Eritrea/Asmara International Airport (ASM)/Avoid non-essential travel (with regional advisories)/Asmara
+Estonia/Tallinn Airport (TLL)/Take normal security precautions/Tallinn
+Ethiopia/Addis Ababa Bole International Airport (ADD)/Avoid non-essential travel (with regional advisories)/Addis Ababa
+Fiji/Nadi International Airport (NAN)/Take normal security precautions/Suva
+Finland/Helsinki Airport (HEL)/Take normal security precautions/Helsinki
+France/Paris Charles de Gaulle (CDG)/Exercise a high degree of caution/Paris
+Gabon/Libreville Leon M’ba International Airport (LBV)/Exercise a high degree of caution/Libreville
+Gambia/Banjul International Airport (BJL)/Exercise a high degree of caution/Banjul
+Georgia/Tbilisi Airport (TBS)/Take normal security precautions (with regional advisories)/Tbilisi
+Germany/Frankfurt Airport (FRA)/Take normal security precautions/Berlin
+Ghana/Kotoka International Airport (ACC)/Exercise a high degree of caution/Accra
+Greece/Athens International Airport (ATH)/Take normal security precautions/Athens
+Grenada/Maurice Bishop Airport (GND)/Take normal security precautions/St. George's
+Guatemala/La Aurora International Airport (GUA)/Exercise a high degree of caution (with regional advisories)/Guatemala City
+Guinea/Conakry International Airport (CKY)/Exercise a high degree of caution/Conakry
+Guinea-Bissau/Osvaldo Vieira International Airport (OXB)/Exercise a high degree of caution (with regional advisories)/Bissau
+Guyana/Cheddi Jagan International Airport (GEO)/Exercise a high degree of caution/Georgetown
+Haiti/Toussaint Louverture International Airport (PAP)/Avoid non-essential travel (with regional advisories)/Port-au-Prince
+Honduras/Ramon Villeda Morales International Airport (SAP)/Exercise a high degree of caution (with regional advisories)/Tegucigalpa
+Hong Kong/Hong Kong International Airport (HKG)/Exercise a high degree of caution/Hong Kong
+Hungary/Budapest Liszt Ferenc International Airport (BUD)/Take normal security precautions/Budapest
+Iceland/Keflavik International Airport (KEF)/Take normal security precautions/Reykjavík
+India/Indira Gandhi International Airport (DEL)/Exercise a high degree of caution (with regional advisories)/New Delhi
+Indonesia/Soekarno–Hatta International Airport (CGK)/Exercise a high degree of caution (with regional advisories)/Jakarta
+Iran/Mehrabad International Airport (THR)/Avoid all travel/Tehran
+Iraq/Baghdad International Airport (BGW)/Avoid all travel/Baghdad
+Ireland/Dublin Airport (DUB)/Take normal security precautions/Dublin
+Israel/Ben Gurion International Airport (TLV)/Exercise a high degree of caution (with regional advisories)/Jerusalem
+Italy/Rome Leonardo da Vinci-Fiumicino (FCO)/Take normal security precautions/Rome
+Jamaica/Sangster International Airport (SIA)/Exercise a high degree of caution/Kingston
+Japan/Narita International Airport (NRT)/Take normal security precautions/Tokyo
+Jordan/Queen Alia International Airport (AMM)/Exercise a high degree of caution/Amman
+Kazakhstan/Almaty International Airport (ALA)/Exercise a high degree of caution/Astana
+Kenya/Jomo Kenyatta International Airport (NBO)/Exercise a high degree of caution (with regional advisories)/Nairobi
+Kiribati/Bonriki International Airport (TRW)/Take normal security precautions/Tarawa
+Kosovo/Prishtina International Airport “Adem Jashari” (PRN)/Take normal security precautions (with regional advisories)/Pristina
+Kuwait/Kuwait International Airport (KWI )/Exercise a high degree of caution (with regional advisories)/Kuwait City
+Kyrgyzstan/Manas International Airport (FRU)/Exercise a high degree of caution/Bishkek
+Laos/Wattay International Airport Vientiane (VTE)/Exercise a high degree of caution (with regional advisories)/Vientiane
+Latvia/Riga International Airport (RIX)/Take normal security precautions/Riga
+Lebanon/Beirut Rafic Hariri International Airport (BEY)/Exercise a high degree of caution (with regional advisories)/Beirut
+Lesotho/Moshoeshoe I International Airport (MSU)/Exercise a high degree of caution/Maseru
+Liberia/Roberts International Airport Monrovia (ROB)/Exercise a high degree of caution/Monrovia
+Libya/Tripoli International Airport (TIP)/Avoid all travel/Tripoli
+Liechtenstein/No airport. The nearest is St. Gallen-Altenrhein Airport./Take normal security precautions/Vaduz
+Lithuania/Vilnius Airport (VNO)/Take normal security precautions/Vilnius
+Luxembourg/Luxembourg Airport (LUX)/Take normal security precautions/Luxembourg
+Macao/Macau International Airport (MFM)/Exercise a high degree of caution/Macau
+Madagascar/Ivato International Airport (TNR)/Exercise a high degree of caution (with regional advisories)/Antananarivo
+Malawi/Kamuzu International Airport (LLW)/Exercise a high degree of caution/Lilongwe
+Malaysia/Kuala Lumpur International Airport (KUL)/Exercise a high degree of caution (with regional advisories)/Kuala Lumpur
+Maldives/Velana International Airport (MLE)/Exercise a high degree of caution/Malé
+Mali/Modibo Keita International Airport (BKO)/Avoid all travel/Bamako
+Malta/Malta International Airport Valletta (MLA)/Take normal security precautions/Valletta
+Marshall Islands/Marshall Islands International Airport Majuro Atoll (MAJ)/Take normal security precautions/Majuro
+Mauritania/Nouakchott–Oumtounsy International Airport (NKC)/Avoid non-essential travel (with regional advisories)/Nouakchott
+Mauritius/Sir Seewoosagur Ramgoolam International Airport (MRU)/Take normal security precautions/Port Louis
+Mexico/Mexico City International Airport (MEX)/Exercise a high degree of caution (with regional advisories)/Mexico City
+Micronesia/Kosrae International Airport (KSA)/Take normal security precautions/Palikir
+Moldova/Chişinău International Airport (KIV)/Exercise a high degree of caution (with regional advisories)/Chisinau
+Monaco/No airport. The nearest airport is Nice./Take normal security precautions/Monaco
+Mongolia/Buyant-Ukhaa International Airport (ULN)/Take normal security precautions/Ulaanbaatar
+Montenegro/Tivat Airport (TIV)/Take normal security precautions/Podgorica
+Morocco/Casablanca-Mohammed V (CMN)/Exercise a high degree of caution (with regional advisories)/Rabat
+Mozambique/Maputo International Airport (LUM)/Exercise a high degree of caution (with regional advisories)/Maputo
+Myanmar/Yangon International Airport (RGN)/Avoid all travel/Naypyidaw
+Namibia/Hosea Kutako International Airport (WDH)/Exercise a high degree of caution/Windhoek
+Nauru/Nauru International Airport (INU)/Take normal security precautions/Yaren
+Nepal/Tribhuvan International Airport (LUA)/Exercise a high degree of caution/Kathmandu
+Netherlands/Amsterdam Airport Schiphol (AMS)/Take normal security precautions/Amsterdam
+New Zealand/Auckland Airport (AKL)/Take normal security precautions/Wellington
+Nicaragua/Augusto C. Sandino International Airport (MGA)/Exercise a high degree of caution (with regional advisories)/Managua
+Niger/NIM Diori Hamani International Airport (NIM)/Avoid all travel (with regional advisories)/Niamey
+Nigeria/Murtala Muhammed International Airport (LOS)/Avoid non-essential travel (with regional advisories)/Abuja
+North Korea/Pyongyang Sunan International Airport (FNJ)/Avoid all travel/Pyongyang
+North Macedonia/Skopje Alexander the Great Airport (SKP)/Take normal security precautions/Skopje
+Norway/Oslo Airport (OSL)/Take normal security precautions/Oslo
+Oman/Muscat International Airport (MCT)/Exercise a high degree of caution (with regional advisories)/Muscat
+Pakistan/Jinnah International Airport (KHI)/Exercise a high degree of caution (with regional advisories)/Islamabad
+Palau/Roman Tmetuchl International Airport (ROR)/Take normal security precautions/Ngerulmud
+Panama/Tocumen International Airport (PTY)/Take normal security precautions (with regional advisories)/Panama City
+Papua New Guinea/Port Moresby Jacksons International Airport (POM)/Avoid non-essential travel/Port Moresby
+Paraguay/Silvio Pettirossi International Airport (ASU)/Exercise a high degree of caution/Asunción
+Peru/Jorge Chávez International Airport Lima (LIM)/Exercise a high degree of caution (with regional advisories)/Lima
+Philippines/Ninoy Aquino International Airport (MNL)/Exercise a high degree of caution (with regional advisories)/Manila
+Poland/Warsaw Chopin Airport (WAW)/Take normal security precautions/Warsaw
+Portugal/Lisbon Airport (LIS)/Take normal security precautions/Lisbon
+Qatar/Hamad International Airport (DOH)/Take normal security precautions/Doha
+Romania/Henri Coanda International Airport (OTP)/Take normal security precautions/Bucharest
+Russia/Sheremetyevo International Airport (SVO)/Avoid all travel/Moscow
+Rwanda/Kigali International Airport (KGL)/Exercise a high degree of caution (with regional advisories)/Kigali
+Saint Kitts and Nevis/Robert L. Bradshaw International Airport (SKB)/Take normal security precautions/Basseterre
+Saint Lucia/Hewanorra International Airport (UVF)/Take normal security precautions/Castries
+Saint Vincent and the Grenadines/Argyle International Airport (SVD)/Take normal security precautions/Kingstown
+Samoa/Faleolo International Airport (APW)/Take normal security precautions/Apia
+San Marino/No airport. The nearest airport is Rimini./Take normal security precautions/San Marino
+Sao Tome and Principe/São Tomé International Airport (TMS)/Take normal security precautions/São Tomé
+Saudi Arabia/King Fahd International Airport (DMM)/Exercise a high degree of caution (with regional advisories)/Riyadh
+Senegal/Dakar International Airport (DSS)/Exercise a high degree of caution/Dakar
+Serbia/Belgrade Nikola Tesla Airport (BEG)/Take normal security precautions/Belgrade
+Seychelles/Seychelles International Airport (SEZ)/Take normal security precautions/Victoria
+Sierra Leone/Lungi International Airport (FNA)/Exercise a high degree of caution/Freetown
+Singapore/Singapore Changi Airport (SIN)/Take normal security precautions/Singapore
+Slovakia/Bratislava Airport (BTS)/Take normal security precautions/Bratislava
+Slovenia/Ljubljana Jože Pučnik Airport (LJU)/Take normal security precautions/Ljubljana
+Solomon Islands/Honiara International Airport (HIR)/Take normal security precautions/Honiara
+Somalia/Aden Adde International Airport (MGQ)/Avoid all travel/Mogadishu
+South Africa/Tambo International Airport Johannesburg (JNB)/Exercise a high degree of caution/Pretoria
+South Korea/Incheon International Airport (IIA)/Take normal security precautions/Seoul
+South Sudan/Juba International Airport (JUB)/Avoid all travel/Juba
+Spain/Madrid Airport (MAD)/Take normal security precautions/Madrid
+Sri Lanka/Bandaranaike International Airport (CMB)/Exercise a high degree of caution/Sri Jayawardenapura Kotte
+Sudan/Khartoum International Airport (KRT)/Avoid non-essential travel (with regional advisories)/Khartoum
+Suriname/Johan Adolf Pengel International Airport (PBM)/Take normal security precautions/Paramaribo
+Eswatini/Matsapha Airport Manzini (MTS)/Exercise a high degree of caution/Mbabane
+Sweden/Stockholm-Arlanda Airport (ARN)/Take normal security precautions/Stockholm
+Switzerland/Zurich Airport (ZRH)/Take normal security precautions/Bern
+Syria/Damascus International Airport (DAM)/Avoid all travel/Damascus
+Taiwan/Taiwan Taoyuan International Airport (TPE)/Take normal security precautions/Taipei
+Tajikistan/Dushanbe Airport (DYU)/Exercise a high degree of caution (with regional advisories)/Dushanbe
+Tanzania/Julius Nyerere International Airport (DAR)/Exercise a high degree of caution (with regional advisories)/Dodoma
+Thailand/Suvarnabhumi Airport (BKK)/Exercise a high degree of caution (with regional advisories)/Bangkok
+Timor-Leste/Presidente Nicolau Lobato International Airport (DIL)/Exercise a high degree of caution/Dili
+Togo/Lomé-Tokoin Airport (LFW)/Exercise a high degree of caution (with regional advisories)/Lomé
+Tonga/Fua’amotu International Airport (TBU)/Take normal security precautions/Nukuʻalofa
+Trinidad and Tobago/Piarco International Airport (POS)/Exercise a high degree of caution/Port of Spain
+Tunisia/Tunis-Carthage Airport (TUN)/Exercise a high degree of caution (with regional advisories)/Tunis
+Türkiye/Istanbul Airport (IST)/Exercise a high degree of caution (with regional advisories)/Ankara
+Turkmenistan/Ashgabat International Airport (ASB)/Exercise a high degree of caution (with regional advisories)/Ashgabat
+Tuvalu/Funafuti International Airport (FUN)/Take normal security precautions/Funafuti
+Uganda/Entebbe International Airport (EBB)/Exercise a high degree of caution (with regional advisories)/Kampala
+Ukraine/Boryspil International Airport (KBP)/Avoid all travel/Kiev
+United Arab Emirates/Dubai International Airport (DXB)/Exercise a high degree of caution/Abu Dhabi
+United Kingdom/London Heathrow (LHR)/Exercise a high degree of caution/London
+United States/Denver International Airport (DEN)/Take normal security precautions (with regional advisories)/Washington, D.C.
+Uruguay/Carrasco International Airport (MVD)/Take normal security precautions (with regional advisories)/Montevideo
+Uzbekistan/Islam Karimov Tashkent International Airport (TAS)/Exercise a high degree of caution (with regional advisories)/Tashkent
+Vanuatu/Bauerfield International Airport Port Vila International Airport (VLI)/Take normal security precautions/Port Vila
+Venezuela/Simón Bolívar International Airport (CCS)/Avoid all travel/Caracas
+Vietnam/Tân Sơn Nhất International Airport (SGN)/Exercise a high degree of caution/Hanoi
+Yemen/Sanaa International Airport (SAH)/Avoid all travel/Sanaá
+Zambia/Kenneth Kaunda International Airport (LUN)/Take normal security precautions (with regional advisories)/Lusaka
+Zimbabwe/Harare International Airport (HRE)/Exercise a high degree of caution/Harare

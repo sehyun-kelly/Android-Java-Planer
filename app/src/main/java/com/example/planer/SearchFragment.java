@@ -261,6 +261,8 @@ public class SearchFragment extends Fragment implements Runnable {
 
     public void goToRestrictions() {
         Intent intent = new Intent(getActivity(), TravelRestrictionsActivity.class);
+        intent.putExtra("home", homeCountry);
+        intent.putExtra("destination", countrySelected);
         startActivity(intent);
     }
 
