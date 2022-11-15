@@ -22,7 +22,7 @@
     <string name="score">Score</string>
     <string name="airport">Airport</string>
     <string name="visa">Visa</string>
-    <string name="restriction">Covid/Travel Restriction</string>
+    <string name="restriction">Travel/Covid Restriction</string>
     <string name="weather">Weather</string>
     <string name="currency">Currency</string>
     <string name="loading">Loading....</string>
@@ -76,16 +76,23 @@
     <string name="visa_description_content">Shows the type of visa you need when visiting this
         country.\n\nFor visa-free regimes, the number of visa-free days is specified whenever
         available. When not available (for example, in some EU countries days are not limited),
-        \'visa free\' is shown.\n\nSource:
-        <a href="https://www.passportindex.org">https://www.passportindex.org</a>.</string>
+        \'visa free\' is shown.\n\nSource: https://www.passportindex.org.</string>
 
     <!-- Used in Favourite Fragment -->
     <string name="sort_method">Sort method</string>
     <string name="from_a_to_z">From A to Z</string>
     <string name="from_z_to_a">From Z to A</string>
 
-    <!-- Used in travel restriction activity -->
-    <string name="covid_links">Travel and Covid Restrictions</string>
-    <string name="link">link1</string>
+    <!-- Used in Travel Restriction Activity -->
+    <string name="travel_and_covid_restrictions">Travel and Covid Restrictions</string>
+    <string name="more_details_about_risk_levels">More Details about Risk Levels</string>
+    <string name="normal_precautions">Take normal security precautions</string>
+    <string name="normal_precaution_description">Take similar precautions to those you would take in your country.</string>
+    <string name="high_degree_of_caution">Exercise a high degree of caution</string>
+    <string name="high_degree_of_caution_description">Be very cautious at all times, monitor local media and follow the instructions of local authorities.</string>
+    <string name="avoid_non_essential_travel">Avoid non-essential travel</string>
+    <string name="avoid_non_essential_travel_description">Your safety and security could be at risk. You should think about your need to travel to this country.</string>
+    <string name="avoid_all_travel">Avoid all travel</string>
+    <string name="avoid_all_travel_description">You should not travel to this country as your personal safety and security are at great risk.</string>
 
 </resources>

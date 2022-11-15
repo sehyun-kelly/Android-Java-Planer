@@ -8,19 +8,15 @@
     tools:context=".TravelRestrictionsActivity">
 
     <TextView
+        style="@style/header"
         android:id="@+id/page_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/covid_links"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:text="@string/travel_and_covid_restrictions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.cardview.widget.CardView
         style="@style/customizedCardView"
@@ -39,8 +35,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="More Details about Risk Levels"
                 android:layout_marginBottom="5dp"
+                android:text="@string/more_details_about_risk_levels"
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
@@ -53,23 +49,24 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/normal" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="@string/normal_precautions"
                     android:textSize="12sp"
-                    android:text="Take normal security precautions"
                     android:textStyle="italic" />
             </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
                 android:layout_marginBottom="5dp"
-                android:text="Take similar precautions to those you would take in your country." />
+                android:text="@string/normal_precaution_description"
+                android:textSize="12sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -80,14 +77,15 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/high_caution" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="@string/high_degree_of_caution"
                     android:textSize="12sp"
-                    android:text="Exercise a high degree of caution"
                     android:textStyle="italic" />
             </LinearLayout>
 
@@ -95,8 +93,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:textSize="12sp"
-                android:text="Be very cautious at all times, monitor local media and follow the instructions of local authorities." />
+                android:text="@string/high_degree_of_caution_description"
+                android:textSize="12sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -107,14 +105,15 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/avoid_non_essential" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="@string/avoid_non_essential_travel"
                     android:textSize="12sp"
-                    android:text="Avoid non-essential travel"
                     android:textStyle="italic" />
             </LinearLayout>
 
@@ -122,8 +121,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:textSize="12sp"
-                android:text="Your safety and security could be at risk. You should think about your need to travel to this country." />
+                android:text="@string/avoid_non_essential_travel_description"
+                android:textSize="12sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -134,13 +133,14 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/no_travel" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Avoid all travel"
+                    android:text="@string/avoid_all_travel"
                     android:textSize="12sp"
                     android:textStyle="italic" />
 
@@ -150,8 +150,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:textSize="12sp"
-                android:text="You should not travel to this country as your personal safety and security are at great risk." />
+                android:text="@string/avoid_all_travel_description"
+                android:textSize="12sp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -175,7 +175,7 @@
                 android:id="@+id/card_links"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/covid_links"
+                android:text="@string/travel_and_covid_restrictions"
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
@@ -187,7 +187,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/page_title"
                 app:layout_constraintVertical_bias="0.025"
-                tools:layout_editor_absoluteX="30dp"></LinearLayout>
+                tools:layout_editor_absoluteX="30dp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
