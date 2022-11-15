@@ -1,9 +1,5 @@
 package com.example.planer.data;
 
-import android.content.Context;
-
-import com.example.planer.R;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;

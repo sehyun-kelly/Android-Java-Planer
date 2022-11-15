@@ -2,36 +2,27 @@ package com.example.planer.currecnyconverter;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.RequestFuture;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Currency;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Locale;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import java.util.function.Consumer;
 
 public class CurrencyConverter {
 
     private final String DEFAULT_HOME = "Canada";
     private final String DEFAULT_DESTINATION = "Vietnam";
     private final double DEFAULT_RATE_HD = 1.25;
-    private final double DEFAUL_RATE_DH = 1 / DEFAULT_RATE_HD;
+    private final double DEFAULT_RATE_DH = 1 / DEFAULT_RATE_HD;
     static final String API_KEY = "vd7qdS6VOHYSw4P8LybvPR2HPsbxzecc";
 
     private String home;
@@ -50,7 +41,7 @@ public class CurrencyConverter {
         this.home = DEFAULT_HOME;
         this.destination = DEFAULT_DESTINATION;
         this.homeRate = DEFAULT_RATE_HD;
-        this.destinationRate = DEFAUL_RATE_DH;
+        this.destinationRate = DEFAULT_RATE_DH;
     }
 
     public CurrencyConverter(String home, String destination) {
@@ -99,7 +90,6 @@ public class CurrencyConverter {
     }
 
 
-
     public void setHome(String home) {
         this.home = home;
     }
@@ -110,8 +100,8 @@ public class CurrencyConverter {
 
     /**
      * TODO
-     *
      * This function became extra nasty. I don't like how much time this took.
+     *
      * @return
      */
     private void getRateAPI(Context context, Runnable callBack) {
@@ -124,9 +114,9 @@ public class CurrencyConverter {
         Map<String, String> countries = new HashMap<>();
 
         // Map ISO countries to country name
-        // TODO must make currecny code filter faster.
+        // TODO must make currency code filter faster.
         String[] countryCodes = Locale.getISOCountries();
-        for (String countryCode : countryCodes){
+        for (String countryCode : countryCodes) {
             Locale locale = new Locale("", countryCode);
             Currency c = Currency.getInstance(locale);
             if (c != null) {
@@ -137,38 +127,43 @@ public class CurrencyConverter {
         this.homeAbrev = countries.get(this.home);
         this.destinationAbrev = countries.get(this.destination);
 
-        String url ="https://api.apilayer.com/exchangerates_data/latest?symbols=" + this.destinationAbrev + "&base=" + this.homeAbrev;
+        String url = "https://api.apilayer.com/exchangerates_data/latest?symbols=" + this.destinationAbrev + "&base=" + this.homeAbrev;
 
         mStringRequest = new StringRequest(Request.Method.GET, url,
-            new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                // response
-                try {
-                    JSONObject json = new JSONObject(response);
-                    JSONObject rates = json.getJSONObject("rates");
-                    // We are only getting one rate.
-                    double rate = rates.getDouble(destinationAbrev);
-                    setRate(rate);
-                    callBack.run();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }},
-            new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
-                        Log.d("ERROR","error => "+ error.toString());
+                response -> {
+                    // response
+                    try {
+                        JSONObject json = new JSONObject(response);
+                        JSONObject rates = json.getJSONObject("rates");
+                        // We are only getting one rate.
+                        double rate = rates.getDouble(destinationAbrev);
+                        setRate(rate);
+                        callBack.run();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
+                },
+                error -> {
+                    if (error == null || error.networkResponse == null) {
+                        return;
+                    }
+
+                    String body = "";
+                    final String statusCode = String.valueOf(error.networkResponse.statusCode);
+                    try {
+                        body = new String(error.networkResponse.data, "UTF-8");
+                    } catch (UnsupportedEncodingException e) {
+                        // exception
+                    }
+                    Log.d("ERROR", "error => Status code: " + statusCode + ", " + body);
                 }
         )
 
-        // I don't know how this works :( I am ashamed.
+                // I don't know how this works :( I am ashamed.
         {
             @Override
             public Map<String, String> getHeaders() {
-                Map<String, String>  params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<>();
                 params.put("apikey", API_KEY);
                 return params;
             }
@@ -178,7 +173,7 @@ public class CurrencyConverter {
     }
 
     public String toString() {
-        return this.homeAbrev + " - " + this.destinationAbrev + " : " + this.getRate();
+        return this.homeAbrev + " - " + this.destinationAbrev + ": " + this.getRate();
     }
 }
 

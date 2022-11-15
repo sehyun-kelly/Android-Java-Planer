@@ -7,8 +7,6 @@ import android.util.Log;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.checkerframework.checker.units.qual.A;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -39,7 +37,7 @@ public class FirebaseDriver {
 
                 db.collection("countries").document(info[0])
                         .set(countries)
-                        .addOnSuccessListener( o -> Log.d(TAG, "Count: " + count + ", DocumentSnapshot added")).addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
+                        .addOnSuccessListener(o -> Log.d(TAG, "Count: " + count + ", DocumentSnapshot added")).addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
                 count++;
             }
             bufferedReader.close();
@@ -85,11 +83,11 @@ public class FirebaseDriver {
         }
     }
 
-    public static void uploadCovidLinks(FirebaseFirestore db){
+    public static void uploadCovidLinks(FirebaseFirestore db) {
         String file = "res/raw/covid_link.txt";
         InputStream inputStream = Objects.requireNonNull(FirebaseDriver.class.getClassLoader()).getResourceAsStream(file);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-        String country ="";
+        String country = "";
         ArrayList<String> links = new ArrayList<>();
         try {
             String line = bufferedReader.readLine();
@@ -97,7 +95,7 @@ public class FirebaseDriver {
             country = initial_info[0];
             while (line != null) {
                 String[] info = line.split(",");
-                if(info[0] != country){
+                if (info[0] != country) {
                     String[] links_array = links.toArray(new String[0]);
                     db.collection("countries").document(country).update("links", FieldValue.arrayUnion(links_array));
                     links.clear();
@@ -113,6 +111,7 @@ public class FirebaseDriver {
             e.printStackTrace();
         }
     }
+
     public static void main(String[] args) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         uploadCountries(db);
