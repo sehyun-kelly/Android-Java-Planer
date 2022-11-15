@@ -20,42 +20,32 @@
         <activity
             android:name=".ChangeProfilePic"
             android:exported="false"
-            android:parentActivityName=".SearchActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:label="@string/change_profile_picture"
+            android:parentActivityName=".SearchActivity" />
         <activity
             android:name=".TravelRestrictionsActivity"
             android:exported="false"
-            android:parentActivityName=".SearchActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:label="@string/restriction"
+            android:parentActivityName=".SearchActivity" />
         <activity
             android:name=".CurrencyConverterActivity"
             android:exported="false"
+            android:label="@string/currency"
             android:parentActivityName=".SearchActivity" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".WeatherActivity"
             android:exported="false"
-            android:parentActivityName=".SearchActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:label="@string/weather"
+            android:parentActivityName=".SearchActivity" />
         <activity
             android:name=".SearchActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:label="@string/search"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:label="@string/sign_up"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
