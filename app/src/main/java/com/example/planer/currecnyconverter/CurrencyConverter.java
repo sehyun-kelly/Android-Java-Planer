@@ -12,6 +12,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.Currency;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,6 +27,7 @@ public class CurrencyConverter {
     private final double DEFAULT_RATE_HD = 1.25;
     private final double DEFAULT_RATE_DH = 1 / DEFAULT_RATE_HD;
     static final String API_KEY = "vd7qdS6VOHYSw4P8LybvPR2HPsbxzecc";
+    static final int SIGFIGS = 3;
 
     private String home;
     private String destination;
@@ -72,7 +76,7 @@ public class CurrencyConverter {
 
     private void setRate(double rate) {
         this.homeRate = rate;
-        this.destinationRate = 1 / rate;
+        this.destinationRate = rate;
     }
 
     // Home to Destination
@@ -85,10 +89,16 @@ public class CurrencyConverter {
         return num * this.destinationRate;
     }
 
+
+    public static String sigFigs(double num) {
+        MathContext mathContext = new MathContext(3, RoundingMode.DOWN);
+        BigDecimal bigDecimal = new BigDecimal(num,mathContext);
+        return bigDecimal.toPlainString();
+    }
+
     public void updateRate(Context context, Runnable callBack) {
         getRateAPI(context, callBack);
     }
-
 
     public void setHome(String home) {
         this.home = home;

@@ -283,21 +283,21 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
     private void checkFavouritePair(String countryPair) {
         db = FirebaseFirestore.getInstance();
 
-        db.collection("favourite")
-                .document(currentUser.getUid())
-                .get()
-                .addOnCompleteListener(task -> {
-                    Map<String, Object> favPair = task.getResult().getData();
-                    if (favPair.containsKey(countryPair)) {
-                        addToFavBtn.setTag(R.string.fav_true);
-                        addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_filled);
-                    } else {
-                        addToFavBtn.setTag(R.string.fav_false);
-                        addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_bordered);
-                    }
-                })
-                .addOnSuccessListener(o -> System.out.println("pair checked success"))
-                .addOnFailureListener(e -> Log.e(TAG, e.getMessage()));
+//        db.collection("favourite")
+//                .document(currentUser.getUid())
+//                .get()
+//                .addOnCompleteListener(task -> {
+//                    Map<String, Object> favPair = task.getResult().getData();
+//                    if (favPair.containsKey(countryPair)) {
+//                        addToFavBtn.setTag(R.string.fav_true);
+//                        addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_filled);
+//                    } else {
+//                        addToFavBtn.setTag(R.string.fav_false);
+//                        addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_bordered);
+//                    }
+//                })
+//                .addOnSuccessListener(o -> System.out.println("pair checked success"))
+//                .addOnFailureListener(e -> Log.e(TAG, e.getMessage()));
     }
 
     /**

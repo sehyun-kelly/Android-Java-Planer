@@ -36,7 +36,7 @@ public class CurrencyConverterActivity extends AppCompatActivity {
                 destination.setText("0.00");
                 return;
             }
-            destination.setText(new Double(cC.convertHD(Double.parseDouble(home.getText().toString()))).toString());
+            destination.setText(CurrencyConverter.sigFigs(cC.convertHD(Double.parseDouble(home.getText().toString()))));
         }
 
         @Override
@@ -47,7 +47,6 @@ public class CurrencyConverterActivity extends AppCompatActivity {
 
         @Override
         public void afterTextChanged(Editable s) {
-
             destination.addTextChangedListener(destWatcher);
         }
 
@@ -61,8 +60,7 @@ public class CurrencyConverterActivity extends AppCompatActivity {
                 home.setText("0.00");
                 return;
             }
-
-            home.setText(new Double(cC.convertDH(Double.parseDouble(destination.getText().toString()))).toString());
+            home.setText(CurrencyConverter.sigFigs(cC.convertDH(Double.parseDouble(destination.getText().toString()))));
         }
 
 
@@ -74,7 +72,6 @@ public class CurrencyConverterActivity extends AppCompatActivity {
 
         @Override
         public void afterTextChanged(Editable s) {
-
             home.addTextChangedListener(homeWatcher);
         }
     };
@@ -113,7 +110,7 @@ public class CurrencyConverterActivity extends AppCompatActivity {
         // Update cC rates
         TextView rate = findViewById(R.id.conversion_rate);
         cC.updateRate(getApplicationContext(), () -> {
-            rate.setText("" + cC.getRate());
+            rate.setText(CurrencyConverter.sigFigs(cC.getRate()));
         });
 
         // I scoured the internet for a sleek way to set on click listeners
@@ -134,7 +131,7 @@ public class CurrencyConverterActivity extends AppCompatActivity {
         EditText home = findViewById(R.id.currency_input);
         EditText destination = findViewById(R.id.currency_output);
         double homeValue = Double.parseDouble(home.getText().toString());
-        destination.setText(new Double(cC.convertHD(homeValue)).toString());
+        destination.setText(CurrencyConverter.sigFigs(cC.convertHD(homeValue)));
     }
 
 
@@ -145,7 +142,7 @@ public class CurrencyConverterActivity extends AppCompatActivity {
         EditText home = findViewById(R.id.currency_input);
         EditText destination = findViewById(R.id.currency_output);
         double destinationValue = Double.parseDouble(destination.getText().toString());
-        destination.setText(new Double(cC.convertDH(destinationValue)).toString());
+        destination.setText(CurrencyConverter.sigFigs(cC.convertDH(destinationValue)));
     }
 
     // Ew stinky listeners. This belongs at the bottom of the file.
