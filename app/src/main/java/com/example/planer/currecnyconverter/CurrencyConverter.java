@@ -26,7 +26,7 @@ public class CurrencyConverter {
     private final String DEFAULT_DESTINATION = "Vietnam";
     private final double DEFAULT_RATE_HD = 1.25;
     private final double DEFAULT_RATE_DH = 1 / DEFAULT_RATE_HD;
-    static final String API_KEY = "vd7qdS6VOHYSw4P8LybvPR2HPsbxzecc";
+    static final String API_KEY = "NhsgcPMeSuheM59uUjhJzNvl54oDlIs3";
     static final int SIGFIGS = 3;
 
     private String home;
@@ -183,7 +183,7 @@ public class CurrencyConverter {
     }
 
     public String toString() {
-        return this.homeAbrev + " - " + this.destinationAbrev + ": " + this.getRate();
+        return this.homeAbrev + " - " + this.destinationAbrev + ": " + sigFigs(this.getRate());
     }
 }
 
