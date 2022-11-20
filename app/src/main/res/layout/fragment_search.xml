@@ -43,8 +43,10 @@
                             android:layout_alignParentStart="true"
                             android:layout_alignParentTop="true"
                             android:layout_centerVertical="true"
+                            android:drawablePadding="5dp"
                             android:text="@string/score"
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            app:drawableEndCompat="@drawable/ic_baseline_help_outline_24" />
 
                         <TextView
                             android:id="@+id/score"
@@ -73,8 +75,9 @@
 
                         <TextView
                             android:id="@+id/visa"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:drawablePadding="5dp"
                             android:text="@string/visa"
                             android:textColor="#000000"
                             app:drawableEndCompat="@drawable/ic_baseline_help_outline_24" />
@@ -165,10 +168,12 @@
 
                 <TextView
                     android:id="@+id/airport"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:drawablePadding="5dp"
                     android:text="@string/airport"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    app:drawableEndCompat="@drawable/ic_baseline_help_outline_24" />
 
                 <TextView
                     android:id="@+id/airportInfo"
@@ -217,19 +222,19 @@
                         android:background="@drawable/corner_rounded"
                         android:orientation="vertical">
 
-                            <ImageView
-                                android:id="@+id/conditionsIcon"
-                                android:layout_width="match_parent"
-                                android:layout_height="75dp"
-                                android:layout_gravity="center"
-                                android:importantForAccessibility="no"/>
+                        <ImageView
+                            android:id="@+id/conditionsIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="75dp"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no" />
 
-                            <TextView
-                                android:id="@+id/conditions"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal"
-                                android:paddingBottom="10dp" />
+                        <TextView
+                            android:id="@+id/conditions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:paddingBottom="10dp" />
                     </LinearLayout>
 
                     <TextView
