@@ -31,12 +31,7 @@ public class FavouriteFragment extends Fragment {
     private FirebaseFirestore db;
     private String userUuid;
     private final ArrayList<FavouriteCountry> favouriteCountries = new ArrayList<>();
-
     private FavouriteCountriesAdapter favouriteCountriesAdapter;
-
-    public FavouriteFragment() {
-    }
-
     private FavouriteCallbackListener favouriteCallbackListener;
 
     @Override

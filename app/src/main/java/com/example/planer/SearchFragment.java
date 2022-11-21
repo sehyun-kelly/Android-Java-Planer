@@ -19,7 +19,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
-import com.example.planer.currecnyconverter.CurrencyConverter;
+import com.example.planer.currencyconverter.CurrencyConverter;
 import com.example.planer.ranking.CovidRestriction;
 import com.example.planer.ranking.RecommendationLevel;
 import com.example.planer.ranking.Visa;
