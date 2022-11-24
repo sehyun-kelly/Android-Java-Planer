@@ -116,6 +116,6 @@ public class FirebaseDriver {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         uploadCountries(db);
         uploadVisa(db);
-        uploadCountries(db);
+        uploadCovidLinks(db);
     }
 }
