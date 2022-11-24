@@ -19,7 +19,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
-import com.example.planer.currecnyconverter.CurrencyConverter;
+import com.example.planer.currencyconverter.CurrencyConverter;
 import com.example.planer.ranking.CovidRestriction;
 import com.example.planer.ranking.RecommendationLevel;
 import com.example.planer.ranking.Visa;
@@ -63,7 +63,7 @@ public class SearchFragment extends Fragment implements Runnable {
     private TextView temperature;
 
     // Currecny Converter
-    private CurrencyConverter cC =  new CurrencyConverter();
+    private CurrencyConverter cC = new CurrencyConverter();
 
     public SearchFragment() {
         super(R.layout.fragment_search);
@@ -86,19 +86,6 @@ public class SearchFragment extends Fragment implements Runnable {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // OnClickListeners to switch to new activities when clicking cards (Visa, Covid, Weather)
-        CardView visa = requireView().findViewById(R.id.visaCard);
-        visa.findViewById(R.id.visa).setOnClickListener(v -> goToVisa());
-
-        CardView travelRestrictions = requireView().findViewById(R.id.travelRestrictionsCard);
-        travelRestrictions.setOnClickListener(v -> goToRestrictions());
-
-        CardView weather = requireView().findViewById(R.id.weatherCard);
-        weather.setOnClickListener(v -> goToWeather());
-
-        CardView currency = requireView().findViewById(R.id.currencyCard);
-        currency.setOnClickListener(v -> goToCurrency());
-
         score = view.findViewById(R.id.score);
         scoreCard = view.findViewById(R.id.score_card);
         airport = view.findViewById(R.id.airportInfo);
@@ -110,6 +97,24 @@ public class SearchFragment extends Fragment implements Runnable {
         conditions = view.findViewById(R.id.conditions);
         conditionsIcon = view.findViewById(R.id.conditionsIcon);
         temperature = view.findViewById(R.id.temp);
+
+        scoreCard.findViewById(R.id.score_title).setOnClickListener(v -> goToScore());
+
+        CardView visa = requireView().findViewById(R.id.visaCard);
+        visa.findViewById(R.id.visa).setOnClickListener(v -> goToVisa());
+
+        CardView travelRestrictions = requireView().findViewById(R.id.travelRestrictionsCard);
+        travelRestrictions.setOnClickListener(v -> goToRestrictions());
+
+        CardView airport = requireView().findViewById(R.id.airportCard);
+        airport.findViewById(R.id.airport).setOnClickListener(v -> goToAirport());
+
+        CardView weather = requireView().findViewById(R.id.weatherCard);
+        weather.setOnClickListener(v -> goToWeather());
+
+        CardView currency = requireView().findViewById(R.id.currencyCard);
+        currency.setOnClickListener(v -> goToCurrency());
+
     }
 
     private void updateDataFromCountries() {
@@ -127,9 +132,12 @@ public class SearchFragment extends Fragment implements Runnable {
                             } else if (key.equalsIgnoreCase("advisory")) {
                                 advisoryContent = value.toString();
                                 String restriction;
-                                if(advisoryContent.contains("normal")) restriction = "Take normal security";
-                                else if(advisoryContent.contains("non-essential")) restriction = "Avoid non-essential travel";
-                                else if(advisoryContent.contains("high")) restriction = "High degree of caution";
+                                if (advisoryContent.contains("normal"))
+                                    restriction = "Take normal security";
+                                else if (advisoryContent.contains("non-essential"))
+                                    restriction = "Avoid non-essential travel";
+                                else if (advisoryContent.contains("high"))
+                                    restriction = "High degree of caution";
                                 else restriction = advisoryContent;
                                 advisory.setText(restriction);
                                 getRiskLevelImage(advisoryContent);
@@ -233,20 +241,14 @@ public class SearchFragment extends Fragment implements Runnable {
 
     }
 
-    public void goToWeather() {
-        Bundle bundle = new Bundle();
-        bundle.putString("city", capital);
-        bundle.putString("country", countrySelected);
-        Intent intent = new Intent(getActivity(), WeatherActivity.class);
-        intent.putExtras(bundle);
-        startActivity(intent);
-    }
-
-    public void goToCurrency() {
-        Intent intent = new Intent(getActivity(), CurrencyConverterActivity.class);
-        intent.putExtra("home", homeCountry);
-        intent.putExtra("destination", countrySelected);
-        startActivity(intent);
+    public void goToScore() {
+        BottomSheetDialog dialog = new BottomSheetDialog(requireContext(), R.style.SheetDialog);
+        dialog.setContentView(R.layout.layout_bottom_sheet);
+        TextView dialogHeader = dialog.findViewById(R.id.title);
+        TextView dialogContent = dialog.findViewById(R.id.content);
+        dialogHeader.setText(R.string.score_description_title);
+        dialogContent.setText(R.string.score_description_content);
+        dialog.show();
     }
 
     public void goToVisa() {
@@ -261,6 +263,32 @@ public class SearchFragment extends Fragment implements Runnable {
 
     public void goToRestrictions() {
         Intent intent = new Intent(getActivity(), TravelRestrictionsActivity.class);
+        intent.putExtra("home", homeCountry);
+        intent.putExtra("destination", countrySelected);
+        startActivity(intent);
+    }
+
+    public void goToAirport() {
+        BottomSheetDialog dialog = new BottomSheetDialog(requireContext(), R.style.SheetDialog);
+        dialog.setContentView(R.layout.layout_bottom_sheet);
+        TextView dialogHeader = dialog.findViewById(R.id.title);
+        TextView dialogContent = dialog.findViewById(R.id.content);
+        dialogHeader.setText(R.string.airport_description_title);
+        dialogContent.setText(R.string.airport_description_content);
+        dialog.show();
+    }
+
+    public void goToWeather() {
+        Bundle bundle = new Bundle();
+        bundle.putString("city", capital);
+        bundle.putString("country", countrySelected);
+        Intent intent = new Intent(getActivity(), WeatherActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    public void goToCurrency() {
+        Intent intent = new Intent(getActivity(), CurrencyConverterActivity.class);
         intent.putExtra("home", homeCountry);
         intent.putExtra("destination", countrySelected);
         startActivity(intent);

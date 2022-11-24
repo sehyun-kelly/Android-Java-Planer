@@ -1,4 +1,4 @@
-package com.example.planer.currecnyconverter;
+package com.example.planer.currencyconverter;
 
 import android.content.Context;
 import android.util.Log;
