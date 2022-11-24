@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -80,7 +81,11 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (!validateForm(userNameInput, emailInput, passwordInput, confirmPasswordInput)) {
             Toast.makeText(RegisterActivity.this,
-                    "Please enter user name, email, password, and confirm password", Toast.LENGTH_SHORT).show();
+                    "Please enter user name, email, password, and confirm password.", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (!checkConfirmPassword(passwordInput, confirmPasswordInput)) {
+            Toast.makeText(RegisterActivity.this,
+                    "Confirm password failed.", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -122,5 +127,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     private boolean validateForm(String userName, String email, String password, String confirmPassword) {
         return !userName.isEmpty() && !email.isEmpty() && !password.isEmpty() && !confirmPassword.isEmpty();
+    }
+
+    private boolean checkConfirmPassword(String password, String confirmPassword) {
+        return Objects.equals(password, confirmPassword);
     }
 }
