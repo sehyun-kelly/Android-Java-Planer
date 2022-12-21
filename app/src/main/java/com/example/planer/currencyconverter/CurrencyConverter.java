@@ -86,7 +86,7 @@ public class CurrencyConverter {
 
     // Destination to Home
     public double convertDH(double num) {
-        return num * this.destinationRate;
+        return num / this.destinationRate;
     }
 
 

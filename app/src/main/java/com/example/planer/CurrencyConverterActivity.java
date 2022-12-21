@@ -124,7 +124,9 @@ public class CurrencyConverterActivity extends AppCompatActivity {
         EditText home = findViewById(R.id.currency_input);
         EditText destination = findViewById(R.id.currency_output);
         double homeValue = Double.parseDouble(home.getText().toString());
+        destination.removeTextChangedListener(destWatcher);
         destination.setText(CurrencyConverter.sigFigs(cC.convertHD(homeValue)));
+        destination.addTextChangedListener(destWatcher);
     }
 
 
@@ -135,7 +137,9 @@ public class CurrencyConverterActivity extends AppCompatActivity {
         EditText home = findViewById(R.id.currency_input);
         EditText destination = findViewById(R.id.currency_output);
         double destinationValue = Double.parseDouble(destination.getText().toString());
-        destination.setText(CurrencyConverter.sigFigs(cC.convertDH(destinationValue)));
+        home.removeTextChangedListener(homeWatcher);
+        home.setText(CurrencyConverter.sigFigs(cC.convertDH(destinationValue)));
+        home.addTextChangedListener(homeWatcher);
     }
 
     // Ew stinky listeners. This belongs at the bottom of the file.
