@@ -4,7 +4,6 @@
 - [Project Description](#project-description)
 - [Technologies Used](#technologies-used)
 - [How to install or run the project](#how-to-run-project)
-- [Contact Information](#contact-information)
 
 ## Project Description
 When planning a vacation, consolidating visa, currency, and COVID restriction information is a monstrous task. Here at Planer, we plan on bringing the correct information for travelers, making it easier to choose your next big vacation.
@@ -88,9 +87,3 @@ To see how much a different denomination is
 - Click currency section 
 - User will be redirected to currency page
 - Enter quantiy of either home country or destination country currency
-
-## <a id="contact-information">Contact Information</a>
-
-### Ravinder Shokar
-- ravindershokar@gmail.com
-- https://www.linkedin.com/in/rshokar/
