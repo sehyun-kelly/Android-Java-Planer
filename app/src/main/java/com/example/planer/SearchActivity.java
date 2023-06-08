@@ -27,6 +27,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ import java.util.Map;
 
 public class SearchActivity extends AppCompatActivity implements FavouriteCallbackListener {
     public static String CURRENT_USER_UUID_KEY = "current_user_uuid";
+    public static final String COLLECTION_NAME = "favourite";
     public static final String TAG = "ActivityMain";
 
     private FirebaseUser currentUser;
@@ -48,7 +50,7 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
     private Button addToFavBtn;
 
     private String homeCountry;
-    private String destinationCountry;
+    private String destinationCountry = "Afghanistan";
     private ArrayList<String> countries;
     private boolean isFavourite = false;
     private int hiddenCountryIndex;
@@ -249,14 +251,24 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
         favPair.put("home", homeVisaValue);
         favPair.put("destination", destinationCountry);
 
+        // Create new line;
+        Map<String, Object> favMap = new HashMap<>();
+        favMap.put(countryPair, favPair);
+
         db = FirebaseFirestore.getInstance();
         assert currentUser != null;
-        db.collection("favourite")
+        db.collection(COLLECTION_NAME)
                 .document(currentUser.getUid())
-                .update(countryPair, favPair)
+                .update(favMap) // Update or insert.
                 .addOnSuccessListener(o ->
                         Toast.makeText(this, "Added favourite", Toast.LENGTH_SHORT))
-                .addOnFailureListener(e -> Log.e(TAG, e.getMessage()));
+                .addOnFailureListener(e -> {
+                    db.collection(COLLECTION_NAME)
+                            .document(currentUser.getUid())
+                            .set(favMap);
+                    Toast.makeText(this, "Error adding favourite", Toast.LENGTH_SHORT);
+                });
+
     }
 
     /**
@@ -282,13 +294,14 @@ public class SearchActivity extends AppCompatActivity implements FavouriteCallba
      */
     private void checkFavouritePair(String countryPair) {
         db = FirebaseFirestore.getInstance();
+        String temp = currentUser.getUid();
 
         db.collection("favourite")
                 .document(currentUser.getUid())
                 .get()
                 .addOnCompleteListener(task -> {
                     Map<String, Object> favPair = task.getResult().getData();
-                    if (favPair.containsKey(countryPair)) {
+                    if (favPair != null && favPair.containsKey(countryPair)) {
                         addToFavBtn.setTag(R.string.fav_true);
                         addToFavBtn.setBackgroundResource(R.drawable.ic_favorite_filled);
                     } else {

@@ -23,8 +23,10 @@ import java.util.Map;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
-
+    private static  final String FAVOURITE_COLLECTION = "favourite";
+    private static  final String USERS_COLLECTION = "users";
     private FirebaseAuth mAuth;
+
 
     String country = "";
     FirebaseUser user;
@@ -95,6 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Log.e("QA", "Failed to add data", e); // log error to logcat
                 })
                 .addOnCompleteListener(this, task -> {
+
                     if (task.isSuccessful()) {
 
                         mAuth.signInWithEmailAndPassword(emailInput, passwordInput)
@@ -107,7 +110,8 @@ public class RegisterActivity extends AppCompatActivity {
                                         registrant.put("username", userNameInput);
                                         registrant.put("email", emailInput);
                                         registrant.put("country", country);
-                                        db.collection("users").document(user.getUid()).set(registrant);
+                                        db.collection(USERS_COLLECTION).document(user.getUid()).set(registrant);
+
                                         Intent intent = new Intent(RegisterActivity.this, SearchActivity.class);
                                         startActivity(intent);
 
