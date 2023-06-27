@@ -1,4 +1,5 @@
 # Planer
+<img width="1270" alt="Screenshot 2023-06-27 at 2 26 14 PM" src="https://github.com/sehyun-kelly/Android-Java-Planer/assets/89621420/8616b8df-84ae-4ab0-84d9-ab1aaaac5f3d">
 
 ## Table of Contents
 - [Project Description](#project-description)
